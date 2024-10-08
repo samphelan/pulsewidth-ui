@@ -11,6 +11,7 @@ import styles from "./autocomplete.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { TextInput } from "../TextInput/TextInput";
+import useClickOutside from "../../hooks/useClickOutside";
 
 interface AutocompleteProps extends ComponentProps<"input"> {
   value: string;
@@ -36,10 +37,15 @@ export const Autocomplete = ({
 }: AutocompleteProps) => {
   const choices = suggestions || [];
   const inputRef = useRef<HTMLInputElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   const [text, setText] = useState(value);
   const [selected, setSelected] = useState<string>();
   const [showSuggestions, setShowSuggestions] = useState(false);
+
+  useClickOutside(wrapperRef, () => {
+    setShowSuggestions(false);
+  });
 
   useEffect(() => {
     setText(value);
@@ -85,8 +91,12 @@ export const Autocomplete = ({
     }
   };
 
+  const handleFocus = () => {
+    if (text && typeof selected === "undefined") setShowSuggestions(true);
+  };
+
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} ref={wrapperRef}>
       <TextInput
         ref={inputRef}
         type="text"
@@ -96,6 +106,7 @@ export const Autocomplete = ({
         readOnly={selected ? true : false}
         style={inputStyles}
         className={[styles.input, inputClassName].join(" ")}
+        onFocus={handleFocus}
         {...rest}
       />
       {showSuggestions && (
