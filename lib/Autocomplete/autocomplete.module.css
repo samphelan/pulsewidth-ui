@@ -1,0 +1,56 @@
+.wrapper {
+    position: relative;
+    background-color: yellow;
+}
+
+.ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style-type: none;
+    background-color: #1a1a1a;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+}
+
+.input {
+    width: calc(100% - 1.2em - 12px);
+}
+
+.li {
+    flex: 1;
+}
+
+.xWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: none;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 4px;
+}
+
+.x {
+    padding: 0;
+    width: 2em;
+    height: 2em;
+}
+
+.choice {
+    border-radius: 0;
+    width: 100%;
+    border: none;
+    text-align: inherit;
+}
+
+.choice:hover {
+    cursor: pointer;
+    border: none;
+    background-color: #ededed;
+}

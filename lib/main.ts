@@ -1,2 +1,5 @@
+import { Autocomplete } from './Autocomplete/Autocomplete'
 import { Button } from './Button/Button'
-export { Button }
+import { TextInput } from './TextInput/TextInput'
+
+export { Autocomplete, Button, TextInput }
