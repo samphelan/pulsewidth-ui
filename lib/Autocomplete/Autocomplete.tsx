@@ -102,7 +102,6 @@ export const Autocomplete = ({
         type="text"
         value={text}
         onChange={handleChange}
-        disabled={false}
         readOnly={selected ? true : false}
         style={inputStyles}
         className={[styles.input, inputClassName].join(" ")}
