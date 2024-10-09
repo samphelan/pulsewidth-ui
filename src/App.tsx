@@ -5,6 +5,7 @@ import {
   Button,
   Checkbox,
   Option,
+  Password,
   Radio,
   Select,
   TextInput,
@@ -53,6 +54,7 @@ function App() {
           <Option value="option 2">Option 2</Option>
           <Option value="option 3">Option 3</Option>
         </Select>
+        <Password />
       </div>
     </>
   );
