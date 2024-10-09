@@ -4,7 +4,9 @@ import {
   Autocomplete,
   Button,
   Checkbox,
+  Option,
   Radio,
+  Select,
   TextInput,
 } from "pulsewidth-ui";
 
@@ -46,6 +48,11 @@ function App() {
           label="Option 2"
           size="medium"
         />
+        <Select>
+          <Option value="option 1">Option 1</Option>
+          <Option value="option 2">Option 2</Option>
+          <Option value="option 3">Option 3</Option>
+        </Select>
       </div>
     </>
   );

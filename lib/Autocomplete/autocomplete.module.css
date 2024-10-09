@@ -1,5 +1,6 @@
 .wrapper {
     position: relative;
+    width: fit-content;
 }
 
 .ul {
@@ -15,10 +16,6 @@
     width: 100%;
     text-align: left;
     border-radius: 3px;
-}
-
-.input {
-    width: calc(100% - 1.2em - 12px);
 }
 
 .li {
