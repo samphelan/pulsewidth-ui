@@ -1,11 +1,11 @@
 import { ComponentProps, forwardRef } from "react";
 
 interface TextInputProps extends ComponentProps<"input"> {
-  value?: string;
+  variant?: string;
 }
 
 export const TextInput = forwardRef(function TextInput(
-  { value, ...rest }: TextInputProps,
+  { variant, ...rest }: TextInputProps,
   ref: React.ForwardedRef<HTMLInputElement>
 ) {
   return <input type="text" {...rest} ref={ref} />;

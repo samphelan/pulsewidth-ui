@@ -5,6 +5,19 @@
   text-align: center;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.app .miniwrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

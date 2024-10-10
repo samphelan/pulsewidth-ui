@@ -1,7 +1,7 @@
 import {
+  ChangeEvent,
   forwardRef,
   MutableRefObject,
-  useEffect,
   useRef,
   useState,
 } from "react";
@@ -11,8 +11,8 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import styles from "./password.module.css";
 
 interface PasswordProps {
-  value: string;
-  onChange: () => void;
+  value?: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Password = forwardRef(
@@ -21,6 +21,7 @@ export const Password = forwardRef(
     forwardedRef: React.ForwardedRef<HTMLInputElement>
   ) => {
     const [visible, setVisible] = useState(false);
+    const [text, setText] = useState("");
 
     const internalRef = useRef<HTMLInputElement>(null);
 
@@ -46,6 +47,13 @@ export const Password = forwardRef(
       }
     };
 
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+      setText(e.currentTarget.value);
+      if (onChange) {
+        onChange(e);
+      }
+    };
+
     return (
       <div className={styles["wrapper"]}>
         <TextInput
@@ -54,8 +62,9 @@ export const Password = forwardRef(
               el;
             setRefs(el);
           }}
-          value={value}
-          onChange={onChange}
+          className={styles["input"]}
+          value={value || text}
+          onChange={handleChange}
           type={visible ? "text" : "password"}
         />
         <button

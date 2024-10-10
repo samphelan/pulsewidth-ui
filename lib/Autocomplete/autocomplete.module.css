@@ -1,6 +1,13 @@
 .wrapper {
     position: relative;
-    width: fit-content;
+    min-width: fit-content;
+    display: inline-flex;
+    justify-content: stretch;
+    background-color: red;
+}
+
+.input {
+    flex: 1;
 }
 
 .ul {
@@ -16,6 +23,7 @@
     width: 100%;
     text-align: left;
     border-radius: 3px;
+    z-index: 9;
 }
 
 .li {

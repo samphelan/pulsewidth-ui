@@ -1,0 +1,48 @@
+.wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 50px;
+    
+    position: relative;
+}
+
+.custom {
+    display: inline-flex;
+    position: relative;
+    width: 100%;
+    height: 20px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.customTrack {
+    height: 5px;
+    width: 100%;
+    background-color: rgb(210,210,210);
+    border-radius: 3px;
+    position: absolute;
+}
+
+.trackFill {
+    height: 5px;
+    background-color: rgb(72, 130, 255);
+    border-radius: 3px;
+    position: absolute;
+}
+
+.customThumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    border: 1px solid rgb(220,220,220);
+    position: absolute;
+
+}
+
+.custom:hover .customTrack {
+    background-color: rgb(200,200,200)
+}

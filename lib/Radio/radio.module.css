@@ -45,31 +45,31 @@
 }
 
 .radio-button--small .radio-button__circle {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
 }
     
 .radio-button--medium .radio-button__circle {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
 }
   
 .radio-button--large .radio-button__circle {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
 }
 .radio-button--small .radio-button__inner-circle {
+    width: 6px;
+    height: 6px;
+}
+  
+.radio-button--medium .radio-button__inner-circle {
     width: 10px;
     height: 10px;
 }
   
-.radio-button--medium .radio-button__inner-circle {
+.radio-button--large .radio-button__inner-circle {
     width: 14px;
     height: 14px;
-}
-  
-.radio-button--large .radio-button__inner-circle {
-    width: 18px;
-    height: 18px;
 }
   
