@@ -1,4 +1,4 @@
-import React, { FC, useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, forwardRef } from "react";
 import styles from "./slider.module.css";
 
 interface SliderProps {
@@ -9,16 +9,13 @@ interface SliderProps {
   onChange: (value: number) => void;
 }
 
-export const Slider: FC<SliderProps> = ({
-  min = 0,
-  max = 100,
-  step = 1,
-  value,
-  onChange,
-}: SliderProps) => {
+export const Slider = forwardRef(function Slider(
+  { min = 0, max = 100, step = 1, value, onChange }: SliderProps,
+  ref: React.ForwardedRef<HTMLDivElement>
+) {
   const internalMax = (max - min) / step;
   const internalMin = 0;
-  const [internalValue, setInternalValue] = useState(value || 50);
+  const [internalValue, setInternalValue] = useState(value || min);
   const handleChange = () => {
     if (onChange) onChange(internalValue);
   };
@@ -120,7 +117,7 @@ export const Slider: FC<SliderProps> = ({
     internalValue > max ? max : internalValue < min ? min : internalValue;
 
   return (
-    <div className={styles["wrapper"]}>
+    <div className={styles["wrapper"]} ref={ref}>
       <input
         type="range"
         min={min}
@@ -152,4 +149,4 @@ export const Slider: FC<SliderProps> = ({
       <div style={{ textAlign: "center" }}>{val}</div>
     </div>
   );
-};
+});

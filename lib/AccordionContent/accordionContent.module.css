@@ -1,0 +1,18 @@
+.content {
+    display: grid;
+    overflow: hidden;
+    color: black;
+    transition: 500ms ease-out;
+}
+
+.first-row {
+    overflow: hidden;
+}
+
+.content--collapsed {
+    grid-template-rows: 0fr;
+}
+
+.content--expanded {
+    grid-template-rows: 1fr;
+}

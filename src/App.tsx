@@ -1,7 +1,11 @@
 import { ChangeEvent, useState } from "react";
 import "./App.css";
 import {
+  Accordion,
+  AccordionHeader,
+  AccordionContent,
   Autocomplete,
+  Avatar,
   Button,
   Checkbox,
   Option,
@@ -29,7 +33,7 @@ function App() {
           <Button>Click Me</Button>
         </div>
         <div className={"miniwrapper"}>
-          <TextInput />
+          <TextInput placeholder="Regular Input" />
         </div>
 
         <div className={"miniwrapper"}>
@@ -40,6 +44,7 @@ function App() {
               setInputVal(e.currentTarget.value);
             }}
             suggestions={["Choice 1", "Choice 2", "Choice 3"]}
+            placeholder="Autocomplete"
           />
         </div>
         <div className={"miniwrapper"}>
@@ -83,6 +88,19 @@ function App() {
             value={sliderValue}
             onChange={setSliderValue}
           />
+        </div>
+        <div className={"miniwrapper"}>
+          <Avatar text="SP" />
+        </div>
+        <div className={"miniwrapper"}>
+          <Accordion>
+            <AccordionHeader>Title</AccordionHeader>
+            <AccordionContent>Content</AccordionContent>
+          </Accordion>
+          <Accordion>
+            <AccordionHeader>Title</AccordionHeader>
+            <AccordionContent>Content</AccordionContent>
+          </Accordion>
         </div>
       </div>
     </>
