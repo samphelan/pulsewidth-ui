@@ -8,9 +8,6 @@ import {
   Avatar,
   Button,
   Checkbox,
-  List,
-  ListItem,
-  ListItemButton,
   Option,
   Password,
   Phone,
@@ -18,6 +15,9 @@ import {
   Select,
   Slider,
   TextInput,
+  List,
+  ListItem,
+  ListItemButton,
 } from "pulsewidth-ui";
 
 function App() {
@@ -95,6 +95,13 @@ function App() {
         <div className={"miniwrapper"}>
           <Avatar text="SP" />
         </div>
+        <List>
+          <ListItem>List Item 1</ListItem>
+          <ListItem>List Item 2</ListItem>
+          <ListItem>
+            <ListItemButton>List Item 3 (button)</ListItemButton>
+          </ListItem>
+        </List>
         <div className={"miniwrapper"}>
           <Accordion>
             <AccordionHeader>Title</AccordionHeader>
@@ -105,7 +112,6 @@ function App() {
             <AccordionContent>Content</AccordionContent>
           </Accordion>
         </div>
-        <Button>Hey</Button>
       </div>
     </>
   );

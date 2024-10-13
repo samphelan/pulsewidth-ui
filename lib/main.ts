@@ -5,6 +5,7 @@ import { Autocomplete } from './Autocomplete/Autocomplete'
 import { Avatar } from './Avatar/Avatar'
 import { Button } from './Button/Button'
 import { Checkbox } from './Checkbox/Checkbox'
+import { Flex } from './Flex/Flex'
 import { List } from './List/List'
 import { ListItem } from './ListItem/ListItem'
 import { ListItemButton } from './ListItemButton/ListItemButton'
@@ -14,6 +15,7 @@ import { Phone } from './Phone/Phone'
 import { Select, Option } from './Select/Select'
 import { Slider } from './Slider/Slider'
 import { TextInput } from './TextInput/TextInput'
+import './styles/index.css'
 
 
-export { Accordion, AccordionHeader, AccordionContent, Autocomplete, Avatar, Button, Checkbox, List, ListItem, ListItemButton, Option, Password, Phone, Radio, Select, Slider, TextInput }
+export { Accordion, AccordionHeader, AccordionContent, Autocomplete, Avatar, Button, Checkbox, Flex, List, ListItem, ListItemButton, Option, Password, Phone, Radio, Select, Slider, TextInput }
