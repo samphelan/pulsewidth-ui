@@ -8,13 +8,16 @@
 .app {
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
   align-items: stretch;
+  min-width: 320px;
+  max-width: 500px;
+  min-height: 100vh;
 }
 
 .app .miniwrapper {
   display: flex;
   flex-direction: column;
+  background-color: yellowgreen;
 }
 
 

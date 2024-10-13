@@ -4,14 +4,16 @@
 
 .wrapper {
     position: relative;
-    width:fit-content;
+    min-width: fit-content;
+    flex: 1;
+    background-color: yellow;
 }
 
 .select-button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-width: 200px;
+    width: 100%;
 }
 
 .option-button {

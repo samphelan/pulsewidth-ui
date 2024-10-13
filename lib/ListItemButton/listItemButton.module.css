@@ -1,0 +1,31 @@
+.button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    flex: 1;
+    text-align: inherit;
+    display: flex;
+    flex-direction: row;
+    border-radius: 0px;
+    padding: 0.6em 1.2em;
+    transition: background-color 400ms ease;
+}
+
+.button:hover {
+    background-color: rgb(45, 45, 45);
+}
+
+.button:active {
+    background-color: rgb(100,100,100);
+}
+
+@media (prefers-color-scheme: light) {
+    .button:hover {
+        background-color: #f0f0f0;
+        color: black;
+    }
+    .button:active {
+        background-color: #e6e6e6;
+        color: black;
+    }
+  }

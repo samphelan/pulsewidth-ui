@@ -4,6 +4,7 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./accordionHeader.module.css";
 import { formatCSSModuleClasses } from "../utils/functions";
+import { Button } from "../Button/Button";
 
 const f = formatCSSModuleClasses(styles);
 
@@ -19,7 +20,7 @@ export const AccordionHeader = forwardRef(function AccordionHeader(
   const { expanded, disabled, toggle } = useContext(AccordionContext);
 
   return (
-    <button
+    <Button
       ref={ref}
       className={f(["header", `header--${indicatorPos}`])}
       onClick={toggle}
@@ -34,6 +35,6 @@ export const AccordionHeader = forwardRef(function AccordionHeader(
       >
         <FontAwesomeIcon icon={faChevronRight} />
       </div>
-    </button>
+    </Button>
   );
 });

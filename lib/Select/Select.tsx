@@ -13,6 +13,10 @@ import styles from "./select.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import useClickOutside from "../../hooks/useClickOutside";
+import { ListItem } from "../ListItem/ListItem";
+import { ListItemButton } from "../ListItemButton/ListItemButton";
+import { List } from "../List/List";
+import { Button } from "../Button/Button";
 
 interface OptionProps {
   value: string;
@@ -22,11 +26,11 @@ interface OptionProps {
 
 export const Option = ({ children, onClick }: OptionProps) => {
   return (
-    <li>
-      <button className={styles["option-button"]} onClick={onClick}>
+    <ListItem>
+      <ListItemButton className={styles["option-button"]} onClick={onClick}>
         {children}
-      </button>
-    </li>
+      </ListItemButton>
+    </ListItem>
   );
 };
 
@@ -69,12 +73,12 @@ export const Select = ({ children }: SelectProps) => {
 
   return (
     <div className={styles.wrapper} ref={wrapperRef}>
-      <button className={styles["select-button"]} onClick={handleClick}>
+      <Button className={styles["select-button"]} onClick={handleClick}>
         <span>{selected || "Choose One..."}</span>
         <FontAwesomeIcon icon={faAngleDown} className={styles["caret-icon"]} />
-      </button>
+      </Button>
       {showOptions && (
-        <ul className={styles["ul"]}>
+        <List className={styles["ul"]}>
           {Children.map(children, (child) => {
             if (isValidElement(child) && child.type === Option) {
               return cloneElement(child as ReactElement<OptionProps>, {
@@ -82,7 +86,7 @@ export const Select = ({ children }: SelectProps) => {
               });
             }
           })}
-        </ul>
+        </List>
       )}
     </div>
   );
