@@ -6,6 +6,7 @@ import {
   useState,
 } from "react";
 import { TextInput } from "../TextInput/TextInput";
+import { Button } from "../Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import styles from "./password.module.css";
@@ -67,12 +68,12 @@ export const Password = forwardRef(
           onChange={handleChange}
           type={visible ? "text" : "password"}
         />
-        <button
+        <Button
           onClick={toggleVisibility}
           className={styles["visibility-button"]}
         >
           <FontAwesomeIcon icon={visible ? faEyeSlash : faEye} />
-        </button>
+        </Button>
       </div>
     );
   }

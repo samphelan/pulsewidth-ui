@@ -6,7 +6,7 @@ import AccordionContext from "../Accordion/AccordionContext";
 const f = formatCSSModuleClasses(styles);
 
 interface AccordionContentProps {
-  children?: string;
+  children?: React.ReactNode;
 }
 
 export const AccordionContent = forwardRef(function AccordionContent(
@@ -24,7 +24,6 @@ export const AccordionContent = forwardRef(function AccordionContent(
       ])}
     >
       <div className={f(["first-row"])}>{children}</div>
-      <div></div>
     </div>
   );
 });

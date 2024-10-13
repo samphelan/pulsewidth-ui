@@ -1,13 +1,14 @@
 {
   "name": "pulsewidth-ui",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "0.0.3",
   "type": "module",
   "files": [
     "dist"
   ],
   "main": "./dist/pulsewidth-ui.umd.cjs",
   "module": "./dist/pulsewidth-ui.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/pulsewidth-ui.js",
@@ -19,7 +20,8 @@
     "prebuild": "rm -rf dist",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "publish": "npm publish"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
@@ -41,6 +43,7 @@
     "globals": "^15.9.0",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.7.0",
-    "vite": "^5.4.8"
+    "vite": "^5.4.8",
+    "vite-plugin-dts": "^4.2.4"
   }
 }
