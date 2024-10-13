@@ -12,6 +12,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { TextInput } from "../TextInput/TextInput";
 import useClickOutside from "../../hooks/useClickOutside";
+import { Button } from "../Button/Button";
+import { List } from "../List/List";
+import { ListItem } from "../ListItem/ListItem";
+import { ListItemButton } from "../ListItemButton/ListItemButton";
 
 interface AutocompleteProps extends ComponentProps<"input"> {
   value: string;
@@ -109,24 +113,27 @@ export const Autocomplete = ({
         {...rest}
       />
       {showSuggestions && (
-        <ul className={[styles.ul, listClassName].join(" ")} style={listStyles}>
+        <List
+          className={[styles.ul, listClassName].join(" ")}
+          style={listStyles}
+        >
           {choices.map((choice, i) => (
-            <li key={`${choice}${i}`} className={styles.li}>
-              <button
+            <ListItem key={`${choice}${i}`} className={styles.li}>
+              <ListItemButton
                 className={styles.choice}
                 onClick={() => handleSuggestionClick(choice)}
               >
                 {choice}
-              </button>
-            </li>
+              </ListItemButton>
+            </ListItem>
           ))}
-        </ul>
+        </List>
       )}
       {selected && (
         <div className={styles.xWrapper}>
-          <button className={styles.x} onClick={handleDeleteSelection}>
+          <Button className={styles.x} onClick={handleDeleteSelection}>
             <FontAwesomeIcon icon={faXmark} />
-          </button>
+          </Button>
         </div>
       )}
     </div>

@@ -1,5 +1,6 @@
 .header {
     display: flex;
+    text-align: left;
 }
 
 .header--left {
@@ -17,6 +18,7 @@
 .indicator {
     flex: 0;
     transition: 500ms ease-out;
+    margin-right: 10px;
 }
 
 .indicator--expanded {

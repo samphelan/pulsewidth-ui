@@ -10,7 +10,7 @@ interface ListItemButtonProps extends ComponentPropsWithoutRef<"button"> {
 }
 
 export const ListItemButton = forwardRef(function ListItemButton(
-  { children, onClick }: ListItemButtonProps,
+  { children, onClick, ...rest }: ListItemButtonProps,
   ref: ForwardedRef<HTMLButtonElement>
 ) {
   const handleFocus = (e: React.FocusEvent<HTMLButtonElement>) => {
@@ -28,6 +28,7 @@ export const ListItemButton = forwardRef(function ListItemButton(
       onClick={handleClick}
       className={f(["button"])}
       onFocus={handleFocus}
+      {...rest}
     >
       {children}
     </button>

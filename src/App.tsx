@@ -18,6 +18,7 @@ import {
   List,
   ListItem,
   ListItemButton,
+  Flex,
 } from "pulsewidth-ui";
 
 function App() {
@@ -32,6 +33,38 @@ function App() {
   return (
     <>
       <div className="app">
+        <Flex>
+          <Flex direction="column">
+            <Accordion>
+              <AccordionHeader>Getting Started</AccordionHeader>
+              <AccordionContent>
+                <List>
+                  {["Overview", "Installation"].map((page) => (
+                    <ListItem key={page}>
+                      <ListItemButton>{page}</ListItemButton>
+                    </ListItem>
+                  ))}
+                </List>
+              </AccordionContent>
+            </Accordion>
+            <Accordion>
+              <AccordionHeader>Components</AccordionHeader>
+              <AccordionContent>
+                <List style={{ paddingLeft: "24px" }}>
+                  {["Autocorrect", "Slider", "TextInput"].map((comp) => (
+                    <ListItem key={comp}>
+                      <ListItemButton
+                        style={{ borderLeft: "2px solid rgb(220,220,220)" }}
+                      >
+                        {comp}
+                      </ListItemButton>
+                    </ListItem>
+                  ))}
+                </List>
+              </AccordionContent>
+            </Accordion>
+          </Flex>
+        </Flex>
         <div className={"miniwrapper"}>
           <Button>Click Me</Button>
         </div>
