@@ -18,19 +18,23 @@ export const Flex = forwardRef(function Flex(
     align = "stretch",
     justify = "stretch",
     textAlign = "inherit",
+    className = "",
     ...rest
   }: FlexProps,
   ref: ForwardedRef<HTMLDivElement>
 ) {
   return (
     <div
-      className={f([
-        "container",
-        `direction--${direction}`,
-        `align--${align}`,
-        `justify--${justify}`,
-        `text-align--${textAlign}`,
-      ])}
+      className={[
+        f([
+          "container",
+          `direction--${direction}`,
+          `align--${align}`,
+          `justify--${justify}`,
+          `text-align--${textAlign}`,
+        ]),
+        className,
+      ].join(" ")}
       ref={ref}
       {...rest}
     ></div>

@@ -9,10 +9,16 @@ interface AccordionProps {
   children?: ReactNode;
   expanded?: boolean;
   disabled?: boolean;
+  className?: string;
 }
 
 export const Accordion = forwardRef(function Accordion(
-  { children, expanded = false, disabled = false }: AccordionProps,
+  {
+    children,
+    expanded = false,
+    disabled = false,
+    className = "",
+  }: AccordionProps,
   ref: ForwardedRef<HTMLDivElement>
 ) {
   const [isExpanded, setIsExpanded] = useState(expanded);
@@ -27,7 +33,7 @@ export const Accordion = forwardRef(function Accordion(
 
   return (
     <AccordionContext.Provider value={contextValue}>
-      <div className={f(["accordion"])} ref={ref}>
+      <div className={[f(["accordion"]), className].join(" ")} ref={ref}>
         {children}
       </div>
     </AccordionContext.Provider>

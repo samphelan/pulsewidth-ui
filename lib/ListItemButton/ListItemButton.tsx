@@ -1,16 +1,31 @@
-import { ComponentPropsWithoutRef, ForwardedRef, forwardRef } from "react";
+import {
+  ComponentPropsWithoutRef,
+  ElementType,
+  ForwardedRef,
+  forwardRef,
+} from "react";
 
 import styles from "./listItemButton.module.css";
 import { formatCSSModuleClasses } from "../utils/functions";
+import DynamicRoot from "../utils/internalComponents/DynamicRoot";
 
 const f = formatCSSModuleClasses(styles);
 
-interface ListItemButtonProps extends ComponentPropsWithoutRef<"button"> {
+interface ListItemButtonProps<T extends ElementType = "button">
+  extends ComponentPropsWithoutRef<"button"> {
   value?: string;
+  as?: T;
 }
 
-export const ListItemButton = forwardRef(function ListItemButton(
-  { children, onClick, ...rest }: ListItemButtonProps,
+export const ListItemButton = forwardRef(function ListItemButton<
+  T extends ElementType = "button"
+>(
+  {
+    children,
+    onClick,
+    as: Component = "button" as T,
+    ...rest
+  }: ListItemButtonProps<T>,
   ref: ForwardedRef<HTMLButtonElement>
 ) {
   const handleFocus = (e: React.FocusEvent<HTMLButtonElement>) => {
@@ -23,7 +38,8 @@ export const ListItemButton = forwardRef(function ListItemButton(
   };
 
   return (
-    <button
+    <DynamicRoot
+      as="button"
       ref={ref}
       onClick={handleClick}
       className={f(["button"])}
@@ -31,6 +47,6 @@ export const ListItemButton = forwardRef(function ListItemButton(
       {...rest}
     >
       {children}
-    </button>
+    </DynamicRoot>
   );
 });
