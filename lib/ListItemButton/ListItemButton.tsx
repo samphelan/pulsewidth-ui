@@ -1,52 +1,52 @@
-import {
+import React, {
   ComponentPropsWithoutRef,
+  ComponentPropsWithRef,
   ElementType,
   ForwardedRef,
   forwardRef,
 } from "react";
-
 import styles from "./listItemButton.module.css";
 import { formatCSSModuleClasses } from "../utils/functions";
-import DynamicRoot from "../utils/internalComponents/DynamicRoot";
+import { Variant } from "../types";
 
 const f = formatCSSModuleClasses(styles);
 
-interface ListItemButtonProps<T extends ElementType = "button">
+interface ListItemButtonProps<T extends ElementType>
   extends ComponentPropsWithoutRef<"button"> {
   value?: string;
   as?: T;
+  variant?: Variant;
 }
 
 export const ListItemButton = forwardRef(function ListItemButton<
-  T extends ElementType = "button"
+  T extends ElementType
 >(
   {
     children,
     onClick,
     as: Component = "button" as T,
+    variant,
+    className,
     ...rest
-  }: ListItemButtonProps<T>,
-  ref: ForwardedRef<HTMLButtonElement>
+  }: ListItemButtonProps<T> & ComponentPropsWithRef<T>,
+  ref: ForwardedRef<ComponentPropsWithRef<T>["ref"]>
 ) {
-  const handleFocus = (e: React.FocusEvent<HTMLButtonElement>) => {
-    console.log(e);
-  };
-
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
     if (onClick) onClick(e);
   };
 
   return (
-    <DynamicRoot
-      as="button"
+    <Component
       ref={ref}
       onClick={handleClick}
-      className={f(["button"])}
-      onFocus={handleFocus}
+      className={[f(["button", `variant--${variant}`]), className].join(" ")}
       {...rest}
     >
       {children}
-    </DynamicRoot>
+    </Component>
   );
-});
+}) as <T extends ElementType = "button">(
+  props: ListItemButtonProps<T> & {
+    ref?: ForwardedRef<ComponentPropsWithRef<T>["ref"]>;
+  } & ComponentPropsWithoutRef<T>
+) => JSX.Element;

@@ -1,4 +1,10 @@
-import { ForwardedRef, forwardRef, ReactNode, useContext } from "react";
+import {
+  ComponentPropsWithoutRef,
+  ForwardedRef,
+  forwardRef,
+  ReactNode,
+  useContext,
+} from "react";
 import AccordionContext from "../Accordion/AccordionContext";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,13 +14,13 @@ import { Button } from "../Button/Button";
 
 const f = formatCSSModuleClasses(styles);
 
-interface AccordionHeaderProps {
+interface AccordionHeaderProps extends ComponentPropsWithoutRef<"button"> {
   children?: ReactNode;
   indicatorPos?: "left" | "right";
 }
 
 export const AccordionHeader = forwardRef(function AccordionHeader(
-  { children, indicatorPos = "left" }: AccordionHeaderProps,
+  { children, indicatorPos = "left", className, ...rest }: AccordionHeaderProps,
   ref: ForwardedRef<HTMLButtonElement>
 ) {
   const { expanded, disabled, toggle } = useContext(AccordionContext);
@@ -22,9 +28,12 @@ export const AccordionHeader = forwardRef(function AccordionHeader(
   return (
     <Button
       ref={ref}
-      className={f(["header", `header--${indicatorPos}`])}
+      className={[f(["header", `header--${indicatorPos}`]), className].join(
+        " "
+      )}
       onClick={toggle}
       disabled={disabled}
+      {...rest}
     >
       <div className={f(["header-children"])}>{children}</div>
       <div

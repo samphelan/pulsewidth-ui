@@ -4,15 +4,15 @@ A lightweight and customizable React UI component library built with styled-comp
 
 ## **Features**
 
-- 📦 **Pre-built Components**: Includes a range of commonly used components like buttons, modals, cards, and forms.
-- 🎨 **Customizable**: Easily theme components using styled-components and props.
-- ⚙️ **Fully Typed**: Written in TypeScript for better developer experience and type safety.
-- 📱 **Responsive**: Components are responsive by default with customizable breakpoints.
-- 🔌 **Easy Integration**: Designed to work seamlessly with any React project.
+- **Pre-built Components**: Includes a range of commonly used components like buttons, modals, cards, and forms.
+- **Customizable**: Easily theme components using styled-components and props.
+- **Fully Typed**: Written in TypeScript for better developer experience and type safety.
+- **Responsive**: Components are responsive by default with customizable breakpoints.
+- **Easy Integration**: Designed to work seamlessly with any React project.
 
 ---
 
-## Documentation
+## **Documentation**
 
 To view a more in-depth usage and installation guide, visit https://pulsewidthlabs.com/pulsewidth-ui
 
@@ -35,7 +35,7 @@ API available at https://pulsewidthlabs.com/pulsewidth-ui/docs
 To install the library, run:
 
 ```bash
-npm install pulsewidth-ui styled-components
+npm install pulsewidth-ui
 ```
 
 ---
@@ -70,7 +70,7 @@ export default App;
 
 ### Theming
 
-All components support theming using styled-components. You can provide your own theme to override default styles and colors.
+All components support theming using CSS variables. You can provide your own theme to override default styles and colors.
 
 To create a custom theme:
 

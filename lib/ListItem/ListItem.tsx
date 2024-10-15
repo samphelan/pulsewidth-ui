@@ -14,11 +14,11 @@ interface ListItemProps extends ComponentPropsWithoutRef<"li"> {
 }
 
 export const ListItem = forwardRef(function ListItem(
-  { children }: ListItemProps,
+  { children, className, ...rest }: ListItemProps,
   ref: ForwardedRef<HTMLLIElement>
 ) {
   return (
-    <li ref={ref} className={f(["li"])}>
+    <li ref={ref} className={[f(["li"]), className].join(" ")} {...rest}>
       {children}
     </li>
   );

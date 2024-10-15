@@ -1,0 +1,14 @@
+.wrapper {
+    background-color: rgb(240,240,240);
+    padding: 50px;
+}
+
+.description {
+    max-width: 900;
+    color: rgb(80,80,80);
+}
+
+.gridLabel {
+    color: rgb(120,120,120);
+    min-width: 130px;
+}

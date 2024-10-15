@@ -1,25 +1,76 @@
 .button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: none;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.25s;
 }
-.button:hover {
-  border-color: #646cff;
-}
-.button:focus,
+
 .button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Variant Classes */
+.variant--plain {
+  background-color: rgb(0,0,0,0);
+}
+.variant--plain:hover {
+  background-color: rgb(75,75,75,1);
+}
+.variant--outline {
+  background-color: rgba(255,255,255,0);
+  border: 1px solid rgb(75,75,75);
+}
+.variant--outline:hover {
+  background-color: rgb(75,75,75);
+  border: 1px solid rgb(110,110,110);
+}
+.variant--soft {
+  background-color: rgb(75,75,75);
+}
+.variant--soft:hover {
+  background-color: rgb(110,110,110);
+}
+.variant--solid {
+  background-color: rgb(240,240,240);
+  color: rgb(35, 35, 35);
+}
+.variant--solid:hover {
+  background-color: rgb(220,220,220);
+  color: black;
+}
+
 @media (prefers-color-scheme: light) {
-  .button {
-    background-color: #f9f9f9;
+  .variant--plain {
+    background-color: rgba(255,255,255,0);
+  }
+  .variant--plain:hover {
+    background-color: rgb(220,220,220);
+  }
+  .variant--outline {
+    background-color: rgba(255,255,255,0);
+    border: 1px solid rgb(220,220,220);
+  }
+  .variant--outline:hover {
+    background-color: rgba(220,220,220,0);
+    border: 1px solid rgb(200,200,200);
+  }
+  .variant--soft {
+    background-color: rgb(220,220,220);
+  }
+  .variant--soft:hover {
+    background-color: rgb(200,200,200);
+  }
+  .variant--solid {
+    background-color: rgb(35,35,35);
+    color: rgb(235, 235, 235);
+  }
+  .variant--solid:hover {
+    background-color: rgb(0,0,0);
+    color: white;
   }
 }
 

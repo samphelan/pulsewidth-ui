@@ -1,0 +1,1 @@
+export type Variant = 'plain' | 'outline' | 'soft' | 'solid'

@@ -1,6 +1,5 @@
 .button {
     border: none;
-    background-color: transparent;
     cursor: pointer;
     flex: 1;
     text-align: inherit;
@@ -11,21 +10,62 @@
     transition: background-color 400ms ease;
 }
 
-.button:hover {
-    background-color: rgb(45, 45, 45);
+.variant--plain {
+    background-color: transparent;
 }
-
-.button:active {
-    background-color: rgb(100,100,100);
+.variant--plain:hover {
+    background-color: var(--primary-plain-hover);
+}
+.variant--plain:active {
+    background-color: rgb(from var(--primary-plain-hover) calc(r - 20) calc(g - 20) calc(b - 20));
+}
+.variant--outline {
+    background-color: transparent;
+    border: 1px solid var(--primary-soft);
+}
+.variant--outline:hover {
+    background-color: var(--primary-plain-hover);
+}
+.variant--soft {
+    background-color: var(--primary-soft);
+}
+.variant--soft:hover {
+    background-color: var(--primary-soft-hover);
+}
+.variant--solid {
+    background-color: var(--primary-solid);
+}
+.variant--solid:hover {
+    background-color: var(--primary-solid-hover);
 }
 
 @media (prefers-color-scheme: light) {
-    .button:hover {
-        background-color: #f0f0f0;
-        color: black;
+    .variant--plain {
+        background-color: transparent;
     }
-    .button:active {
-        background-color: #e6e6e6;
-        color: black;
+    .variant--plain:hover {
+        background-color: var(--primary-plain-hover);
+    }
+    .variant--plain:active {
+        background-color: rgb(from var(--primary-plain-hover) calc(r - 20) calc(g - 20) calc(b - 20));
+    }
+    .variant--outline {
+        background-color: transparent;
+        border: 1px solid var(--primary-soft);
+    }
+    .variant--outline:hover {
+        background-color: var(--primary-plain-hover);
+    }
+    .variant--soft {
+        background-color: var(--primary-soft);
+    }
+    .variant--soft:hover {
+        background-color: var(--primary-soft-hover);
+    }
+    .variant--solid {
+        background-color: var(--primary-solid);
+    }
+    .variant--solid:hover {
+        background-color: var(--primary-solid-hover);
     }
   }

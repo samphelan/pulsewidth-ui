@@ -1,7 +1,6 @@
 .content {
     display: grid;
     overflow: hidden;
-    color: black;
     transition: 500ms ease-out;
 }
 

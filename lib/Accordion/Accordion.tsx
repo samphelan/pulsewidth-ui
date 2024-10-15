@@ -1,13 +1,20 @@
-import { ForwardedRef, forwardRef, ReactNode, useState } from "react";
+import {
+  ComponentPropsWithoutRef,
+  ForwardedRef,
+  forwardRef,
+  ReactNode,
+  useState,
+} from "react";
 import styles from "./accordion.module.css";
 import { formatCSSModuleClasses } from "../utils/functions";
 import AccordionContext from "./AccordionContext";
 
 const f = formatCSSModuleClasses(styles);
 
-interface AccordionProps {
+interface AccordionProps extends ComponentPropsWithoutRef<"div"> {
   children?: ReactNode;
   expanded?: boolean;
+  defaultExpanded?: boolean;
   disabled?: boolean;
   className?: string;
 }
@@ -15,9 +22,11 @@ interface AccordionProps {
 export const Accordion = forwardRef(function Accordion(
   {
     children,
-    expanded = false,
+    defaultExpanded = false,
+    expanded = defaultExpanded,
     disabled = false,
     className = "",
+    ...rest
   }: AccordionProps,
   ref: ForwardedRef<HTMLDivElement>
 ) {
@@ -33,7 +42,11 @@ export const Accordion = forwardRef(function Accordion(
 
   return (
     <AccordionContext.Provider value={contextValue}>
-      <div className={[f(["accordion"]), className].join(" ")} ref={ref}>
+      <div
+        className={[f(["accordion"]), className].join(" ")}
+        ref={ref}
+        {...rest}
+      >
         {children}
       </div>
     </AccordionContext.Provider>
