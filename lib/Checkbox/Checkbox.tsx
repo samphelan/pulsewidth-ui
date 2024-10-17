@@ -1,5 +1,4 @@
 import {
-  useState,
   useEffect,
   forwardRef,
   ComponentPropsWithoutRef,
@@ -10,13 +9,18 @@ import {
 import styles from "./checkbox.module.css"; // Assume you have styles here
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { Colors, Variant } from "../types";
 
 interface CheckboxProps
   extends Omit<ComponentPropsWithoutRef<"input">, "size"> {
   size?: "small" | "medium" | "large";
   indeterminate?: boolean;
   label?: string;
-  variant?: "square" | "circle";
+  circle?: boolean;
+  variant?: Variant;
+  colorVariant?: Colors;
+  checked?: boolean;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
@@ -28,30 +32,31 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       className,
       disabled,
       checked,
-      variant = "square",
+      onChange,
+      colorVariant,
+      variant = "outline",
+      circle = false,
       ...rest
     },
     forwardedRef
   ) => {
-    const [isChecked, setIsChecked] = useState(checked || false);
-
     const internalRef = useRef<HTMLInputElement>(null);
 
     const sizeClass = `checkbox--${size}`;
     const disabledClass = disabled ? "checkbox--disabled" : "";
-    const variantClass = `checkbox--${variant}`;
+    const variantClass = `variant--${variant}`;
+    const shapeClass = `checkbox--${circle ? "circle" : "square"}`;
     const classes = [
       "checkbox-icon__custom",
       sizeClass,
       disabledClass,
-      variantClass,
-      className || "",
+      shapeClass,
     ]
       .filter((name) => name !== "")
       .map((name) => styles[name]);
 
     const renderIcon = () =>
-      isChecked ? (
+      checked ? (
         <FontAwesomeIcon
           icon={indeterminate ? faMinus : faCheck}
           className={styles[sizeClass]}
@@ -73,9 +78,11 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     // Handle checkbox changes
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
       if (!disabled) {
-        setIsChecked(e.target.checked);
-        if (rest.onChange) {
-          rest.onChange(e);
+        console.log(e);
+        console.log(e.target.checked);
+        //setIsChecked(e.target.checked);
+        if (onChange) {
+          onChange(e);
         }
       }
     };
@@ -107,12 +114,17 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             setRefs(el);
           }}
           className={styles["checkbox"]}
-          checked={isChecked}
+          checked={checked}
           disabled={disabled}
           onChange={handleChange}
           {...rest}
         />
-        <span className={classes.join(" ")}>{renderIcon()}</span>
+        <span
+          className={[...classes, variantClass, className].join(" ")}
+          data-color={colorVariant}
+        >
+          {renderIcon()}
+        </span>
         {label && <span className="checkbox-label">{label}</span>}
       </label>
     );

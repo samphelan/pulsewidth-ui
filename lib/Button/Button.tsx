@@ -7,12 +7,13 @@ import {
 } from "react";
 import styles from "./button.module.css";
 import { formatCSSModuleClasses } from "../utils/functions";
-import { Variant } from "../types";
+import { Colors, Variant } from "../types";
 const f = formatCSSModuleClasses(styles);
 
 interface ButtonProps<T extends ElementType>
   extends ComponentPropsWithoutRef<"button"> {
   variant?: Variant;
+  colorVariant?: Colors;
   className?: string;
   as?: T;
 }
@@ -20,6 +21,7 @@ interface ButtonProps<T extends ElementType>
 export const Button = forwardRef(function Button<T extends ElementType>(
   {
     variant = "plain",
+    colorVariant = "gray",
     children,
     as: Component = "button" as T,
     className,
@@ -31,9 +33,15 @@ export const Button = forwardRef(function Button<T extends ElementType>(
     <Component
       ref={ref}
       className={`${f(["button", `variant--${variant}`])} ${className}`}
+      data-color={colorVariant}
       {...rest}
     >
       {children}
     </Component>
   );
-});
+}) as <T extends ElementType>(
+  props: ButtonProps<T> &
+    ComponentPropsWithoutRef<T> & {
+      ref?: ForwardedRef<ComponentPropsWithRef<T>["ref"]>;
+    }
+) => JSX.Element;

@@ -8,15 +8,18 @@ import {
 import styles from "./accordion.module.css";
 import { formatCSSModuleClasses } from "../utils/functions";
 import AccordionContext from "./AccordionContext";
+import { Colors, Variant } from "../types";
 
 const f = formatCSSModuleClasses(styles);
 
-interface AccordionProps extends ComponentPropsWithoutRef<"div"> {
+export interface AccordionProps extends ComponentPropsWithoutRef<"div"> {
   children?: ReactNode;
   expanded?: boolean;
   defaultExpanded?: boolean;
   disabled?: boolean;
   className?: string;
+  variant?: Variant;
+  color?: Colors;
 }
 
 export const Accordion = forwardRef(function Accordion(
@@ -24,6 +27,8 @@ export const Accordion = forwardRef(function Accordion(
     children,
     defaultExpanded = false,
     expanded = defaultExpanded,
+    variant = "plain",
+    color = "gray",
     disabled = false,
     className = "",
     ...rest
@@ -37,6 +42,8 @@ export const Accordion = forwardRef(function Accordion(
     toggle: () => {
       setIsExpanded((current) => !current);
     },
+    variant,
+    color,
     disabled,
   };
 

@@ -1,14 +1,23 @@
 .wrapper {
-    background-color: rgb(240,240,240);
-    padding: 50px;
+    background-color: var(--pulsewidth-color-gray-8);
+    padding: var(--pulsewidth-spacing-9);
 }
 
 .description {
     max-width: 900;
-    color: rgb(80,80,80);
+    color: var(--pulsewidth-color-gray-4);
 }
 
 .gridLabel {
     color: rgb(120,120,120);
     min-width: 130px;
+}
+
+@media (prefers-color-scheme: light) {
+    .wrapper {
+        background-color: var(--pulsewidth-color-gray-1);
+    }
+    .description {
+        color: rgb(80,80,80);
+    }
 }

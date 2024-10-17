@@ -1,0 +1,106 @@
+/* Variant Classes Dark Mode */
+.variant--plain {
+    background-color: transparent;
+    color: var(--pulsewidth-color-gray-1)
+}
+.variant--plain:hover {
+    background-color: var(--pulsewidth-color-gray-8)
+}
+.variant--plain:active {
+    background-color: var(--pulsewidth-color-gray-7)
+}
+.variant--outline {
+    background-color: transparent;
+    border: 1px solid var(--pulsewidth-color-outline-border);
+    color: var(--pulsewidth-color-solid-text);
+}
+.variant--outline:hover {
+    background-color: var(--pulsewidth-color-solid-hover);
+    border-color: var(--pulsewidth-color-solid-border-hover);
+}
+.variant--outline:active {
+    background-color: var(--pulsewidth-color-outline-active);
+    border-color: var(--pulsewidth-color-outline-border-active);
+}
+.variant--soft {
+    background-color: var(--pulsewidth-color-solid);
+    border: 1px solid var(--pulsewidth-color-solid);
+    color: var(--pulsewidth-color-gray-0)
+}
+.variant--soft:hover {
+    background-color: var(--pulsewidth-color-gray-6);
+    border-color: var(--pulsewidth-color-gray-6);
+}
+.variant--soft:active {
+    background-color: var(--pulsewidth-color-gray-5);
+    border-color: var(--pulsewidth-color-gray-5);
+}
+.variant--solid {
+    background-color: var(--pulsewidth-color-soft);
+    border: 1px solid var(--pulsewidth-color-soft);
+    color: var(--pulsewidth-color-soft-text);
+}
+.variant--solid:hover {
+    background-color: var(--pulsewidth-color-soft-hover);
+    border-color: var(--pulsewidth-color-soft-hover);
+}
+.variant--solid:active {
+    background-color: var(--pulsewidth-color-soft-active);
+    border-color: var(--pulsewidth-color-soft-active);
+}
+  
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+    .variant--plain {
+      background-color: transparent;
+      border: 1px solid transparent;
+      color: var(--pulsewidth-color-plain-text)
+    }
+    .variant--plain:hover {
+      background-color: var(--pulsewidth-color-plain-hover);
+      border-color: var(--pulsewidth-color-plain-hover);
+    }
+    .variant--plain:active {
+      background-color: var(--pulsewidth-color-plain-active);
+      border-color: var(--pulsewidth-color-plain-active);
+    }
+    .variant--outline {
+      background-color: transparent;
+      border: 1px solid var(--pulsewidth-color-outline-border);
+      color: var(--pulsewidth-color-outline-text);
+    }
+    .variant--outline:hover {
+      background-color: var(--pulsewidth-color-outline-hover);
+      border-color: var(--pulsewidth-color-outline-border-hover);
+    }
+    .variant--outline:active {
+      background-color: var(--pulsewidth-color-outline-active);
+      border-color: var(--pulsewidth-color-outline-border-active);
+    }
+    .variant--soft {
+      background-color: var(--pulsewidth-color-soft);
+      border: 1px solid var(--pulsewidth-color-soft);
+      color: var(--pulsewidth-color-soft-text);
+    }
+    .variant--soft:hover {
+      background-color: var(--pulsewidth-color-soft-hover);
+      border-color: var(--pulsewidth-color-soft-hover);
+    }
+    .variant--soft:active {
+      background-color: var(--pulsewidth-color-soft-active);
+      border-color: var(--pulsewidth-color-soft-active);
+    }
+    .variant--solid {
+      background-color: var(--pulsewidth-color-solid);
+      border: 1px var(--pulsewidth-color-solid);
+      color: var(--pulsewidth-color-solid-text);
+    }
+    .variant--solid:hover {
+      background-color: var(--pulsewidth-color-solid-hover);
+      border-color: var(--pulsewidth-color-solid-hover);
+    }
+    .variant--solid:active {
+      background-color: var(--pulsewidth-color-solid-active);
+      border-color: var(--pulsewidth-color-solid-active);
+    }
+}

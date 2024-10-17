@@ -16,6 +16,9 @@
 .direction--column-reverse {
     flex-direction: column-reverse;
 }
+.direction--responsive-row {
+    flex-direction: column;
+}
 
 /*justify-content classes*/
 .justify--start {
@@ -56,4 +59,10 @@
 
 .text-align--center {
     text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+    .direction--responsive-row {
+        flex-direction: row;
+    }
 }

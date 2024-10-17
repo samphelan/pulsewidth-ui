@@ -3,6 +3,25 @@
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column;
     align-items: stretch;
+}
+
+.direction-column {
+    flex-direction: column;
+}
+
+.direction-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.direction-responsive-row {
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 600px) {
+    .direction--responsive-row {
+        flex-direction: row;
+    }
 }

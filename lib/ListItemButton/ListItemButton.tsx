@@ -39,7 +39,7 @@ export const ListItemButton = forwardRef(function ListItemButton<
     <Component
       ref={ref}
       onClick={handleClick}
-      className={[f(["button", `variant--${variant}`]), className].join(" ")}
+      className={[f(["button"]), className, `variant--${variant}`].join(" ")}
       {...rest}
     >
       {children}

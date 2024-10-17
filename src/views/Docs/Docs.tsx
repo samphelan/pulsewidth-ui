@@ -21,6 +21,7 @@ import SelectDoc from "./views/SelectDoc/SelectDoc";
 import FlexDoc from "./views/FlexDoc/FlexDoc";
 import TooltipDoc from "./views/TooltipDoc/TooltipDoc";
 import ListDoc from "./views/ListDoc/ListDoc";
+import Usage from "./views/Usage/Usage";
 
 const renderPage = (p: string) => {
   switch (p.toLowerCase()) {
@@ -28,6 +29,8 @@ const renderPage = (p: string) => {
       return <Overview></Overview>;
     case "installation":
       return <Installation></Installation>;
+    case "usage":
+      return <Usage></Usage>;
     case "autocomplete":
       return <AutocompleteDoc></AutocompleteDoc>;
     case "textinput":
@@ -55,7 +58,7 @@ const Docs = () => {
   const navData = [
     {
       title: "Getting Started",
-      sections: [{ title: null, pages: ["Overview", "Installation"] }],
+      sections: [{ title: null, pages: ["Overview", "Installation", "Usage"] }],
     },
     {
       title: "Components",
@@ -82,14 +85,7 @@ const Docs = () => {
                 section.title.toUpperCase() === "GETTING STARTED"
               }
             >
-              <AccordionHeader
-                style={{
-                  fontWeight: "bold",
-                  fontSize: "0.8em",
-                  textWrap: "nowrap",
-                  minWidth: "min-content",
-                }}
-              >
+              <AccordionHeader className={styles.accordionHeader}>
                 {section.title.toUpperCase()}
               </AccordionHeader>
               <AccordionContent className={styles.content}>

@@ -13,7 +13,12 @@ const f = formatCSSModuleClasses(styles);
 
 interface FlexProps<T extends ElementType>
   extends ComponentPropsWithoutRef<"div"> {
-  direction?: React.CSSProperties["flexDirection"];
+  direction?:
+    | "row"
+    | "row-reverse"
+    | "column"
+    | "column-reverse"
+    | "responsive-row";
   align?: React.CSSProperties["alignItems"];
   justify?: React.CSSProperties["justifyContent"];
   textAlign?: React.CSSProperties["textAlign"];

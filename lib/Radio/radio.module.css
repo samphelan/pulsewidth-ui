@@ -2,28 +2,66 @@
     display: inline-flex;
     align-items: center;
     cursor: pointer;
-  }
-  
-.radio-button__input {
-    display: none; /* Hide the native radio button */
+    font-size: 1em;
+}
+
+.labelPos--top {
+    flex-direction: column-reverse;
+}
+.labelPos--right {
+    flex-direction: row;
+}
+.labelPos--bottom {
+    flex-direction: column;
+}
+.labelPos--left {
+    flex-direction: row-reverse;
+}
+
+.disable-icon {
+    padding: var(--pulsewidth-spacing-0) var(--pulsewidth-spacing-4);
+    border-radius: var(--pulsewidth-radius-8);
+    font-size: 0.8em;
+}
+
+.disable-icon:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
 }
   
-.radio-button__custom-icon {
-    margin-right: 8px;
+.radio-button__input {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
 }
   
 .radio-button__circle {
-    border: 2px solid rgb(200, 200, 200);
     border-radius: 50%;
     width: 20px;
     height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 0.8em;
 }
 
-.radio-button:hover .radio-button__circle {
-    border: 2px solid rgb(180,180,180)
+.radio-button__input:focus-visible + .radio-button__circle {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+/*Dark Mode*/
+.radio-button:hover .variant--plain.radio-button__circle {
+    background-color: var(--pulsewidth-color-solid-hover)
+}
+.radio-button:hover .variant--outline.radio-button__circle {
+    background-color: var(--pulsewidth-color-solid-hover)
+}
+.radio-button:hover .variant--soft.radio-button__circle {
+    background-color: var(--pulsewidth-color-solid-hover)
+}
+.radio-button:hover .variant--solid.radio-button__circle {
+    background-color: var(--pulsewidth-color-soft-hover)
 }
 
 .radio-button__inner-circle {
@@ -41,7 +79,7 @@
 }
   
 .radio-button__label {
-    font-size: 16px;
+    font-size: inherit;
 }
 
 .radio-button--small .radio-button__circle {
@@ -73,3 +111,17 @@
     height: 14px;
 }
 
+@media (prefers-color-scheme: light) {
+    .radio-button:hover .variant--plain.radio-button__circle {
+        background-color: var(--pulsewidth-color-plain-hover)
+    }
+    .radio-button:hover .variant--outline.radio-button__circle {
+        background-color: var(--pulsewidth-color-outline-hover)
+    }
+    .radio-button:hover .variant--soft.radio-button__circle {
+        background-color: var(--pulsewidth-color-soft-hover)
+    }
+    .radio-button:hover .variant--solid.radio-button__circle {
+        background-color: var(--pulsewidth-color-solid-hover)
+    }
+}

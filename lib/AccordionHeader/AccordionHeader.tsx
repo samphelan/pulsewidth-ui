@@ -23,7 +23,13 @@ export const AccordionHeader = forwardRef(function AccordionHeader(
   { children, indicatorPos = "left", className, ...rest }: AccordionHeaderProps,
   ref: ForwardedRef<HTMLButtonElement>
 ) {
-  const { expanded, disabled, toggle } = useContext(AccordionContext);
+  const {
+    expanded,
+    disabled,
+    variant,
+    color = "gray",
+    toggle,
+  } = useContext(AccordionContext);
 
   return (
     <Button
@@ -33,6 +39,8 @@ export const AccordionHeader = forwardRef(function AccordionHeader(
       )}
       onClick={toggle}
       disabled={disabled}
+      variant={variant}
+      colorVariant={color}
       {...rest}
     >
       <div className={f(["header-children"])}>{children}</div>

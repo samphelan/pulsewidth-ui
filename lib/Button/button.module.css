@@ -40,37 +40,51 @@
 }
 .variant--solid:hover {
   background-color: rgb(220,220,220);
-  color: black;
 }
 
 @media (prefers-color-scheme: light) {
   .variant--plain {
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
+    color: var(--pulsewidth-color-plain-text)
   }
   .variant--plain:hover {
-    background-color: rgb(220,220,220);
+    background-color: var(--pulsewidth-color-plain-hover)
+  }
+  .variant--plain:active {
+    background-color: var(--pulsewidth-color-plain-active)
   }
   .variant--outline {
-    background-color: rgba(255,255,255,0);
-    border: 1px solid rgb(220,220,220);
+    background-color: transparent;
+    border: 1px solid var(--pulsewidth-color-outline-border);
+    color: var(--pulsewidth-color-outline-text);
   }
   .variant--outline:hover {
-    background-color: rgba(220,220,220,0);
-    border: 1px solid rgb(200,200,200);
+    background-color: var(--pulsewidth-color-outline-hover);
+    border: 1px solid var(--pulsewidth-color-outline-border-hover);
+  }
+  .variant--outline:active {
+    background-color: var(--pulsewidth-color-outline-active);
+    border: 1px solid var(--pulsewidth-color-outline-border-active);
   }
   .variant--soft {
-    background-color: rgb(220,220,220);
+    background-color: var(--pulsewidth-color-soft);
+    color: var(--pulsewidth-color-soft-text)
   }
   .variant--soft:hover {
-    background-color: rgb(200,200,200);
+    background-color: var(--pulsewidth-color-soft-hover);
+  }
+  .variant--soft:active {
+    background-color: var(--pulsewidth-color-soft-active);
   }
   .variant--solid {
-    background-color: rgb(35,35,35);
-    color: rgb(235, 235, 235);
+    background-color: var(--pulsewidth-color-solid);
+    color: var(--pulsewidth-color-solid-text);
   }
   .variant--solid:hover {
-    background-color: rgb(0,0,0);
-    color: white;
+    background-color: var(--pulsewidth-color-solid-hover);
+  }
+  .variant--solid:active {
+    background-color: var(--pulsewidth-color-solid-active);
   }
 }
 

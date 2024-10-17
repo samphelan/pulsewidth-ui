@@ -10,12 +10,14 @@ import { List } from './List/List'
 import { ListItem } from './ListItem/ListItem'
 import { ListItemButton } from './ListItemButton/ListItemButton'
 import { Radio } from './Radio/Radio'
+import { RadioGroup } from './RadioGroup/RadioGroup'
 import { Password } from './Password/Password'
 import { Phone } from './Phone/Phone'
 import { Select, Option } from './Select/Select'
 import { Slider } from './Slider/Slider'
 import { TextInput } from './TextInput/TextInput'
 import './styles/index.css'
+import './styles/variants.css'
 
 
-export { Accordion, AccordionHeader, AccordionContent, Autocomplete, Avatar, Button, Checkbox, Flex, List, ListItem, ListItemButton, Option, Password, Phone, Radio, Select, Slider, TextInput }
+export { Accordion, AccordionHeader, AccordionContent, Autocomplete, Avatar, Button, Checkbox, Flex, List, ListItem, ListItemButton, Option, Password, Phone, Radio, RadioGroup, Select, Slider, TextInput }

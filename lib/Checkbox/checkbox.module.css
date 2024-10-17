@@ -13,17 +13,12 @@
 }
 
 .checkbox-icon__custom {
-    border: 1px solid rgb(230,230,230);
     width: 16px;
     height: 16px;
     cursor: pointer;
     margin: 0 4px 0 0;
     line-height: 0;
     padding: 4px;
-}
-
-.checkbox-wrapper:hover .checkbox-icon__custom {
-    border: 1px solid rgb(210,210,210);
 }
 
 .checkbox--disabled {
