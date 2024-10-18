@@ -8,10 +8,13 @@ type VariantPickerProps = {
 
 const VariantPicker = ({ selected, onChange }: VariantPickerProps) => {
   return (
-    <List direction={"row"}>
-      <RadioGroup>
+    <RadioGroup>
+      <List direction={"row"}>
         {(["plain", "outline", "soft", "solid"] as Variant[]).map((v) => (
-          <ListItem style={{ marginRight: "10px" }} key={v}>
+          <ListItem
+            style={{ marginRight: "10px", marginBottom: "5px" }}
+            key={v}
+          >
             <Radio
               label={v}
               checked={selected === v}
@@ -24,8 +27,8 @@ const VariantPicker = ({ selected, onChange }: VariantPickerProps) => {
             ></Radio>
           </ListItem>
         ))}
-      </RadioGroup>
-    </List>
+      </List>
+    </RadioGroup>
   );
 };
 

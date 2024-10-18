@@ -17,7 +17,7 @@ import { ListItem } from "../ListItem/ListItem";
 import { ListItemButton } from "../ListItemButton/ListItemButton";
 import { List } from "../List/List";
 import { Button } from "../Button/Button";
-import { Colors, Variant } from "../types";
+import { Colors, Radius, Variant } from "../types";
 
 interface OptionProps {
   value: string;
@@ -41,6 +41,7 @@ interface SelectProps {
   style?: React.CSSProperties;
   colorVariant?: Colors;
   variant?: Variant;
+  radius?: Radius;
   selected?: string;
   onChange?: (v: string) => void;
 }
@@ -49,6 +50,7 @@ export const Select = ({
   children,
   style,
   colorVariant,
+  radius = 3,
   variant,
   selected,
   onChange,
@@ -81,8 +83,6 @@ export const Select = ({
       (child) => isValidElement(child) && child.type === Option
     ) as ReactElement<OptionProps>[];
 
-    console.log(validOptions);
-
     setOptions(validOptions);
   }, [children]);
 
@@ -93,13 +93,20 @@ export const Select = ({
         className={styles["select-button"]}
         onClick={handleClick}
         colorVariant={colorVariant}
+        radius={radius}
         variant={variant}
       >
         <span>{selected || "Choose One..."}</span>
         <FontAwesomeIcon icon={faAngleDown} className={styles["caret-icon"]} />
       </Button>
       {showOptions && (
-        <List className={styles["ul"]} opaque>
+        <List
+          className={styles["ul"]}
+          variant={variant}
+          colorVariant={colorVariant}
+          radius={radius}
+          opaque
+        >
           {Children.map(children, (child) => {
             if (isValidElement(child) && child.type === Option) {
               return cloneElement(child as ReactElement<OptionProps>, {

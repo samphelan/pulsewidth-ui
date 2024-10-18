@@ -5,10 +5,12 @@ import { ReactNode } from "react";
 import NavFooter from "../../components/NavFooter/NavFooter";
 import Sandbox, { SandboxDisplay } from "../../components/Sandbox/Sandbox";
 import { Link } from "react-router-dom";
+import { SelectSandbox } from "../SelectDoc/SelectDoc";
 
 type SectionProps = {
   children?: ReactNode;
 };
+
 const Section = ({ children }: SectionProps) => {
   return (
     <Flex direction="column" style={{ marginBottom: "30px" }}>
@@ -65,6 +67,8 @@ import { Link } from "react-router-dom";
           underlying html tag so that it can be used in the same way it would be
           without a library, but with additional features and styling.
         </p>
+        <br />
+        <SelectSandbox />
       </Section>
       <Section>
         <h3>Polymorphic Components</h3>

@@ -9,7 +9,7 @@ type CodeBlockProps = {
   className?: string;
 };
 
-export const CodeBlock = ({ str, className }: CodeBlockProps) => {
+export const CodeBlock = ({ str, className: _className }: CodeBlockProps) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -26,7 +26,7 @@ export const CodeBlock = ({ str, className }: CodeBlockProps) => {
   }, [copied]);
 
   return (
-    <div style={{ position: "relative" }} className={className}>
+    <div style={{ position: "relative" }} className={_className}>
       <Highlight theme={themes.okaidia} code={str} language="tsx">
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre
@@ -39,9 +39,9 @@ export const CodeBlock = ({ str, className }: CodeBlockProps) => {
             }}
           >
             {tokens.map((line, i) => (
-              <div {...getLineProps({ line, key: i })}>
+              <div key={i} {...getLineProps({ line })}>
                 {line.map((token, key) => (
-                  <span {...getTokenProps({ token, key })} />
+                  <span key={key} {...getTokenProps({ token })} />
                 ))}
               </div>
             ))}

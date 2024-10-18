@@ -44,10 +44,21 @@
     --pulsewidth-color-red-3: hsl(0, 85%, 70%);
     --pulsewidth-color-red-4: hsl(0, 80%, 58%);
     --pulsewidth-color-red-5: hsl(0, 80%, 50%);
-    --pulsewidth-color-red-6: hsl(0, 85%, 35%);
-    --pulsewidth-color-red-7: hsl(0, 90%, 25%);
-    --pulsewidth-color-red-8: hsl(0, 98%, 19%);
-    --pulsewidth-color-red-9: hsl(0, 100%, 12%);
+    --pulsewidth-color-red-6: hsl(0, 85%, 45%);
+    --pulsewidth-color-red-7: hsl(0, 90%, 40%);
+    --pulsewidth-color-red-8: hsl(0, 98%, 35%);
+    --pulsewidth-color-red-9: hsl(0, 100%, 30%);
+
+    --pulsewidth-color-orange-0: hsl(30, 100%, 90%);
+    --pulsewidth-color-orange-1: hsl(30, 95%, 85%);
+    --pulsewidth-color-orange-2: hsl(30, 90%, 80%);
+    --pulsewidth-color-orange-3: hsl(30, 85%, 70%);
+    --pulsewidth-color-orange-4: hsl(30, 80%, 58%);
+    --pulsewidth-color-orange-5: hsl(30, 80%, 50%);
+    --pulsewidth-color-orange-6: hsl(30, 85%, 45%);
+    --pulsewidth-color-orange-7: hsl(30, 90%, 40%);
+    --pulsewidth-color-orange-8: hsl(30, 98%, 35%);
+    --pulsewidth-color-orange-9: hsl(30, 100%, 30%);
 
     --pulsewidth-color-plain: transparent;
     --pulsewidth-color-plain-hover: var(--pulsewidth-color-gray-0);
@@ -74,12 +85,12 @@
     --pulsewidth-color-dark-background: #242424;;
 
     /* Spacing Variables */
-    --pulsewidth-radius-0: 2px;
-    --pulsewidth-radius-1: 4px;
-    --pulsewidth-radius-2: 6px;
-    --pulsewidth-radius-3: 8px;
-    --pulsewidth-radius-4: 10px;
-    --pulsewidth-radius-5: 12px;
+    --pulsewidth-radius-0: 0px;
+    --pulsewidth-radius-1: 2px;
+    --pulsewidth-radius-2: 4px;
+    --pulsewidth-radius-3: 6px;
+    --pulsewidth-radius-4: 8px;
+    --pulsewidth-radius-5: 10px;
     --pulsewidth-radius-6: 15px;
     --pulsewidth-radius-7: 20px;
     --pulsewidth-radius-8: 25px;
@@ -186,6 +197,30 @@
     --pulsewidth-color-solid: var(--pulsewidth-color-green-7);
     --pulsewidth-color-solid-hover: var(--pulsewidth-color-green-8);
     --pulsewidth-color-solid-active: var(--pulsewidth-color-green-9);
+    --pulsewidth-color-solid-text: var(--pulsewidth-color-white);
+  }
+
+  [data-color="orange"] {
+    --pulsewidth-color-plain: transparent;
+    --pulsewidth-color-plain-hover: var(--pulsewidth-color-orange-0);
+    --pulsewidth-color-plain-active: var(--pulsewidth-color-orange-1);
+    --pulsewidth-color-plain-text: var(--pulsewidth-color-orange-8);
+
+    --pulsewidth-color-outline-hover: var(--pulsewidth-color-orange-0);
+    --pulsewidth-color-outline-active: var(--pulsewidth-color-orange-1);
+    --pulsewidth-color-outline-border: var(--pulsewidth-color-orange-1);
+    --pulsewidth-color-outline-border-hover: var(--pulsewidth-color-orange-2);
+    --pulsewidth-color-outline-border-active: var(--pulsewidth-color-orange-3);
+    --pulsewidth-color-outline-text: var(--pulsewidth-color-orange-8);
+
+    --pulsewidth-color-soft: var(--pulsewidth-color-orange-0);
+    --pulsewidth-color-soft-hover: var(--pulsewidth-color-orange-1);
+    --pulsewidth-color-soft-active: var(--pulsewidth-color-orange-2);
+    --pulsewidth-color-soft-text: var(--pulsewidth-color-orange-9);
+
+    --pulsewidth-color-solid: var(--pulsewidth-color-orange-7);
+    --pulsewidth-color-solid-hover: var(--pulsewidth-color-orange-8);
+    --pulsewidth-color-solid-active: var(--pulsewidth-color-orange-9);
     --pulsewidth-color-solid-text: var(--pulsewidth-color-white);
   }
   

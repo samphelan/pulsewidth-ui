@@ -38,8 +38,6 @@ componentDirs.forEach((dir) => {
 
 // Remove duplicates (if any)
 
-console.log(importStatements);
-
 // Create the content for main.ts
 const fileContent = `
 ${importStatements.join("\n")}

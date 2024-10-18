@@ -1,4 +1,10 @@
-import React, { useState, useRef, useEffect, forwardRef } from "react";
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  forwardRef,
+  CSSProperties,
+} from "react";
 import styles from "./slider.module.css";
 
 interface SliderProps {
@@ -7,10 +13,20 @@ interface SliderProps {
   step?: number;
   value: number;
   onChange: (value: number) => void;
+  className?: string;
+  style?: CSSProperties;
 }
 
 export const Slider = forwardRef(function Slider(
-  { min = 0, max = 100, step = 1, value, onChange }: SliderProps,
+  {
+    min = 0,
+    max = 100,
+    step = 1,
+    value,
+    onChange,
+    className,
+    style,
+  }: SliderProps,
   ref: React.ForwardedRef<HTMLDivElement>
 ) {
   const internalMax = (max - min) / step;
@@ -117,7 +133,11 @@ export const Slider = forwardRef(function Slider(
     internalValue > max ? max : internalValue < min ? min : internalValue;
 
   return (
-    <div className={styles["wrapper"]} ref={ref}>
+    <div
+      className={[styles["wrapper"], className].join(" ")}
+      style={style}
+      ref={ref}
+    >
       <input
         type="range"
         min={min}

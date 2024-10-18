@@ -17,16 +17,6 @@
 .labelPos--left {
     flex-direction: row-reverse;
 }
-
-.disable-icon {
-    padding: var(--pulsewidth-spacing-0) var(--pulsewidth-spacing-4);
-    border-radius: var(--pulsewidth-radius-8);
-    font-size: 0.8em;
-}
-
-.disable-icon:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-}
   
 .radio-button__input {
     opacity: 0;
@@ -47,6 +37,20 @@
 
 .radio-button__input:focus-visible + .radio-button__circle {
     outline: 4px auto -webkit-focus-ring-color;
+}
+
+.radio-button__input:focus-visible + .disable-icon__label {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+.radio-button__label {
+    font-size: inherit;
+}
+
+.disable-icon__label {
+    padding: var(--pulsewidth-spacing-0) var(--pulsewidth-spacing-4);
+    border-radius: var(--pulsewidth-radius-8);
+    font-size: 0.8em;
 }
 
 
@@ -78,9 +82,7 @@
     background-color: white;
 }
   
-.radio-button__label {
-    font-size: inherit;
-}
+
 
 .radio-button--small .radio-button__circle {
     width: 18px;

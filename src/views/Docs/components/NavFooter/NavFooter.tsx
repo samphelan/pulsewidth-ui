@@ -12,6 +12,7 @@ type NavFooterProps = {
   nextPath?: string;
   previousTitle?: string;
   previousPath?: string;
+  className?: string;
 };
 
 const NavFooter = ({
@@ -19,9 +20,13 @@ const NavFooter = ({
   nextPath,
   previousTitle,
   previousPath,
+  className,
 }: NavFooterProps) => {
   return (
-    <Flex justify="space-between" className={styles.wrapper}>
+    <Flex
+      justify="space-between"
+      className={[styles.wrapper, className].join(" ")}
+    >
       {previousPath ? (
         <Button as={Link} to={previousPath} variant="outline">
           <FontAwesomeIcon icon={faChevronLeft} /> {previousTitle}

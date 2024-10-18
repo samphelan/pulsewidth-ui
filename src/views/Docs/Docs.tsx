@@ -22,6 +22,7 @@ import FlexDoc from "./views/FlexDoc/FlexDoc";
 import TooltipDoc from "./views/TooltipDoc/TooltipDoc";
 import ListDoc from "./views/ListDoc/ListDoc";
 import Usage from "./views/Usage/Usage";
+import SliderDoc from "./views/SliderDoc/SliderDoc";
 
 const renderPage = (p: string) => {
   switch (p.toLowerCase()) {
@@ -41,6 +42,8 @@ const renderPage = (p: string) => {
       return <RadioDoc></RadioDoc>;
     case "select":
       return <SelectDoc></SelectDoc>;
+    case "slider":
+      return <SliderDoc></SliderDoc>;
     case "flex":
       return <FlexDoc></FlexDoc>;
     case "list":
@@ -65,7 +68,14 @@ const Docs = () => {
       sections: [
         {
           title: "Inputs",
-          pages: ["Autocomplete", "TextInput", "Checkbox", "Radio", "Select"],
+          pages: [
+            "Autocomplete",
+            "TextInput",
+            "Checkbox",
+            "Radio",
+            "Select",
+            "Slider",
+          ].sort(),
         },
         { title: "Layout", pages: ["Flex"] },
         { title: "Data Display", pages: ["List", "Tooltip"] },

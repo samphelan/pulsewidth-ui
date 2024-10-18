@@ -6,7 +6,7 @@ import {
 } from "react";
 import styles from "./list.module.css";
 import { formatCSSModuleClasses } from "../utils/functions";
-import { Colors, Variant } from "../types";
+import { Colors, Radius, Variant } from "../types";
 import ListContext from "./ListContext";
 
 const f = formatCSSModuleClasses(styles);
@@ -17,6 +17,7 @@ interface ListProps extends ComponentPropsWithoutRef<"ul"> {
   direction?: "column" | "row" | "responsive-row";
   variant?: Variant;
   colorVariant?: Colors;
+  radius?: Radius;
   opaque?: boolean;
 }
 
@@ -28,18 +29,20 @@ export const List = forwardRef<HTMLUListElement, ListProps>(function List(
     direction = "column",
     variant = "plain",
     colorVariant = "gray",
+    radius = 0,
     opaque = false,
     ...rest
   }: ListProps,
   ref: ForwardedRef<HTMLUListElement>
 ) {
-  console.log(variant);
   return (
     <ul
       ref={ref}
       className={`${
         unstyled ? "" : f(["ul", `direction-${direction}`])
-      } ${className} static-variant--${variant} ${opaque ? "opaque" : ""}`}
+      } ${className} static-variant--${variant} ${
+        opaque ? "opaque" : ""
+      } radius${radius}`}
       data-color={colorVariant}
       {...rest}
     >

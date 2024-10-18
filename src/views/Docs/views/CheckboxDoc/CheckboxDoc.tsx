@@ -10,6 +10,7 @@ import { Colors, Variant } from "../../../../../lib/types";
 import ComponentBody from "../../components/ComponentBody/ComponentBody";
 import VariantPicker from "../../components/VariantPicker/VariantPicker";
 import ColorVariantPicker from "../../components/ColorVariantPicker/ColorVariantPicker";
+import NavFooter from "../../components/NavFooter/NavFooter";
 
 const CheckboxDoc = () => {
   const [checked, setChecked] = useState(true);
@@ -59,6 +60,13 @@ const CheckboxDoc = () => {
             />
           </SandboxControls>
         </Sandbox>
+        <NavFooter
+          className="mt7"
+          previousPath="/docs/Autocomplete"
+          previousTitle="Autocomplete"
+          nextPath="/docs/Radio"
+          nextTitle="Radio"
+        />
       </ComponentBody>
     </ComponentPageLayout>
   );

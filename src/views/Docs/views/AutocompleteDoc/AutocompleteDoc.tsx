@@ -31,9 +31,10 @@ const AutocompleteDoc = () => {
         github="https://github.com/samphelan/pulsewidth-ui/tree/main/lib/Autocomplete"
       ></ComponentHeader>
       <ComponentBody>
-        <Sandbox className="mb8">
+        <Sandbox>
           <SandboxDisplay code={code()}>
             <Autocomplete
+              placeholder="Autocomplete"
               value={val}
               onChange={(e) => {
                 setVal(e.currentTarget.value);
@@ -60,7 +61,13 @@ const AutocompleteDoc = () => {
             ></ColorVariantPicker>
           </SandboxControls>
         </Sandbox>
-        <NavFooter nextPath="/docs/Installation" nextTitle="Installation" />
+        <NavFooter
+          className="mt7"
+          previousPath="/docs/Usage"
+          previousTitle="Usage"
+          nextPath="/docs/Checkbox"
+          nextTitle="Checkbox"
+        />
       </ComponentBody>
     </ComponentPageLayout>
   );

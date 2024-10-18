@@ -78,8 +78,6 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     // Handle checkbox changes
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
       if (!disabled) {
-        console.log(e);
-        console.log(e.target.checked);
         //setIsChecked(e.target.checked);
         if (onChange) {
           onChange(e);

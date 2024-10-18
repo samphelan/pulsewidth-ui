@@ -6,7 +6,7 @@ import {
   useContext,
 } from "react";
 import styles from "./radio.module.css";
-import { Colors, Variant } from "../types";
+import { Colors, Radius, Variant } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import RadioGroupContext from "../RadioGroup/RadioGroupContext";
@@ -32,6 +32,7 @@ interface RadioButtonProps
   colorVariant?: Colors;
   labelPos?: "top" | "right" | "bottom" | "left";
   slotProps?: RadioSlotProps;
+  spacing?: Radius;
 }
 
 export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
@@ -46,6 +47,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
       variant = "outline",
       colorVariant = "gray",
       labelPos = "right",
+      spacing = 3,
       slotProps,
       ...rest
     }: RadioButtonProps,
@@ -56,8 +58,6 @@ export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
 
     // Handle radio button state change
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-      console.log(e.target.checked);
-
       //setIsChecked(e.target.checked);
       if (onChange) onChange(e); // Call the provided onChange handler
     };
@@ -72,17 +72,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
         className={[
           styles["radio-button"],
           styles[sizeClass],
-          disableIcon
-            ? `variant--${
-                checked
-                  ? variant === "soft" || variant === "outline"
-                    ? "solid"
-                    : variant === "plain"
-                    ? "soft"
-                    : "outline"
-                  : variant
-              } ${styles["disable-icon"]}`
-            : null,
+
           styles[`labelPos--${labelPos}`],
           ...(slotProps?.root?.className ? [slotProps.root.className] : []),
         ].join(" ")}
@@ -109,6 +99,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
                 ? [slotProps.iconContainer.className]
                 : []),
               ,
+              `m${labelPos.charAt(0)}${spacing}`,
             ].join(" ")}
           >
             <FontAwesomeIcon
@@ -125,6 +116,17 @@ export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
                 ? [slotProps.label.className]
                 : []),
               ,
+              disableIcon
+                ? `variant--${
+                    checked
+                      ? variant === "soft" || variant === "outline"
+                        ? "solid"
+                        : variant === "plain"
+                        ? "soft"
+                        : "outline"
+                      : variant
+                  } ${styles["disable-icon__label"]}`
+                : null,
             ].join(" ")}
           >
             {label}

@@ -249,3 +249,36 @@
 .pl9 {
     padding-left: var(--pulsewidth-spacing-9);
 }
+
+/* Border Radius */
+.radius0 {
+    border-radius: var(--pulsewidth-radius-0);
+}
+.radius1 {
+    border-radius: var(--pulsewidth-radius-1);
+}
+.radius2 {
+    border-radius: var(--pulsewidth-radius-2);
+}
+.radius3 {
+    border-radius: var(--pulsewidth-radius-3);
+}
+.radius4 {
+    border-radius: var(--pulsewidth-radius-4);
+}
+.radius5 {
+    border-radius: var(--pulsewidth-radius-5);
+}
+.radius6 {
+    border-radius: var(--pulsewidth-radius-6);
+}
+.radius7 {
+    border-radius: var(--pulsewidth-radius-7);
+}
+.radius8 {
+    border-radius: var(--pulsewidth-radius-8);
+}
+.radius9 {
+    border-radius: var(--pulsewidth-radius-9);
+}
+

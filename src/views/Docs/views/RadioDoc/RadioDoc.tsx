@@ -10,6 +10,7 @@ import { useState } from "react";
 import { Colors, Variant } from "../../../../../lib/types";
 import ColorVariantPicker from "../../components/ColorVariantPicker/ColorVariantPicker";
 import VariantPicker from "../../components/VariantPicker/VariantPicker";
+import NavFooter from "../../components/NavFooter/NavFooter";
 
 const RadioDoc = () => {
   const [selectedVariant, setSelectedVariant] = useState("outline" as Variant);
@@ -78,6 +79,13 @@ const RadioDoc = () => {
             ></Checkbox>
           </SandboxControls>
         </Sandbox>
+        <NavFooter
+          className="mt7"
+          previousPath="/docs/Checkbox"
+          previousTitle="Checkbox"
+          nextPath="/docs/Select"
+          nextTitle="Select"
+        />
       </ComponentBody>
     </ComponentPageLayout>
   );

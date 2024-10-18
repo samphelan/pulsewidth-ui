@@ -1,4 +1,5 @@
 import {
+  Button,
   Flex,
   List,
   ListItem,
@@ -17,6 +18,7 @@ import VariantPicker from "../../components/VariantPicker/VariantPicker";
 import ColorVariantPicker from "../../components/ColorVariantPicker/ColorVariantPicker";
 import { useState } from "react";
 import { Colors, Position, Variant } from "../../../../../lib/types";
+import NavFooter from "../../components/NavFooter/NavFooter";
 
 const TooltipDoc = () => {
   const [selectedVariant, setSelectedVariant] = useState<Variant>("solid");
@@ -25,7 +27,14 @@ const TooltipDoc = () => {
 
   const code = () => {
     return `
-      <Tooltip variant={${selectedVariant}} colorVariant={${selectedColor}} />
+      <Tooltip
+        text="Tooltip"
+        variant={${selectedVariant}}
+        colorVariant={${selectedColor}}
+        position={${labelPosition}}
+      >
+        <Button variant='outline'>Hover Over Me</Button>
+      </Tooltip>
     `;
   };
 
@@ -45,7 +54,7 @@ const TooltipDoc = () => {
                 variant={selectedVariant}
                 position={labelPosition}
               >
-                <div>Hover Over Me</div>
+                <Button variant="outline">Hover Over Me</Button>
               </Tooltip>
             </Flex>
           </SandboxDisplay>
@@ -69,7 +78,10 @@ const TooltipDoc = () => {
               <RadioGroup name={"labelposition"}>
                 {(["top", "right", "bottom", "left"] as Position[]).map(
                   (pos) => (
-                    <ListItem key={pos} style={{ marginRight: "10px" }}>
+                    <ListItem
+                      key={pos}
+                      style={{ marginRight: "10px", marginBottom: "5px" }}
+                    >
                       <Radio
                         label={pos}
                         checked={labelPosition === pos}
@@ -87,6 +99,11 @@ const TooltipDoc = () => {
             </List>
           </SandboxControls>
         </Sandbox>
+        <NavFooter
+          className="mt7"
+          previousPath="/docs/List"
+          previousTitle="List"
+        />
       </ComponentBody>
     </ComponentPageLayout>
   );

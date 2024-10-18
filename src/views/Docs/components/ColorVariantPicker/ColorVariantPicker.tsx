@@ -15,35 +15,33 @@ const ColorVariantPicker = ({
   return (
     <List direction="row">
       <RadioGroup>
-        {(["gray", "red", "green", "blue", "orange", "pink"] as Colors[]).map(
-          (c) => (
-            <ListItem
-              key={c}
-              style={{
-                minWidth: "40px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+        {(["gray", "red", "green", "blue", "orange"] as Colors[]).map((c) => (
+          <ListItem
+            key={c}
+            style={{
+              minWidth: "40px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Radio
+              label={c}
+              checked={selected === c}
+              onChange={(e) => {
+                if (e.currentTarget.value === "on") onChange(c);
               }}
-            >
-              <Radio
-                label={c}
-                checked={selected === c}
-                onChange={(e) => {
-                  if (e.currentTarget.value === "on") onChange(c);
-                }}
-                colorVariant={c}
-                variant="solid"
-                customIcon={faCheck}
-                labelPos="top"
-                slotProps={{
-                  label: { className: styles["radio-label"] },
-                }}
-                size="large"
-              ></Radio>
-            </ListItem>
-          )
-        )}
+              colorVariant={c}
+              variant="solid"
+              customIcon={faCheck}
+              labelPos="top"
+              slotProps={{
+                label: { className: styles["radio-label"] },
+              }}
+              size="large"
+            ></Radio>
+          </ListItem>
+        ))}
       </RadioGroup>
     </List>
   );

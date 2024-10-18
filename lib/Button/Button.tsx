@@ -7,13 +7,14 @@ import {
 } from "react";
 import styles from "./button.module.css";
 import { formatCSSModuleClasses } from "../utils/functions";
-import { Colors, Variant } from "../types";
+import { Colors, Radius, Variant } from "../types";
 const f = formatCSSModuleClasses(styles);
 
 interface ButtonProps<T extends ElementType>
   extends ComponentPropsWithoutRef<"button"> {
   variant?: Variant;
   colorVariant?: Colors;
+  radius?: Radius;
   className?: string;
   as?: T;
 }
@@ -22,6 +23,7 @@ export const Button = forwardRef(function Button<T extends ElementType>(
   {
     variant = "plain",
     colorVariant = "gray",
+    radius = 3,
     children,
     as: Component = "button" as T,
     className,
@@ -32,7 +34,9 @@ export const Button = forwardRef(function Button<T extends ElementType>(
   return (
     <Component
       ref={ref}
-      className={`${f(["button", `variant--${variant}`])} ${className}`}
+      className={`${f([
+        "button",
+      ])} ${className} variant--${variant} radius${radius}`}
       data-color={colorVariant}
       {...rest}
     >

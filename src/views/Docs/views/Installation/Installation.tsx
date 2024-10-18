@@ -12,7 +12,7 @@ const Installation = () => {
 
       <CodeBlock
         str={`
-pnpm install pulsewidth-ui --save
+pnpm add pulsewidth-ui
         `}
         className={"mb6"}
       ></CodeBlock>

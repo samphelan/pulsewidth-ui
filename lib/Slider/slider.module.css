@@ -26,8 +26,7 @@
 
 .trackFill {
     height: 5px;
-    /*background-color: rgb(72, 130, 255);*/
-    background-color: red;
+    background-color: rgb(72, 130, 255);
     border-radius: 3px;
     position: absolute;
 }

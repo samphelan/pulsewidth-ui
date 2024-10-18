@@ -10,6 +10,7 @@ import VariantPicker from "../../components/VariantPicker/VariantPicker";
 import ColorVariantPicker from "../../components/ColorVariantPicker/ColorVariantPicker";
 import { useState } from "react";
 import { Colors, Variant } from "../../../../../lib/types";
+import NavFooter from "../../components/NavFooter/NavFooter";
 
 const FlexDoc = () => {
   const [selectedVariant, setSelectedVariant] = useState<Variant>("plain");
@@ -17,7 +18,11 @@ const FlexDoc = () => {
 
   const code = () => {
     return `
-      <Flex variant={${selectedVariant}} colorVariant={${selectedColor}} />
+      <Flex variant={${selectedVariant}} colorVariant={${selectedColor}}>
+        <Button>Flex Item 1</Button>
+        <Button>Flex Item 2</Button>
+        <Button>Flex Item 3</Button>
+      </Flex>
     `;
   };
 
@@ -56,6 +61,13 @@ const FlexDoc = () => {
             ></ColorVariantPicker>
           </SandboxControls>
         </Sandbox>
+        <NavFooter
+          className="mt7"
+          previousPath="/docs/TextInput"
+          previousTitle="TextInput"
+          nextPath="/docs/List"
+          nextTitle="List"
+        />
       </ComponentBody>
     </ComponentPageLayout>
   );
