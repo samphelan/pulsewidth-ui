@@ -16,12 +16,15 @@ import { Button } from "../Button/Button";
 import { List } from "../List/List";
 import { ListItem } from "../ListItem/ListItem";
 import { ListItemButton } from "../ListItemButton/ListItemButton";
+import { Colors, Variant } from "../types";
 
 interface AutocompleteProps extends ComponentProps<"input"> {
   value: string;
   onChange: ChangeEventHandler<HTMLInputElement>;
   onSelection?: (selection: string) => void;
   suggestions?: string[];
+  variant?: Variant;
+  colorVariant?: Colors;
   inputClassName?: string;
   inputStyles?: CSSProperties;
   listClassName?: string;
@@ -37,6 +40,8 @@ export const Autocomplete = ({
   inputStyles,
   listClassName,
   listStyles,
+  variant = "outline",
+  colorVariant = "gray",
   ...rest
 }: AutocompleteProps) => {
   const choices = suggestions || [];
@@ -99,6 +104,12 @@ export const Autocomplete = ({
     if (text && typeof selected === "undefined") setShowSuggestions(true);
   };
 
+  const determineButtonVariant = () => {
+    if (variant === "solid") return "solid";
+    if (variant === "soft") return "soft";
+    return "plain";
+  };
+
   return (
     <div className={styles.wrapper} ref={wrapperRef}>
       <TextInput
@@ -110,12 +121,17 @@ export const Autocomplete = ({
         style={inputStyles}
         className={[styles.input, inputClassName].join(" ")}
         onFocus={handleFocus}
+        variant={variant}
+        colorVariant={colorVariant}
         {...rest}
       />
       {showSuggestions && (
         <List
           className={[styles.ul, listClassName].join(" ")}
           style={listStyles}
+          variant={variant}
+          colorVariant={colorVariant}
+          opaque
         >
           {choices.map((choice, i) => (
             <ListItem key={`${choice}${i}`} className={styles.li}>
@@ -131,7 +147,12 @@ export const Autocomplete = ({
       )}
       {selected && (
         <div className={styles.xWrapper}>
-          <Button className={styles.x} onClick={handleDeleteSelection}>
+          <Button
+            variant={determineButtonVariant()}
+            colorVariant={colorVariant}
+            className={styles.x}
+            onClick={handleDeleteSelection}
+          >
             <FontAwesomeIcon icon={faXmark} />
           </Button>
         </div>

@@ -4,10 +4,12 @@ import React, {
   ElementType,
   ForwardedRef,
   forwardRef,
+  useContext,
 } from "react";
 import styles from "./listItemButton.module.css";
 import { formatCSSModuleClasses } from "../utils/functions";
 import { Variant } from "../types";
+import ListContext from "../List/ListContext";
 
 const f = formatCSSModuleClasses(styles);
 
@@ -31,15 +33,28 @@ export const ListItemButton = forwardRef(function ListItemButton<
   }: ListItemButtonProps<T> & ComponentPropsWithRef<T>,
   ref: ForwardedRef<ComponentPropsWithRef<T>["ref"]>
 ) {
+  const listContext = useContext(ListContext);
+
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) onClick(e);
+  };
+
+  const determineVariant = () => {
+    if (variant) return variant;
+    if (listContext.variant === "solid") return "solid";
+    if (listContext.variant === "soft") return "soft";
+    return "plain";
   };
 
   return (
     <Component
       ref={ref}
       onClick={handleClick}
-      className={[f(["button"]), className, `variant--${variant}`].join(" ")}
+      className={[
+        f(["button", `list-variant--${listContext.variant || "plain"}`]),
+        className,
+        `variant--${determineVariant()}`,
+      ].join(" ")}
       {...rest}
     >
       {children}

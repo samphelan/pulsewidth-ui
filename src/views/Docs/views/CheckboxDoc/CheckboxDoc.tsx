@@ -15,6 +15,13 @@ const CheckboxDoc = () => {
   const [checked, setChecked] = useState(true);
   const [selectedVariant, setSelectedVariant] = useState<Variant>("outline");
   const [selectedColor, setSelectedColor] = useState<Colors>("gray");
+
+  const code = () => {
+    return `
+      <Checkbox variant={${selectedVariant}} colorVariant={${selectedColor}} />
+    `;
+  };
+
   return (
     <ComponentPageLayout>
       <ComponentHeader
@@ -24,7 +31,7 @@ const CheckboxDoc = () => {
       ></ComponentHeader>
       <ComponentBody>
         <Sandbox>
-          <SandboxDisplay>
+          <SandboxDisplay code={code()}>
             <Checkbox
               label="Label"
               variant={selectedVariant}

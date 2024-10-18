@@ -1,0 +1,104 @@
+.wrapper {
+    position: relative;
+    display: inline-flex;
+}
+
+.tip {
+    position: absolute;
+    opacity: 0;
+    font-size: 0.8em;
+    padding: var(--pulsewidth-spacing-0) var(--pulsewidth-spacing-2);
+    border-radius: var(--pulsewidth-radius-1);
+    display: none;
+}
+
+.top {
+    bottom: calc(100% + var(--pulsewidth-spacing-1));
+    left: 50%;
+    transform: translateX(-50%);
+    animation: slideUp 200ms forwards;
+}
+.right {
+    left: calc(100% + var(--pulsewidth-spacing-1));
+    top: 50%;
+    transform: translateY(-50%);
+    animation: slideRight 200ms forwards;
+}
+.bottom {
+    top: calc(100% + var(--pulsewidth-spacing-1));
+    left: 50%;
+    transform: translateX(-50%);
+    animation: slideDown 200ms forwards;
+}
+.left {
+    right: calc(100% + var(--pulsewidth-spacing-1));
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
+
+.wrapper:hover .tip {
+    transition: opacity 400ms ease;
+    opacity: 1;
+    max-width: none;
+    display: inline-flex;
+    animation: fadeIn 200ms forwards;
+}
+
+.wrapper:hover .left {
+    animation: slideLeft 200ms forwards;
+}
+.wrapper:hover .right {
+    animation: slideRight 200ms forwards;
+}
+.wrapper:hover .top {
+    animation: slideUp 200ms forwards;
+}
+.wrapper:hover .bottom {
+    animation: slideDown 200ms forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+      transform: translate(10px, -50%); /* Initial position */
+    }
+    100% {
+      transform: translate(0px, -50%); /* Move left by 100px */
+    }
+}
+
+@keyframes slideRight {
+    0% {
+      transform: translate(-10px, -50%); /* Initial position */
+    }
+    100% {
+      transform: translate(0px, -50%); /* Move left by 100px */
+    }
+}
+
+@keyframes slideUp {
+    0% {
+      transform: translate(-50%, 10px); /* Initial position */
+    }
+    100% {
+      transform: translate(-50%, 0px); /* Move left by 100px */
+    }
+}
+
+@keyframes slideDown {
+    0% {
+      transform: translate(-50%, -10px); /* Initial position */
+    }
+    100% {
+      transform: translate(-50%, 0px); /* Move left by 100px */
+    }
+}

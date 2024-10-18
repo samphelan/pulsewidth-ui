@@ -1,3 +1,4 @@
 .input {
     padding: calc(0.6em + 4px);
+    border-radius: var(--pulsewidth-spacing-2);
 }

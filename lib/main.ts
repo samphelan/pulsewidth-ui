@@ -16,8 +16,10 @@ import { Phone } from './Phone/Phone'
 import { Select, Option } from './Select/Select'
 import { Slider } from './Slider/Slider'
 import { TextInput } from './TextInput/TextInput'
+import { Tooltip } from './Tooltip/Tooltip'
 import './styles/index.css'
 import './styles/variants.css'
+import './styles/utilities.css'
 
 
-export { Accordion, AccordionHeader, AccordionContent, Autocomplete, Avatar, Button, Checkbox, Flex, List, ListItem, ListItemButton, Option, Password, Phone, Radio, RadioGroup, Select, Slider, TextInput }
+export { Accordion, AccordionHeader, AccordionContent, Autocomplete, Avatar, Button, Checkbox, Flex, List, ListItem, ListItemButton, Option, Password, Phone, Radio, RadioGroup, Select, Slider, TextInput, Tooltip }

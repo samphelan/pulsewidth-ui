@@ -13,6 +13,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    height: 100%;
 }
 
 .option-button {
@@ -34,7 +35,7 @@
     margin: 0;
     background-color: rgb(30,30,30);
     position: absolute;
-    top: 100%;
+    top: calc(100% + var(--pulsewidth-spacing-1));
     width: 100%;
     text-align: left;
     border-radius: 3px;

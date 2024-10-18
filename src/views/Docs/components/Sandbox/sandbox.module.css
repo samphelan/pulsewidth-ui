@@ -1,14 +1,16 @@
 .wrapper {
-    border-radius: 30px;
-    border: 1px solid rgb(230,230,230);
-    overflow: hidden;
+    border-radius: var(--pulsewidth-radius-9);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--pulsewidth-color-gray-7);
     position: relative;
 }
 
 .controls {
     padding: 20px;
     flex: 30%;
-    background-color: var(--pulsewidth-color-gray-9);
+    background-color: var(--pulsewidth-color-gray-8);
+    border-radius: var(--pulsewidth-radius-9);
 }
 
 .display {
@@ -18,7 +20,9 @@
 
 @media (prefers-color-scheme: light) {
     .controls {
-        
-        background-color: var(--pulsewidth-color-blue-0);
+        background-color: var(--pulsewidth-color-gray-0);
+    }
+    .wrapper {
+        border-color: var(--pulsewidth-color-gray-1)
     }
 }

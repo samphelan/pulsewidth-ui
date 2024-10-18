@@ -33,6 +33,12 @@
 .justify--stretch {
     justify-content: stretch;
 }
+.justify--space-between {
+    justify-content: space-between;
+}
+.justify--space-around {
+    justify-content: space-around;
+}
 
 /*align-items classes*/
 .align--start {

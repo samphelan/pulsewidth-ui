@@ -17,6 +17,7 @@ import { ListItem } from "../ListItem/ListItem";
 import { ListItemButton } from "../ListItemButton/ListItemButton";
 import { List } from "../List/List";
 import { Button } from "../Button/Button";
+import { Colors, Variant } from "../types";
 
 interface OptionProps {
   value: string;
@@ -36,10 +37,23 @@ export const Option = ({ children, onClick }: OptionProps) => {
 
 interface SelectProps {
   children?: ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+  colorVariant?: Colors;
+  variant?: Variant;
+  selected?: string;
+  onChange?: (v: string) => void;
 }
 
-export const Select = ({ children }: SelectProps) => {
-  const [selected, setSelected] = useState<ReactNode>();
+export const Select = ({
+  children,
+  style,
+  colorVariant,
+  variant,
+  selected,
+  onChange,
+}: SelectProps) => {
+  const [internalSelection, setInternalSelection] = useState<ReactNode>();
   const [showOptions, setShowOptions] = useState(false);
   const [options, setOptions] = useState<ReactElement<OptionProps>[]>([]);
 
@@ -57,7 +71,8 @@ export const Select = ({ children }: SelectProps) => {
     const option = (options as ReactElement<OptionProps>[]).find(
       (o) => o.props.value === val
     );
-    if (option) setSelected(option.props.children);
+    if (option) setInternalSelection(option.props.children);
+    if (onChange) onChange(val);
     setShowOptions(false);
   };
 
@@ -72,13 +87,19 @@ export const Select = ({ children }: SelectProps) => {
   }, [children]);
 
   return (
-    <div className={styles.wrapper} ref={wrapperRef}>
-      <Button className={styles["select-button"]} onClick={handleClick}>
+    <div className={styles.wrapper} style={style} ref={wrapperRef}>
+      <Button
+        role="listbox"
+        className={styles["select-button"]}
+        onClick={handleClick}
+        colorVariant={colorVariant}
+        variant={variant}
+      >
         <span>{selected || "Choose One..."}</span>
         <FontAwesomeIcon icon={faAngleDown} className={styles["caret-icon"]} />
       </Button>
       {showOptions && (
-        <List className={styles["ul"]}>
+        <List className={styles["ul"]} opaque>
           {Children.map(children, (child) => {
             if (isValidElement(child) && child.type === Option) {
               return cloneElement(child as ReactElement<OptionProps>, {

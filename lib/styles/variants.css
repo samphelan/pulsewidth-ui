@@ -51,10 +51,13 @@
   
 /* Light Mode */
 @media (prefers-color-scheme: light) {
-    .variant--plain {
+    .variant--plain, .static-variant--plain {
       background-color: transparent;
       border: 1px solid transparent;
       color: var(--pulsewidth-color-plain-text)
+    }
+    .variant--plain.opaque, .static-variant--plain.opaque {
+      background-color: var(--pulsewidth-color-light-background);
     }
     .variant--plain:hover {
       background-color: var(--pulsewidth-color-plain-hover);
@@ -64,10 +67,13 @@
       background-color: var(--pulsewidth-color-plain-active);
       border-color: var(--pulsewidth-color-plain-active);
     }
-    .variant--outline {
+    .variant--outline, .static-variant--outline {
       background-color: transparent;
       border: 1px solid var(--pulsewidth-color-outline-border);
       color: var(--pulsewidth-color-outline-text);
+    }
+    .variant--outline.opaque, .static-variant--outline.opaque {
+      background-color: var(--pulsewidth-color-light-background);
     }
     .variant--outline:hover {
       background-color: var(--pulsewidth-color-outline-hover);
@@ -77,7 +83,7 @@
       background-color: var(--pulsewidth-color-outline-active);
       border-color: var(--pulsewidth-color-outline-border-active);
     }
-    .variant--soft {
+    .variant--soft, .static-variant--soft {
       background-color: var(--pulsewidth-color-soft);
       border: 1px solid var(--pulsewidth-color-soft);
       color: var(--pulsewidth-color-soft-text);
@@ -90,7 +96,7 @@
       background-color: var(--pulsewidth-color-soft-active);
       border-color: var(--pulsewidth-color-soft-active);
     }
-    .variant--solid {
+    .variant--solid, .static-variant--solid {
       background-color: var(--pulsewidth-color-solid);
       border: 1px var(--pulsewidth-color-solid);
       color: var(--pulsewidth-color-solid-text);

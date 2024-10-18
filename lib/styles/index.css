@@ -1,16 +1,5 @@
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-  
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
-  
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    
 
     /*Color Variables*/
     --pulsewidth-color-white: rgb(255,255,255);
@@ -81,6 +70,8 @@
     --pulsewidth-color-solid-hover: var(--pulsewidth-color-gray-8);
     --pulsewidth-color-solid-active: var(--pulsewidth-color-gray-9);
     --pulsewidth-color-solid-text: var(--pulsewidth-color-white);
+    --pulsewidth-color-light-background: white;
+    --pulsewidth-color-dark-background: #242424;;
 
     /* Spacing Variables */
     --pulsewidth-radius-0: 2px;
@@ -111,6 +102,19 @@
     --primary-soft-hover: rgb(from var(--primary-soft) calc(r - 30) calc(g - 30) calc(b - 30));
     --primary-solid: rgb(55,55,55);
     --primary-solid-hover: rgb(from var(--primary-solid) calc(r - 30) calc(g - 30) calc(b - 30));
+
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: var(--pulsewidth-color-dark-background);
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   [data-color="red"] {

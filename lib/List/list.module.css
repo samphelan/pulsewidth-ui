@@ -4,6 +4,7 @@
     margin: 0;
     display: flex;
     align-items: stretch;
+    overflow: hidden;
 }
 
 .direction-column {

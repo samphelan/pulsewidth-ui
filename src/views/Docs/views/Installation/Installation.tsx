@@ -1,27 +1,41 @@
+import { CodeBlock } from "../../components/CodeBlock/CodeBlock";
 import PageLayout from "../../components/PageLayout/PageLayout";
+import NavFooter from "../../components/NavFooter/NavFooter";
 
 const Installation = () => {
   return (
     <PageLayout>
       <h1>Installation</h1>
-      <p>Run the following command to add Pulsewidth UI to your project:</p>
-      <pre>
-        <code>{`
+      <p className={"mb6"}>
+        Run the following command to add Pulsewidth UI to your project:
+      </p>
+
+      <CodeBlock
+        str={`
 pnpm install pulsewidth-ui --save
-        `}</code>
-      </pre>
+        `}
+        className={"mb6"}
+      ></CodeBlock>
       <h2>Peer Dependencies</h2>
-      <p>
+      <p className={"mb6"}>
         Please note that react and react-dom are peer dependencies, meaning you
         should ensure they are installed before installing Pulsewidth UI.
       </p>
-      <pre>
-        <code>{`
+      <CodeBlock
+        str={`
 "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
-},`}</code>
-      </pre>
+}
+    `}
+        className={"mb6"}
+      ></CodeBlock>
+      <NavFooter
+        nextTitle="Usage"
+        nextPath="/docs/Usage"
+        previousPath="/docs/Overview"
+        previousTitle="Overview"
+      />
     </PageLayout>
   );
 };

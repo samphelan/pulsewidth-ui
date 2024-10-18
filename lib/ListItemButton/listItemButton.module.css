@@ -1,5 +1,4 @@
 .button {
-    border: none;
     cursor: pointer;
     flex: 1;
     text-align: inherit;
@@ -8,4 +7,8 @@
     border-radius: 0px;
     padding: 0.6em 1.2em;
     transition: background-color 400ms ease;
+}
+
+.list-variant--solid {
+    color: var(--pulsewidth-color-solid-text);
 }

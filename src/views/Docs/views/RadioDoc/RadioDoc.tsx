@@ -17,6 +17,12 @@ const RadioDoc = () => {
   const [selectedRadio, setSelectedRadio] = useState("first");
   const [disableIcon, setDisableIcon] = useState(false);
 
+  const code = () => {
+    return `
+      <Radio variant={${selectedVariant}} colorVariant={${selectedColor}} />
+    `;
+  };
+
   return (
     <ComponentPageLayout>
       <ComponentHeader
@@ -26,7 +32,7 @@ const RadioDoc = () => {
       ></ComponentHeader>
       <ComponentBody>
         <Sandbox>
-          <SandboxDisplay>
+          <SandboxDisplay code={code()}>
             <RadioGroup name="display">
               <List>
                 {["First", "Second", "Third"].map((r) => (

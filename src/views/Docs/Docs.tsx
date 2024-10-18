@@ -79,12 +79,7 @@ const Docs = () => {
       <Flex className={styles.wrapper} style={{ paddingTop: "51px" }}>
         <Flex direction="column" className={styles.navWrap}>
           {navData.map((section) => (
-            <Accordion
-              key={section.title}
-              defaultExpanded={
-                section.title.toUpperCase() === "GETTING STARTED"
-              }
-            >
+            <Accordion key={section.title} defaultExpanded={true}>
               <AccordionHeader className={styles.accordionHeader}>
                 {section.title.toUpperCase()}
               </AccordionHeader>
