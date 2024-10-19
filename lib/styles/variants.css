@@ -1,52 +1,63 @@
 /* Variant Classes Dark Mode */
-.variant--plain {
+.variant--plain, .static-variant--plain {
     background-color: transparent;
-    color: var(--pulsewidth-color-gray-1)
+    border: 1px solid transparent;
+    color: var(--pulsewidth-color-plain-dark-text);
+}
+.variant--plain.opaque, .static-variant--plain.opaque {
+  background-color: var(--pulsewidth-color-dark-background);
+  border: 1px solid var(--pulsewidth-color-dark-background);
 }
 .variant--plain:hover {
-    background-color: var(--pulsewidth-color-gray-8)
+    background-color: var(--pulsewidth-color-plain-dark-hover);
+    border-color: var(--pulsewidth-color-plain-dark-hover);
 }
 .variant--plain:active {
-    background-color: var(--pulsewidth-color-gray-7)
+    background-color: var(--pulsewidth-color-plain-dark-active);
+    border-color: var(--pulsewidth-color-plain-dark-active);
 }
-.variant--outline {
+.variant--outline, .static-variant--outline {
     background-color: transparent;
-    border: 1px solid var(--pulsewidth-color-outline-border);
-    color: var(--pulsewidth-color-solid-text);
+    border: 1px solid var(--pulsewidth-color-outline-dark);
+    color: var(--pulsewidth-color-outline-text);
+}
+.variant--outline.opaque, .static-variant--outline.opaque {
+  background-color: var(--pulsewidth-color-dark-background);
+  border: 1px solid var(--pulsewidth-color-outline-dark);
 }
 .variant--outline:hover {
-    background-color: var(--pulsewidth-color-solid-hover);
-    border-color: var(--pulsewidth-color-solid-border-hover);
+    background-color: var(--pulsewidth-color-outline-dark-hover);
+    border-color: var(--pulsewidth-color-outline-border-hover);
 }
 .variant--outline:active {
-    background-color: var(--pulsewidth-color-outline-active);
-    border-color: var(--pulsewidth-color-outline-border-active);
+    background-color: var(--pulsewidth-color-outline-dark-active);
+    border-color: var(--pulsewidth-color-outline-dark-border-active);
 }
-.variant--soft {
-    background-color: var(--pulsewidth-color-solid);
-    border: 1px solid var(--pulsewidth-color-solid);
-    color: var(--pulsewidth-color-gray-0)
+.variant--soft, .static-variant--soft {
+    background-color: var(--pulsewidth-color-soft-dark);
+    border: 1px solid var(--pulsewidth-color-soft-dark);
+    color: var(--pulsewidth-color-soft-dark-text)
 }
 .variant--soft:hover {
-    background-color: var(--pulsewidth-color-gray-6);
-    border-color: var(--pulsewidth-color-gray-6);
+    background-color: var(--pulsewidth-color-soft-dark-hover);
+    border-color: var(--pulsewidth-color-soft-dark-hover);
 }
 .variant--soft:active {
-    background-color: var(--pulsewidth-color-gray-5);
-    border-color: var(--pulsewidth-color-gray-5);
+    background-color: var(--pulsewidth-color-soft-dark-active);
+    border-color: var(--pulsewidth-color-soft-dark-active);
 }
-.variant--solid {
-    background-color: var(--pulsewidth-color-soft);
-    border: 1px solid var(--pulsewidth-color-soft);
-    color: var(--pulsewidth-color-soft-text);
+.variant--solid, .static-variant--solid {
+    background-color: var(--pulsewidth-color-solid-dark);
+    border: 1px solid var(--pulsewidth-color-solid-dark);
+    color: var(--pulsewidth-color-solid-dark-text);
 }
 .variant--solid:hover {
-    background-color: var(--pulsewidth-color-soft-hover);
-    border-color: var(--pulsewidth-color-soft-hover);
+    background-color: var(--pulsewidth-color-solid-dark-hover);
+    border-color: var(--pulsewidth-color-solid-dark-hover);
 }
 .variant--solid:active {
-    background-color: var(--pulsewidth-color-soft-active);
-    border-color: var(--pulsewidth-color-soft-active);
+    background-color: var(--pulsewidth-color-solid-dark-active);
+    border-color: var(--pulsewidth-color-solid-dark-active);
 }
   
 /* Light Mode */
@@ -58,6 +69,7 @@
     }
     .variant--plain.opaque, .static-variant--plain.opaque {
       background-color: var(--pulsewidth-color-light-background);
+      border: 1px solid var(--pulsewidth-color-light-background);
     }
     .variant--plain:hover {
       background-color: var(--pulsewidth-color-plain-hover);
@@ -74,6 +86,7 @@
     }
     .variant--outline.opaque, .static-variant--outline.opaque {
       background-color: var(--pulsewidth-color-light-background);
+      border: 1px solid var(--pulsewidth-color-outline-border);
     }
     .variant--outline:hover {
       background-color: var(--pulsewidth-color-outline-hover);
@@ -98,7 +111,7 @@
     }
     .variant--solid, .static-variant--solid {
       background-color: var(--pulsewidth-color-solid);
-      border: 1px var(--pulsewidth-color-solid);
+      border: 1px solid var(--pulsewidth-color-solid);
       color: var(--pulsewidth-color-solid-text);
     }
     .variant--solid:hover {

@@ -2,3 +2,22 @@
     padding: calc(0.6em + 4px);
     border-radius: var(--pulsewidth-spacing-2);
 }
+
+.input::placeholder {
+    color: var(--pulsewidth-color-gray-2);
+    opacity: 0.8; /* Firefox */
+}
+.input::-ms-input-placeholder { /* Edge 12 -18 */
+    color: var(--pulsewidth-color-gray-2);
+}
+
+
+@media (prefers-color-scheme: light) {
+    .input::placeholder {
+        color: var(--pulsewidth-color-gray-7);
+        opacity: 0.8; /* Firefox */
+    }
+    .input::-ms-input-placeholder { /* Edge 12 -18 */
+        color: var(--pulsewidth-color-gray-7);
+    }
+}

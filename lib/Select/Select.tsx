@@ -6,7 +6,6 @@ import {
   ReactNode,
   useState,
   MouseEvent,
-  useEffect,
   useRef,
 } from "react";
 import styles from "./select.module.css";
@@ -55,9 +54,8 @@ export const Select = ({
   selected,
   onChange,
 }: SelectProps) => {
-  const [internalSelection, setInternalSelection] = useState<ReactNode>();
   const [showOptions, setShowOptions] = useState(false);
-  const [options, setOptions] = useState<ReactElement<OptionProps>[]>([]);
+  //const [options, setOptions] = useState<ReactElement<OptionProps>[]>([]);
 
   const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -70,21 +68,22 @@ export const Select = ({
   };
 
   const handleOptionClick = (val: string) => {
-    const option = (options as ReactElement<OptionProps>[]).find(
+    /*const option = (options as ReactElement<OptionProps>[]).find(
       (o) => o.props.value === val
     );
-    if (option) setInternalSelection(option.props.children);
+    if (option) setInternalSelection(option.props.children);*/
     if (onChange) onChange(val);
     setShowOptions(false);
   };
 
+  /*
   useEffect(() => {
     const validOptions = Children.toArray(children).filter(
       (child) => isValidElement(child) && child.type === Option
     ) as ReactElement<OptionProps>[];
 
     setOptions(validOptions);
-  }, [children]);
+  }, [children]);*/
 
   return (
     <div className={styles.wrapper} style={style} ref={wrapperRef}>

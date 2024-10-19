@@ -38,6 +38,7 @@ const ColorVariantPicker = ({
               slotProps={{
                 label: { className: styles["radio-label"] },
               }}
+              spacing={1}
               size="large"
             ></Radio>
           </ListItem>

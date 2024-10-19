@@ -1,12 +1,17 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { TextInput } from "../TextInput/TextInput";
+import { TextInput, TextInputProps } from "../TextInput/TextInput";
 
-type PhoneInputProps = {
+interface PhoneInputProps extends Omit<TextInputProps, "onChange"> {
   value?: string;
   onChange?: (v: string) => void;
-};
+}
 
-export const Phone = ({ value, onChange }: PhoneInputProps) => {
+export const Phone = ({
+  value,
+  onChange,
+  placeholder = "(XXX) XXX-XXXX",
+  ...rest
+}: PhoneInputProps) => {
   const [displayValue, setDisplayValue] = useState<string>("");
   const [internalValue, setInternalValue] = useState<string>("");
   //const [countryValue, setCountryValue] = useState();
@@ -36,9 +41,10 @@ export const Phone = ({ value, onChange }: PhoneInputProps) => {
 
   return (
     <TextInput
-      placeholder="(555) 555-5555"
+      placeholder={placeholder}
       value={displayValue}
       onChange={handlePhoneChange}
+      {...rest}
     ></TextInput>
   );
 };

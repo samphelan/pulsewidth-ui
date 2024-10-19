@@ -1,10 +1,9 @@
 :root {
-    
-
     /*Color Variables*/
     --pulsewidth-color-white: rgb(255,255,255);
     --pulsewidth-color-black: rgb(0,0,0);
 
+    /* Gray */
     --pulsewidth-color-gray-0: rgb(250,250,250);
     --pulsewidth-color-gray-1: rgb(230,230,230);
     --pulsewidth-color-gray-2: rgb(210,210,210);
@@ -15,7 +14,7 @@
     --pulsewidth-color-gray-7: rgb(75,75,75);
     --pulsewidth-color-gray-8: rgb(50,50,50);
     --pulsewidth-color-gray-9: rgb(25,25,25);
-
+    /* Blue */  
     --pulsewidth-color-blue-0: hsl(224, 100%, 90%);
     --pulsewidth-color-blue-1: hsl(225, 95%, 82%);
     --pulsewidth-color-blue-2: hsl(225, 90%, 74%);
@@ -26,7 +25,7 @@
     --pulsewidth-color-blue-7: hsl(225, 90%, 34%);
     --pulsewidth-color-blue-8: hsl(225, 95%, 26%);
     --pulsewidth-color-blue-9: hsl(225, 100%, 18%);
-
+    /* Green */  
     --pulsewidth-color-green-0: hsl(110, 100%, 90%);
     --pulsewidth-color-green-1: hsl(110, 95%, 85%);
     --pulsewidth-color-green-2: hsl(110, 90%, 80%);
@@ -37,7 +36,7 @@
     --pulsewidth-color-green-7: hsl(110, 90%, 25%);
     --pulsewidth-color-green-8: hsl(110, 98%, 19%);
     --pulsewidth-color-green-9: hsl(110, 100%, 12%);
-
+    /* Red */  
     --pulsewidth-color-red-0: hsl(0, 100%, 90%);
     --pulsewidth-color-red-1: hsl(0, 95%, 85%);
     --pulsewidth-color-red-2: hsl(0, 90%, 80%);
@@ -48,7 +47,7 @@
     --pulsewidth-color-red-7: hsl(0, 90%, 40%);
     --pulsewidth-color-red-8: hsl(0, 98%, 35%);
     --pulsewidth-color-red-9: hsl(0, 100%, 30%);
-
+    /* Orange */  
     --pulsewidth-color-orange-0: hsl(30, 100%, 90%);
     --pulsewidth-color-orange-1: hsl(30, 95%, 85%);
     --pulsewidth-color-orange-2: hsl(30, 90%, 80%);
@@ -60,31 +59,60 @@
     --pulsewidth-color-orange-8: hsl(30, 98%, 35%);
     --pulsewidth-color-orange-9: hsl(30, 100%, 30%);
 
+    /* Plain - Light Mode */
     --pulsewidth-color-plain: transparent;
-    --pulsewidth-color-plain-hover: var(--pulsewidth-color-gray-0);
-    --pulsewidth-color-plain-active: var(--pulsewidth-color-gray-1);
+    --pulsewidth-color-plain-hover: var(--pulsewidth-color-gray-1);
+    --pulsewidth-color-plain-active: var(--pulsewidth-color-gray-2);
     --pulsewidth-color-plain-text: var(--pulsewidth-color-gray-8);
+    /* Plain - Dark Mode */
+    --pulsewidth-color-plain-dark: transparent;
+    --pulsewidth-color-plain-dark-hover: var(--pulsewidth-color-gray-8);
+    --pulsewidth-color-plain-dark-active: var(--pulsewidth-color-gray-7);
+    --pulsewidth-color-plain-dark-text: var(--pulsewidth-color-gray-1);
 
+    /* Outline - Light Mode */
     --pulsewidth-color-outline-hover: var(--pulsewidth-color-gray-0);
     --pulsewidth-color-outline-active: var(--pulsewidth-color-gray-1);
     --pulsewidth-color-outline-border: var(--pulsewidth-color-gray-2);
     --pulsewidth-color-outline-border-hover: var(--pulsewidth-color-gray-3);
     --pulsewidth-color-outline-border-active: var(--pulsewidth-color-gray-4);
     --pulsewidth-color-outline-text: var(--pulsewidth-color-gray-8);
+    /* Outline - Dark Mode */
+    --pulsewidth-color-outline-dark-hover: var(--pulsewidth-color-gray-8);
+    --pulsewidth-color-outline-dark-active: var(--pulsewidth-color-gray-7);
+    --pulsewidth-color-outline-dark-border: var(--pulsewidth-color-gray-4);
+    --pulsewidth-color-outline-dark-border-hover: var(--pulsewidth-color-gray-3);
+    --pulsewidth-color-outline-dark-border-active: var(--pulsewidth-color-gray-2);
+    --pulsewidth-color-outline-dark-text: var(--pulsewidth-color-gray-1);
 
+    /* Soft - Light Mode */
     --pulsewidth-color-soft: var(--pulsewidth-color-gray-1);
     --pulsewidth-color-soft-hover: var(--pulsewidth-color-gray-2);
     --pulsewidth-color-soft-active: var(--pulsewidth-color-gray-3);
     --pulsewidth-color-soft-text: var(--pulsewidth-color-gray-9);
+    /* Soft - Dark Mode */
+    --pulsewidth-color-soft-dark: var(--pulsewidth-color-gray-7);
+    --pulsewidth-color-soft-dark-hover: var(--pulsewidth-color-gray-6);
+    --pulsewidth-color-soft-dark-active: var(--pulsewidth-color-gray-5);
+    --pulsewidth-color-soft-dark-text: var(--pulsewidth-color-gray-1);
+    --pulsewidth-color-soft-dark-placeholder-text: var(--pulsewidth-color-gray-3);
 
+    /* Solid - Light Mode */
     --pulsewidth-color-solid: var(--pulsewidth-color-gray-7);
     --pulsewidth-color-solid-hover: var(--pulsewidth-color-gray-8);
     --pulsewidth-color-solid-active: var(--pulsewidth-color-gray-9);
-    --pulsewidth-color-solid-text: var(--pulsewidth-color-white);
-    --pulsewidth-color-light-background: white;
-    --pulsewidth-color-dark-background: #242424;;
+    --pulsewidth-color-solid-text: var(--pulsewidth-color-gray-0);
+    /* Solid - Dark Mode */
+    --pulsewidth-color-solid-dark: var(--pulsewidth-color-gray-0);
+    --pulsewidth-color-solid-dark-hover: var(--pulsewidth-color-gray-2);
+    --pulsewidth-color-solid-dark-active: var(--pulsewidth-color-gray-3);
+    --pulsewidth-color-solid-dark-text: var(--pulsewidth-color-gray-8);
 
-    /* Spacing Variables */
+    /* Background Colors */
+    --pulsewidth-color-light-background: white;
+    --pulsewidth-color-dark-background: rgb(36, 36, 36);;
+
+    /* Radius Variables */
     --pulsewidth-radius-0: 0px;
     --pulsewidth-radius-1: 2px;
     --pulsewidth-radius-2: 4px;
@@ -95,7 +123,7 @@
     --pulsewidth-radius-7: 20px;
     --pulsewidth-radius-8: 25px;
     --pulsewidth-radius-9: 30px;
-
+    /* Spacing Variables */
     --pulsewidth-spacing-0: 2px;
     --pulsewidth-spacing-1: 4px;
     --pulsewidth-spacing-2: 6px;
@@ -106,13 +134,6 @@
     --pulsewidth-spacing-7: 30px;
     --pulsewidth-spacing-8: 40px;
     --pulsewidth-spacing-9: 50px;
-
-    --primary-plain: rgb(250, 250, 250);
-    --primary-plain-hover: rgb(from var(--primary-plain) calc(r - 30) calc(g - 30) calc(b - 30));
-    --primary-soft: rgb(230, 230, 230);
-    --primary-soft-hover: rgb(from var(--primary-soft) calc(r - 30) calc(g - 30) calc(b - 30));
-    --primary-solid: rgb(55,55,55);
-    --primary-solid-hover: rgb(from var(--primary-solid) calc(r - 30) calc(g - 30) calc(b - 30));
 
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -129,99 +150,207 @@
   }
 
   [data-color="red"] {
-    --pulsewidth-color-plain: transparent;
-    --pulsewidth-color-plain-hover: var(--pulsewidth-color-red-0);
-    --pulsewidth-color-plain-active: var(--pulsewidth-color-red-1);
-    --pulsewidth-color-plain-text: var(--pulsewidth-color-red-8);
-
-    --pulsewidth-color-outline-hover: var(--pulsewidth-color-red-0);
-    --pulsewidth-color-outline-active: var(--pulsewidth-color-red-1);
-    --pulsewidth-color-outline-border: var(--pulsewidth-color-red-1);
-    --pulsewidth-color-outline-border-hover: var(--pulsewidth-color-red-2);
-    --pulsewidth-color-outline-border-active: var(--pulsewidth-color-red-3);
-    --pulsewidth-color-outline-text: var(--pulsewidth-color-red-8);
-
-    --pulsewidth-color-soft: var(--pulsewidth-color-red-0);
-    --pulsewidth-color-soft-hover: var(--pulsewidth-color-red-1);
-    --pulsewidth-color-soft-active: var(--pulsewidth-color-red-2);
-    --pulsewidth-color-soft-text: var(--pulsewidth-color-red-9);
-
-    --pulsewidth-color-solid: var(--pulsewidth-color-red-7);
-    --pulsewidth-color-solid-hover: var(--pulsewidth-color-red-8);
-    --pulsewidth-color-solid-active: var(--pulsewidth-color-red-9);
-    --pulsewidth-color-solid-text: var(--pulsewidth-color-white);
+     /* Plain - Light Mode */
+     --pulsewidth-color-plain: transparent;
+     --pulsewidth-color-plain-hover: var(--pulsewidth-color-red-1);
+     --pulsewidth-color-plain-active: var(--pulsewidth-color-red-2);
+     --pulsewidth-color-plain-text: var(--pulsewidth-color-red-8);
+     /* Plain - Dark Mode */
+     --pulsewidth-color-plain-dark: transparent;
+     --pulsewidth-color-plain-dark-hover: var(--pulsewidth-color-red-8);
+     --pulsewidth-color-plain-dark-active: var(--pulsewidth-color-red-7);
+     --pulsewidth-color-plain-dark-text: var(--pulsewidth-color-red-1);
+ 
+     /* Outline - Light Mode */
+     --pulsewidth-color-outline-hover: var(--pulsewidth-color-red-0);
+     --pulsewidth-color-outline-active: var(--pulsewidth-color-red-1);
+     --pulsewidth-color-outline-border: var(--pulsewidth-color-red-2);
+     --pulsewidth-color-outline-border-hover: var(--pulsewidth-color-red-3);
+     --pulsewidth-color-outline-border-active: var(--pulsewidth-color-red-4);
+     --pulsewidth-color-outline-text: var(--pulsewidth-color-red-8);
+     /* Outline - Dark Mode */
+     --pulsewidth-color-outline-dark-hover: var(--pulsewidth-color-red-8);
+     --pulsewidth-color-outline-dark-active: var(--pulsewidth-color-red-7);
+     --pulsewidth-color-outline-dark-border: var(--pulsewidth-color-red-4);
+     --pulsewidth-color-outline-dark-border-hover: var(--pulsewidth-color-red-3);
+     --pulsewidth-color-outline-dark-border-active: var(--pulsewidth-color-red-2);
+     --pulsewidth-color-outline-dark-text: var(--pulsewidth-color-red-1);
+ 
+     /* Soft - Light Mode */
+     --pulsewidth-color-soft: var(--pulsewidth-color-red-1);
+     --pulsewidth-color-soft-hover: var(--pulsewidth-color-red-2);
+     --pulsewidth-color-soft-active: var(--pulsewidth-color-red-3);
+     --pulsewidth-color-soft-text: var(--pulsewidth-color-red-9);
+     /* Soft - Dark Mode */
+     --pulsewidth-color-soft-dark: var(--pulsewidth-color-red-7);
+     --pulsewidth-color-soft-dark-hover: var(--pulsewidth-color-red-6);
+     --pulsewidth-color-soft-dark-active: var(--pulsewidth-color-red-5);
+     --pulsewidth-color-soft-dark-text: var(--pulsewidth-color-red-1);
+     --pulsewidth-color-soft-dark-placeholder-text: var(--pulsewidth-color-red-3);
+ 
+     /* Solid - Light Mode */
+     --pulsewidth-color-solid: var(--pulsewidth-color-red-7);
+     --pulsewidth-color-solid-hover: var(--pulsewidth-color-red-8);
+     --pulsewidth-color-solid-active: var(--pulsewidth-color-red-9);
+     --pulsewidth-color-solid-text: var(--pulsewidth-color-red-0);
+     /* Solid - Dark Mode */
+     --pulsewidth-color-solid-dark: var(--pulsewidth-color-red-0);
+     --pulsewidth-color-solid-dark-hover: var(--pulsewidth-color-red-2);
+     --pulsewidth-color-solid-dark-active: var(--pulsewidth-color-red-3);
+     --pulsewidth-color-solid-dark-text: var(--pulsewidth-color-red-8);
   }
 
   [data-color="blue"] {
+    /* Plain - Light Mode */
     --pulsewidth-color-plain: transparent;
-    --pulsewidth-color-plain-hover: var(--pulsewidth-color-blue-0);
-    --pulsewidth-color-plain-active: var(--pulsewidth-color-blue-1);
+    --pulsewidth-color-plain-hover: var(--pulsewidth-color-blue-1);
+    --pulsewidth-color-plain-active: var(--pulsewidth-color-blue-2);
     --pulsewidth-color-plain-text: var(--pulsewidth-color-blue-8);
-
+    /* Plain - Dark Mode */
+    --pulsewidth-color-plain-dark: transparent;
+    --pulsewidth-color-plain-dark-hover: var(--pulsewidth-color-blue-8);
+    --pulsewidth-color-plain-dark-active: var(--pulsewidth-color-blue-7);
+    --pulsewidth-color-plain-dark-text: var(--pulsewidth-color-blue-1);
+  
+    /* Outline - Light Mode */
     --pulsewidth-color-outline-hover: var(--pulsewidth-color-blue-0);
     --pulsewidth-color-outline-active: var(--pulsewidth-color-blue-1);
-    --pulsewidth-color-outline-border: var(--pulsewidth-color-blue-1);
-    --pulsewidth-color-outline-border-hover: var(--pulsewidth-color-blue-2);
-    --pulsewidth-color-outline-border-active: var(--pulsewidth-color-blue-3);
+    --pulsewidth-color-outline-border: var(--pulsewidth-color-blue-2);
+    --pulsewidth-color-outline-border-hover: var(--pulsewidth-color-blue-3);
+    --pulsewidth-color-outline-border-active: var(--pulsewidth-color-blue-4);
     --pulsewidth-color-outline-text: var(--pulsewidth-color-blue-8);
-
-    --pulsewidth-color-soft: var(--pulsewidth-color-blue-0);
-    --pulsewidth-color-soft-hover: var(--pulsewidth-color-blue-1);
-    --pulsewidth-color-soft-active: var(--pulsewidth-color-blue-2);
+    /* Outline - Dark Mode */
+    --pulsewidth-color-outline-dark-hover: var(--pulsewidth-color-blue-8);
+    --pulsewidth-color-outline-dark-active: var(--pulsewidth-color-blue-7);
+    --pulsewidth-color-outline-dark-border: var(--pulsewidth-color-blue-4);
+    --pulsewidth-color-outline-dark-border-hover: var(--pulsewidth-color-blue-3);
+    --pulsewidth-color-outline-dark-border-active: var(--pulsewidth-color-blue-2);
+    --pulsewidth-color-outline-dark-text: var(--pulsewidth-color-blue-1);
+  
+    /* Soft - Light Mode */
+    --pulsewidth-color-soft: var(--pulsewidth-color-blue-1);
+    --pulsewidth-color-soft-hover: var(--pulsewidth-color-blue-2);
+    --pulsewidth-color-soft-active: var(--pulsewidth-color-blue-3);
     --pulsewidth-color-soft-text: var(--pulsewidth-color-blue-9);
-
+    /* Soft - Dark Mode */
+    --pulsewidth-color-soft-dark: var(--pulsewidth-color-blue-7);
+    --pulsewidth-color-soft-dark-hover: var(--pulsewidth-color-blue-6);
+    --pulsewidth-color-soft-dark-active: var(--pulsewidth-color-blue-5);
+    --pulsewidth-color-soft-dark-text: var(--pulsewidth-color-blue-1);
+    --pulsewidth-color-soft-dark-placeholder-text: var(--pulsewidth-color-blue-3);
+  
+    /* Solid - Light Mode */
     --pulsewidth-color-solid: var(--pulsewidth-color-blue-7);
     --pulsewidth-color-solid-hover: var(--pulsewidth-color-blue-8);
     --pulsewidth-color-solid-active: var(--pulsewidth-color-blue-9);
-    --pulsewidth-color-solid-text: var(--pulsewidth-color-white);
-  }
+    --pulsewidth-color-solid-text: var(--pulsewidth-color-blue-0);
+    /* Solid - Dark Mode */
+    --pulsewidth-color-solid-dark: var(--pulsewidth-color-blue-0);
+    --pulsewidth-color-solid-dark-hover: var(--pulsewidth-color-blue-2);
+    --pulsewidth-color-solid-dark-active: var(--pulsewidth-color-blue-3);
+    --pulsewidth-color-solid-dark-text: var(--pulsewidth-color-blue-8);
+}
 
   [data-color="green"] {
-    --pulsewidth-color-plain: transparent;
-    --pulsewidth-color-plain-hover: var(--pulsewidth-color-green-1);
-    --pulsewidth-color-plain-active: var(--pulsewidth-color-green-2);
-    --pulsewidth-color-plain-text: var(--pulsewidth-color-green-8);
-
-    --pulsewidth-color-outline-hover: var(--pulsewidth-color-green-1);
-    --pulsewidth-color-outline-active: var(--pulsewidth-color-green-2);
-    --pulsewidth-color-outline-border: var(--pulsewidth-color-green-2);
-    --pulsewidth-color-outline-border-hover: var(--pulsewidth-color-green-3);
-    --pulsewidth-color-outline-border-active: var(--pulsewidth-color-green-4);
-    --pulsewidth-color-outline-text: var(--pulsewidth-color-green-8);
-
-    --pulsewidth-color-soft: var(--pulsewidth-color-green-1);
-    --pulsewidth-color-soft-hover: var(--pulsewidth-color-green-2);
-    --pulsewidth-color-soft-active: var(--pulsewidth-color-green-3);
-    --pulsewidth-color-soft-text: var(--pulsewidth-color-green-9);
-
-    --pulsewidth-color-solid: var(--pulsewidth-color-green-7);
-    --pulsewidth-color-solid-hover: var(--pulsewidth-color-green-8);
-    --pulsewidth-color-solid-active: var(--pulsewidth-color-green-9);
-    --pulsewidth-color-solid-text: var(--pulsewidth-color-white);
+      /* Plain - Light Mode */
+      --pulsewidth-color-plain: transparent;
+      --pulsewidth-color-plain-hover: var(--pulsewidth-color-green-1);
+      --pulsewidth-color-plain-active: var(--pulsewidth-color-green-2);
+      --pulsewidth-color-plain-text: var(--pulsewidth-color-green-8);
+      /* Plain - Dark Mode */
+      --pulsewidth-color-plain-dark: transparent;
+      --pulsewidth-color-plain-dark-hover: var(--pulsewidth-color-green-8);
+      --pulsewidth-color-plain-dark-active: var(--pulsewidth-color-green-7);
+      --pulsewidth-color-plain-dark-text: var(--pulsewidth-color-green-1);
+  
+      /* Outline - Light Mode */
+      --pulsewidth-color-outline-hover: var(--pulsewidth-color-green-0);
+      --pulsewidth-color-outline-active: var(--pulsewidth-color-green-1);
+      --pulsewidth-color-outline-border: var(--pulsewidth-color-green-2);
+      --pulsewidth-color-outline-border-hover: var(--pulsewidth-color-green-3);
+      --pulsewidth-color-outline-border-active: var(--pulsewidth-color-green-4);
+      --pulsewidth-color-outline-text: var(--pulsewidth-color-green-8);
+      /* Outline - Dark Mode */
+      --pulsewidth-color-outline-dark-hover: var(--pulsewidth-color-green-8);
+      --pulsewidth-color-outline-dark-active: var(--pulsewidth-color-green-7);
+      --pulsewidth-color-outline-dark-border: var(--pulsewidth-color-green-4);
+      --pulsewidth-color-outline-dark-border-hover: var(--pulsewidth-color-green-3);
+      --pulsewidth-color-outline-dark-border-active: var(--pulsewidth-color-green-2);
+      --pulsewidth-color-outline-dark-text: var(--pulsewidth-color-green-1);
+  
+      /* Soft - Light Mode */
+      --pulsewidth-color-soft: var(--pulsewidth-color-green-1);
+      --pulsewidth-color-soft-hover: var(--pulsewidth-color-green-2);
+      --pulsewidth-color-soft-active: var(--pulsewidth-color-green-3);
+      --pulsewidth-color-soft-text: var(--pulsewidth-color-green-9);
+      /* Soft - Dark Mode */
+      --pulsewidth-color-soft-dark: var(--pulsewidth-color-green-7);
+      --pulsewidth-color-soft-dark-hover: var(--pulsewidth-color-green-6);
+      --pulsewidth-color-soft-dark-active: var(--pulsewidth-color-green-5);
+      --pulsewidth-color-soft-dark-text: var(--pulsewidth-color-green-1);
+      --pulsewidth-color-soft-dark-placeholder-text: var(--pulsewidth-color-green-3);
+  
+      /* Solid - Light Mode */
+      --pulsewidth-color-solid: var(--pulsewidth-color-green-7);
+      --pulsewidth-color-solid-hover: var(--pulsewidth-color-green-8);
+      --pulsewidth-color-solid-active: var(--pulsewidth-color-green-9);
+      --pulsewidth-color-solid-text: var(--pulsewidth-color-green-0);
+      /* Solid - Dark Mode */
+      --pulsewidth-color-solid-dark: var(--pulsewidth-color-green-0);
+      --pulsewidth-color-solid-dark-hover: var(--pulsewidth-color-green-2);
+      --pulsewidth-color-solid-dark-active: var(--pulsewidth-color-green-3);
+      --pulsewidth-color-solid-dark-text: var(--pulsewidth-color-green-8);
   }
 
   [data-color="orange"] {
-    --pulsewidth-color-plain: transparent;
-    --pulsewidth-color-plain-hover: var(--pulsewidth-color-orange-0);
-    --pulsewidth-color-plain-active: var(--pulsewidth-color-orange-1);
-    --pulsewidth-color-plain-text: var(--pulsewidth-color-orange-8);
-
-    --pulsewidth-color-outline-hover: var(--pulsewidth-color-orange-0);
-    --pulsewidth-color-outline-active: var(--pulsewidth-color-orange-1);
-    --pulsewidth-color-outline-border: var(--pulsewidth-color-orange-1);
-    --pulsewidth-color-outline-border-hover: var(--pulsewidth-color-orange-2);
-    --pulsewidth-color-outline-border-active: var(--pulsewidth-color-orange-3);
-    --pulsewidth-color-outline-text: var(--pulsewidth-color-orange-8);
-
-    --pulsewidth-color-soft: var(--pulsewidth-color-orange-0);
-    --pulsewidth-color-soft-hover: var(--pulsewidth-color-orange-1);
-    --pulsewidth-color-soft-active: var(--pulsewidth-color-orange-2);
-    --pulsewidth-color-soft-text: var(--pulsewidth-color-orange-9);
-
-    --pulsewidth-color-solid: var(--pulsewidth-color-orange-7);
-    --pulsewidth-color-solid-hover: var(--pulsewidth-color-orange-8);
-    --pulsewidth-color-solid-active: var(--pulsewidth-color-orange-9);
-    --pulsewidth-color-solid-text: var(--pulsewidth-color-white);
+      /* Plain - Light Mode */
+      --pulsewidth-color-plain: transparent;
+      --pulsewidth-color-plain-hover: var(--pulsewidth-color-orange-1);
+      --pulsewidth-color-plain-active: var(--pulsewidth-color-orange-2);
+      --pulsewidth-color-plain-text: var(--pulsewidth-color-orange-8);
+      /* Plain - Dark Mode */
+      --pulsewidth-color-plain-dark: transparent;
+      --pulsewidth-color-plain-dark-hover: var(--pulsewidth-color-orange-8);
+      --pulsewidth-color-plain-dark-active: var(--pulsewidth-color-orange-7);
+      --pulsewidth-color-plain-dark-text: var(--pulsewidth-color-orange-1);
+  
+      /* Outline - Light Mode */
+      --pulsewidth-color-outline-hover: var(--pulsewidth-color-orange-0);
+      --pulsewidth-color-outline-active: var(--pulsewidth-color-orange-1);
+      --pulsewidth-color-outline-border: var(--pulsewidth-color-orange-2);
+      --pulsewidth-color-outline-border-hover: var(--pulsewidth-color-orange-3);
+      --pulsewidth-color-outline-border-active: var(--pulsewidth-color-orange-4);
+      --pulsewidth-color-outline-text: var(--pulsewidth-color-orange-8);
+      /* Outline - Dark Mode */
+      --pulsewidth-color-outline-dark-hover: var(--pulsewidth-color-orange-8);
+      --pulsewidth-color-outline-dark-active: var(--pulsewidth-color-orange-7);
+      --pulsewidth-color-outline-dark-border: var(--pulsewidth-color-orange-4);
+      --pulsewidth-color-outline-dark-border-hover: var(--pulsewidth-color-orange-3);
+      --pulsewidth-color-outline-dark-border-active: var(--pulsewidth-color-orange-2);
+      --pulsewidth-color-outline-dark-text: var(--pulsewidth-color-orange-1);
+  
+      /* Soft - Light Mode */
+      --pulsewidth-color-soft: var(--pulsewidth-color-orange-1);
+      --pulsewidth-color-soft-hover: var(--pulsewidth-color-orange-2);
+      --pulsewidth-color-soft-active: var(--pulsewidth-color-orange-3);
+      --pulsewidth-color-soft-text: var(--pulsewidth-color-orange-9);
+      /* Soft - Dark Mode */
+      --pulsewidth-color-soft-dark: var(--pulsewidth-color-orange-7);
+      --pulsewidth-color-soft-dark-hover: var(--pulsewidth-color-orange-6);
+      --pulsewidth-color-soft-dark-active: var(--pulsewidth-color-orange-5);
+      --pulsewidth-color-soft-dark-text: var(--pulsewidth-color-orange-1);
+      --pulsewidth-color-soft-dark-placeholder-text: var(--pulsewidth-color-orange-3);
+  
+      /* Solid - Light Mode */
+      --pulsewidth-color-solid: var(--pulsewidth-color-orange-7);
+      --pulsewidth-color-solid-hover: var(--pulsewidth-color-orange-8);
+      --pulsewidth-color-solid-active: var(--pulsewidth-color-orange-9);
+      --pulsewidth-color-solid-text: var(--pulsewidth-color-orange-0);
+      /* Solid - Dark Mode */
+      --pulsewidth-color-solid-dark: var(--pulsewidth-color-orange-0);
+      --pulsewidth-color-solid-dark-hover: var(--pulsewidth-color-orange-2);
+      --pulsewidth-color-solid-dark-active: var(--pulsewidth-color-orange-3);
+      --pulsewidth-color-solid-dark-text: var(--pulsewidth-color-orange-8);
   }
   
   a {

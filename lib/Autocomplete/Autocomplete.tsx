@@ -16,7 +16,7 @@ import { Button } from "../Button/Button";
 import { List } from "../List/List";
 import { ListItem } from "../ListItem/ListItem";
 import { ListItemButton } from "../ListItemButton/ListItemButton";
-import { Colors, Variant } from "../types";
+import { Colors, Radius, Variant } from "../types";
 
 interface AutocompleteProps extends ComponentProps<"input"> {
   value: string;
@@ -29,6 +29,7 @@ interface AutocompleteProps extends ComponentProps<"input"> {
   inputStyles?: CSSProperties;
   listClassName?: string;
   listStyles?: CSSProperties;
+  radius?: Radius;
 }
 
 export const Autocomplete = ({
@@ -42,6 +43,7 @@ export const Autocomplete = ({
   listStyles,
   variant = "outline",
   colorVariant = "gray",
+  radius = 3,
   ...rest
 }: AutocompleteProps) => {
   const choices = suggestions || [];
@@ -123,6 +125,7 @@ export const Autocomplete = ({
         onFocus={handleFocus}
         variant={variant}
         colorVariant={colorVariant}
+        radius={radius}
         {...rest}
       />
       {showSuggestions && (

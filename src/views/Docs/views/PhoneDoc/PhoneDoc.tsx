@@ -1,4 +1,4 @@
-import { Autocomplete, Slider } from "pulsewidth-ui";
+import { Phone, Slider } from "pulsewidth-ui";
 import ComponentBody from "../../components/ComponentBody/ComponentBody";
 import ComponentHeader from "../../components/ComponentHeader/ComponentHeader";
 import ComponentPageLayout from "../../components/ComponentPageLayout/ComponentPageLayout";
@@ -12,7 +12,7 @@ import VariantPicker from "../../components/VariantPicker/VariantPicker";
 import { Colors, Radius, Variant } from "../../../../../lib/types";
 import NavFooter from "../../components/NavFooter/NavFooter";
 
-const AutocompleteDoc = () => {
+const PhoneDoc = () => {
   const [val, setVal] = useState("");
   const [selectedVariant, setSelectedVariant] = useState<Variant>("outline");
   const [selectedColor, setSelectedColor] = useState<Colors>("gray");
@@ -27,24 +27,22 @@ const AutocompleteDoc = () => {
   return (
     <ComponentPageLayout>
       <ComponentHeader
-        name="Autocomplete"
-        description="A text input that displays a list of autocomplete suggestions"
-        github="https://github.com/samphelan/pulsewidth-ui/tree/main/lib/Autocomplete"
+        name="Phone"
+        description="A text input specifically for phone numbers"
+        github="https://github.com/samphelan/pulsewidth-ui/tree/main/lib/Phone"
       ></ComponentHeader>
       <ComponentBody>
         <Sandbox>
           <SandboxDisplay code={code()}>
-            <Autocomplete
-              placeholder="Autocomplete"
+            <Phone
               value={val}
-              onChange={(e) => {
-                setVal(e.currentTarget.value);
+              onChange={(v) => {
+                setVal(v);
               }}
-              suggestions={["Suggestion 1", "Suggestion 2"]}
               variant={selectedVariant}
               colorVariant={selectedColor}
               radius={roundness}
-            ></Autocomplete>
+            ></Phone>
           </SandboxDisplay>
           <SandboxControls>
             <h5>Variant</h5>
@@ -84,4 +82,4 @@ const AutocompleteDoc = () => {
   );
 };
 
-export default AutocompleteDoc;
+export default PhoneDoc;

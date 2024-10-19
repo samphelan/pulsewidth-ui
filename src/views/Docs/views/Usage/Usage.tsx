@@ -31,6 +31,7 @@ export default function ButtonUsage() {
         overridden with the className prop or by using slotProps. Rare
         exceptions should be noted in the component's documentation.
       </p>
+      <br />
       <CodeBlock
         str={`
 import "style.css" from "pulsewidth-ui";

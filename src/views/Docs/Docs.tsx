@@ -23,6 +23,9 @@ import TooltipDoc from "./views/TooltipDoc/TooltipDoc";
 import ListDoc from "./views/ListDoc/ListDoc";
 import Usage from "./views/Usage/Usage";
 import SliderDoc from "./views/SliderDoc/SliderDoc";
+import PasswordDoc from "./views/PasswordDoc/PasswordDoc";
+import PhoneDoc from "./views/PhoneDoc/PhoneDoc";
+import AccordionDoc from "./views/AccordionDoc/AccordionDoc";
 
 const renderPage = (p: string) => {
   switch (p.toLowerCase()) {
@@ -32,12 +35,18 @@ const renderPage = (p: string) => {
       return <Installation></Installation>;
     case "usage":
       return <Usage></Usage>;
+    case "accordion":
+      return <AccordionDoc></AccordionDoc>;
     case "autocomplete":
       return <AutocompleteDoc></AutocompleteDoc>;
     case "textinput":
       return <TextInputDoc></TextInputDoc>;
     case "checkbox":
       return <CheckboxDoc></CheckboxDoc>;
+    case "password":
+      return <PasswordDoc></PasswordDoc>;
+    case "phone":
+      return <PhoneDoc></PhoneDoc>;
     case "radio":
       return <RadioDoc></RadioDoc>;
     case "select":
@@ -72,13 +81,15 @@ const Docs = () => {
             "Autocomplete",
             "TextInput",
             "Checkbox",
+            "Password",
+            "Phone",
             "Radio",
             "Select",
             "Slider",
           ].sort(),
         },
         { title: "Layout", pages: ["Flex"] },
-        { title: "Data Display", pages: ["List", "Tooltip"] },
+        { title: "Data Display", pages: ["Accordion", "List", "Tooltip"] },
       ],
     },
   ];

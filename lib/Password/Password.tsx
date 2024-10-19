@@ -5,20 +5,26 @@ import {
   useRef,
   useState,
 } from "react";
-import { TextInput } from "../TextInput/TextInput";
+import { TextInput, TextInputProps } from "../TextInput/TextInput";
 import { Button } from "../Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import styles from "./password.module.css";
 
-interface PasswordProps {
-  value?: string;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+interface PasswordProps extends TextInputProps {
+  allowVisibility?: boolean;
 }
 
 export const Password = forwardRef(
   (
-    { value, onChange }: PasswordProps,
+    {
+      value,
+      onChange,
+      variant,
+      colorVariant,
+      radius,
+      allowVisibility = true,
+    }: PasswordProps,
     forwardedRef: React.ForwardedRef<HTMLInputElement>
   ) => {
     const [visible, setVisible] = useState(false);
@@ -67,13 +73,20 @@ export const Password = forwardRef(
           value={value || text}
           onChange={handleChange}
           type={visible ? "text" : "password"}
+          variant={variant}
+          colorVariant={colorVariant}
+          radius={radius}
         />
-        <Button
-          onClick={toggleVisibility}
-          className={styles["visibility-button"]}
-        >
-          <FontAwesomeIcon icon={visible ? faEyeSlash : faEye} />
-        </Button>
+        {allowVisibility && (
+          <Button
+            onClick={toggleVisibility}
+            className={styles["visibility-button"]}
+            variant={variant === "solid" ? "solid" : "plain"}
+            radius={radius}
+          >
+            <FontAwesomeIcon icon={visible ? faEyeSlash : faEye} />
+          </Button>
+        )}
       </div>
     );
   }
