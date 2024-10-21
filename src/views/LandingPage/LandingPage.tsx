@@ -1,16 +1,22 @@
-import { Checkbox, Flex, Option, Radio, Select } from "pulsewidth-ui";
+import { Checkbox, Flex, Option, Radio, Select, Variant } from "pulsewidth-ui";
 import styles from "./landingPage.module.css";
 import { Fragment } from "react/jsx-runtime";
 import { useState } from "react";
+import Sandbox, {
+  SandboxControls,
+  SandboxDisplay,
+} from "../../components/Sandbox/Sandbox";
+import VariantPicker from "../../components/VariantPicker/VariantPicker";
 
 const LandingPage = () => {
   const [radioChecked, setRadioChecked] = useState(false);
   const [checkboxChecked, setCheckboxChecked] = useState(false);
   const [selected, setSelected] = useState<string>();
+  const [selectedVariant, setSelectedVariant] = useState<Variant>("outline");
   return (
     <Fragment>
       <Flex direction="row" className={styles.wrapper}>
-        <h2>Playground</h2>
+        <h1>Playground</h1>
         <Radio
           label="Radio"
           checked={radioChecked}
@@ -36,6 +42,27 @@ const LandingPage = () => {
           <Option value="option 1">Option 1</Option>
           <Option value="option 2">Option 2</Option>
         </Select>
+        <Sandbox>
+          <SandboxDisplay>
+            {" "}
+            <Checkbox
+              label="Checkbox"
+              checked={checkboxChecked}
+              onChange={(e) => {
+                setCheckboxChecked(e.currentTarget.checked);
+              }}
+            ></Checkbox>
+          </SandboxDisplay>
+          <SandboxControls>
+            <h5>Variant</h5>
+            <VariantPicker
+              selected={selectedVariant}
+              onChange={(v) => {
+                setSelectedVariant(v);
+              }}
+            ></VariantPicker>
+          </SandboxControls>
+        </Sandbox>
       </Flex>
     </Fragment>
   );

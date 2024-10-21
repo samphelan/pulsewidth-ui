@@ -27,7 +27,7 @@ export const ListItemButton = forwardRef(function ListItemButton<
     children,
     onClick,
     as: Component = "button" as T,
-    variant,
+    variant = "plain",
     className,
     ...rest
   }: ListItemButtonProps<T> & ComponentPropsWithRef<T>,
@@ -39,21 +39,14 @@ export const ListItemButton = forwardRef(function ListItemButton<
     if (onClick) onClick(e);
   };
 
-  const determineVariant = () => {
-    if (variant) return variant;
-    if (listContext.variant === "solid") return "solid";
-    if (listContext.variant === "soft") return "soft";
-    return "plain";
-  };
-
   return (
     <Component
       ref={ref}
       onClick={handleClick}
       className={[
-        f(["button", `list-variant--${listContext.variant || "plain"}`]),
+        f(["button", `list-variant--${listContext.variant}`]),
         className,
-        `variant--${determineVariant()}`,
+        `variant--${listContext.variant}`,
       ].join(" ")}
       {...rest}
     >
