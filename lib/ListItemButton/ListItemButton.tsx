@@ -39,14 +39,19 @@ export const ListItemButton = forwardRef(function ListItemButton<
     if (onClick) onClick(e);
   };
 
+  const getVariant = () => {
+    if (listContext.variant === "solid") return "solid";
+    return "plain";
+  };
+
   return (
     <Component
       ref={ref}
       onClick={handleClick}
       className={[
-        f(["button", `list-variant--${listContext.variant}`]),
+        f(["button", `list-variant--${getVariant()}`]),
         className,
-        `variant--${listContext.variant}`,
+        `variant--${getVariant()}`,
       ].join(" ")}
       {...rest}
     >
