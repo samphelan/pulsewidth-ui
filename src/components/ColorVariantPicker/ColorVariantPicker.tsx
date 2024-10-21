@@ -1,5 +1,5 @@
 import { List, ListItem, Radio, RadioGroup } from "pulsewidth-ui";
-import { Colors } from "../../../../../lib/types";
+import { Colors } from "pulsewidth-ui";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import styles from "./colorVariantPicker.module.css";
 

@@ -3,9 +3,9 @@
 }
 
 .wrapper {
+    display: inline-flex;
     position: relative;
     min-width: fit-content;
-    flex: 1;
 }
 
 .select-button {

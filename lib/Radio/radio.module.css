@@ -53,19 +53,18 @@
     font-size: 0.8em;
 }
 
-
 /*Dark Mode*/
 .radio-button:hover .variant--plain.radio-button__circle {
-    background-color: var(--pulsewidth-color-solid-hover)
+    background-color: var(--pulsewidth-color-plain-dark-hover)
 }
 .radio-button:hover .variant--outline.radio-button__circle {
-    background-color: var(--pulsewidth-color-solid-hover)
+    background-color: var(--pulsewidth-color-outline-dark-hover)
 }
 .radio-button:hover .variant--soft.radio-button__circle {
-    background-color: var(--pulsewidth-color-solid-hover)
+    background-color: var(--pulsewidth-color-soft-dark-hover)
 }
 .radio-button:hover .variant--solid.radio-button__circle {
-    background-color: var(--pulsewidth-color-soft-hover)
+    background-color: var(--pulsewidth-color-solid-dark-hover)
 }
 
 .radio-button__inner-circle {

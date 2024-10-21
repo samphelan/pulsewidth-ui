@@ -49,6 +49,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
       labelPos = "right",
       spacing = 3,
       slotProps,
+      className,
       ...rest
     }: RadioButtonProps,
     ref: ForwardedRef<HTMLInputElement>
@@ -72,7 +73,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
         className={[
           styles["radio-button"],
           styles[sizeClass],
-
+          className,
           styles[`labelPos--${labelPos}`],
           ...(slotProps?.root?.className ? [slotProps.root.className] : []),
         ].join(" ")}

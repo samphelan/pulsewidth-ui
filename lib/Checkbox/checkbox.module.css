@@ -53,3 +53,32 @@
 .checkbox--circle {
     border-radius: 50%;
 }
+
+.checkbox-wrapper:hover .variant--plain {
+    background-color: var(--pulsewidth-color-plain-dark-hover);
+}
+.checkbox-wrapper:hover .variant--outline {
+    background-color: var(--pulsewidth-color-outline-dark-hover);
+    border-color: var(--pulsewidth-color-outline-dark-border-hover);
+}
+.checkbox-wrapper:hover .variant--soft {
+    background-color: var(--pulsewidth-color-soft-dark-hover);
+}
+.checkbox-wrapper:hover .variant--solid {
+    background-color: var(--pulsewidth-color-solid-dark-hover);
+}
+
+@media (prefers-color-scheme: light) {
+    .checkbox-wrapper:hover .variant--plain {
+        background-color: var(--pulsewidth-color-plain-hover);
+    }
+    .checkbox-wrapper:hover .variant--outline {
+        background-color: var(--pulsewidth-color-outline-hover);
+    }
+    .checkbox-wrapper:hover .variant--soft {
+        background-color: var(--pulsewidth-color-soft-hover);
+    }
+    .checkbox-wrapper:hover .variant--solid {
+        background-color: var(--pulsewidth-color-solid-hover);
+    }
+  }

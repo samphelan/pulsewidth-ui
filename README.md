@@ -14,9 +14,9 @@ A lightweight and customizable React UI component library built with styled-comp
 
 ## **Documentation**
 
-To view a more in-depth usage and installation guide, visit https://pulsewidthlabs.com/pulsewidth-ui
+To view a more in-depth usage and installation guide, visit https://pulsewidthlabs.com/
 
-API available at https://pulsewidthlabs.com/pulsewidth-ui/docs
+API available at https://pulsewidthlabs.com/docs
 
 ---
 

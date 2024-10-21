@@ -17,9 +17,10 @@ import { Select, Option } from './Select/Select'
 import { Slider } from './Slider/Slider'
 import { TextInput } from './TextInput/TextInput'
 import { Tooltip } from './Tooltip/Tooltip'
+import { Colors, Variant, Position, Radius } from './types'
 import './styles/index.css'
 import './styles/variants.css'
 import './styles/utilities.css'
 
-
+export type { Colors, Variant, Position, Radius };
 export { Accordion, AccordionHeader, AccordionContent, Autocomplete, Avatar, Button, Checkbox, Flex, List, ListItem, ListItemButton, Option, Password, Phone, Radio, RadioGroup, Select, Slider, TextInput, Tooltip }

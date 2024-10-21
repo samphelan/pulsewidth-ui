@@ -51,6 +51,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       sizeClass,
       disabledClass,
       shapeClass,
+      variantClass,
     ]
       .filter((name) => name !== "")
       .map((name) => styles[name]);
@@ -102,6 +103,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         className={[
           styles["checkbox-wrapper"],
           disabled && styles["checkbox--disabled"],
+          className,
         ].join(" ")}
       >
         <input
@@ -118,7 +120,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           {...rest}
         />
         <span
-          className={[...classes, variantClass, className].join(" ")}
+          className={[...classes, variantClass].join(" ")}
           data-color={colorVariant}
         >
           {renderIcon()}

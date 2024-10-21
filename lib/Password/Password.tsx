@@ -24,6 +24,7 @@ export const Password = forwardRef(
       colorVariant,
       radius,
       allowVisibility = true,
+      ...rest
     }: PasswordProps,
     forwardedRef: React.ForwardedRef<HTMLInputElement>
   ) => {
@@ -76,6 +77,7 @@ export const Password = forwardRef(
           variant={variant}
           colorVariant={colorVariant}
           radius={radius}
+          {...rest}
         />
         {allowVisibility && (
           <Button

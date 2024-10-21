@@ -1,5 +1,5 @@
 import { List, ListItem, Radio, RadioGroup } from "pulsewidth-ui";
-import { Variant } from "../../../../../lib/types";
+import { Variant } from "pulsewidth-ui";
 
 type VariantPickerProps = {
   selected: Variant;

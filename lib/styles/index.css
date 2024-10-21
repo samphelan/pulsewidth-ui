@@ -59,6 +59,7 @@
     --pulsewidth-color-orange-8: hsl(30, 98%, 35%);
     --pulsewidth-color-orange-9: hsl(30, 100%, 30%);
 
+    /* Variant Definitions */
     /* Plain - Light Mode */
     --pulsewidth-color-plain: transparent;
     --pulsewidth-color-plain-hover: var(--pulsewidth-color-gray-1);
@@ -108,9 +109,11 @@
     --pulsewidth-color-solid-dark-active: var(--pulsewidth-color-gray-3);
     --pulsewidth-color-solid-dark-text: var(--pulsewidth-color-gray-8);
 
-    /* Background Colors */
+    /* Background & Text Colors */
     --pulsewidth-color-light-background: white;
     --pulsewidth-color-dark-background: rgb(36, 36, 36);;
+    --pulsewidth-color-text-light: #213547;
+    --pulsewidth-color-text-dark: rgba(255, 255, 255, 0.87);
 
     /* Radius Variables */
     --pulsewidth-radius-0: 0px;
@@ -140,7 +143,7 @@
     font-weight: 400;
   
     color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
+    color: var(--pulsewidth-color-text-dark);
     background-color: var(--pulsewidth-color-dark-background);
   
     font-synthesis: none;
@@ -354,7 +357,7 @@
   }
   
   a {
-    font-weight: 500;
+    font-weight: inherit;
     color: inherit;
     text-decoration: inherit;
   }
@@ -367,8 +370,8 @@
   
   @media (prefers-color-scheme: light) {
     :root {
-      color: #213547;
-      background-color: #ffffff;
+      color: var(--pulsewidth-color-text-light);
+      background-color: var(--pulsewidth-color-light-background);
     }
   }
   

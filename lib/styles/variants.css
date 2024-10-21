@@ -18,12 +18,12 @@
 }
 .variant--outline, .static-variant--outline {
     background-color: transparent;
-    border: 1px solid var(--pulsewidth-color-outline-dark);
-    color: var(--pulsewidth-color-outline-text);
+    border: 1px solid var(--pulsewidth-color-outline-dark-border);
+    color: var(--pulsewidth-color-outline-dark-text);
 }
 .variant--outline.opaque, .static-variant--outline.opaque {
   background-color: var(--pulsewidth-color-dark-background);
-  border: 1px solid var(--pulsewidth-color-outline-dark);
+  border: 1px solid var(--pulsewidth-color-outline-dark-border);
 }
 .variant--outline:hover {
     background-color: var(--pulsewidth-color-outline-dark-hover);

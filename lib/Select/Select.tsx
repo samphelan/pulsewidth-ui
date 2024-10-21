@@ -50,7 +50,7 @@ export const Select = ({
   style,
   colorVariant,
   radius = 3,
-  variant,
+  variant = "outline",
   selected,
   onChange,
 }: SelectProps) => {

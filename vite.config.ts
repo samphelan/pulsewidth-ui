@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import {resolve} from 'path'
 import react from '@vitejs/plugin-react'
 import tsconfigPaths from 'vite-tsconfig-paths'
@@ -7,6 +7,11 @@ import dts from 'vite-plugin-dts'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tsconfigPaths(), dts({ rollupTypes: true, tsconfigPath: './tsconfig.app.json' })],
+  test: {
+    //globals: true,
+    environment: "jsdom",
+    // ...
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'lib/main.ts'),
