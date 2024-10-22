@@ -1,5 +1,6 @@
 import {
   Autocomplete,
+  Button,
   Checkbox,
   Flex,
   Option,
@@ -58,6 +59,13 @@ const LandingPage = () => {
           }}
           suggestions={["suggestion 1", "suggestion 2", "suggestion 3"]}
         />
+        <Button
+          onClick={() => {
+            console.log("clicked");
+          }}
+        >
+          Click Me
+        </Button>
         <Sandbox>
           <SandboxDisplay>
             {" "}

@@ -1,10 +1,12 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { describe, it, expect, vi } from "vitest";
 import { Button } from "./Button";
 import { createRef } from "react";
 
 describe("Button Component", () => {
-  it("renders as disabled and cannot be clicked", () => {
+  it("renders as disabled and cannot be clicked", async () => {
+    const user = userEvent.setup();
     const handleClick = vi.fn();
     render(
       <Button disabled onClick={handleClick}>
@@ -13,7 +15,7 @@ describe("Button Component", () => {
     );
     const button = screen.getByRole("button");
     expect(button).toHaveProperty("disabled", true);
-    fireEvent.click(button);
+    await user.click(button);
     expect(handleClick).not.toHaveBeenCalled();
   });
 
@@ -38,5 +40,22 @@ describe("Button Component", () => {
     const ref = createRef<HTMLButtonElement>();
     render(<Button ref={ref}>Click Me</Button>);
     expect(ref.current).toBeInstanceOf(HTMLButtonElement);
+  });
+
+  it("applies aria attributes correctly", () => {
+    render(<Button aria-label="Close">X</Button>);
+    const button = screen.getByRole("button");
+    expect(button).toHaveAttribute("aria-label", "Close");
+  });
+
+  it("can be focused and triggered by keyboard", async () => {
+    const user = userEvent.setup();
+    const handleClick = vi.fn();
+    render(<Button onClick={handleClick}>Click Me</Button>);
+    const button = screen.getByRole("button");
+    await user.tab();
+    expect(button).toHaveFocus();
+    await user.keyboard("{Enter}");
+    expect(handleClick).toHaveBeenCalledTimes(1);
   });
 });
