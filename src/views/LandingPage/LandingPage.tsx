@@ -1,4 +1,12 @@
-import { Checkbox, Flex, Option, Radio, Select, Variant } from "pulsewidth-ui";
+import {
+  Autocomplete,
+  Checkbox,
+  Flex,
+  Option,
+  Radio,
+  Select,
+  Variant,
+} from "pulsewidth-ui";
 import styles from "./landingPage.module.css";
 import { Fragment } from "react/jsx-runtime";
 import { useState } from "react";
@@ -13,6 +21,7 @@ const LandingPage = () => {
   const [checkboxChecked, setCheckboxChecked] = useState(false);
   const [selected, setSelected] = useState<string>();
   const [selectedVariant, setSelectedVariant] = useState<Variant>("outline");
+  const [autocompleteVal, setAutocompleteVal] = useState("");
   return (
     <Fragment>
       <Flex direction="row" className={styles.wrapper}>
@@ -42,6 +51,13 @@ const LandingPage = () => {
           <Option value="option 1">Option 1</Option>
           <Option value="option 2">Option 2</Option>
         </Select>
+        <Autocomplete
+          value={autocompleteVal}
+          onChange={(e) => {
+            setAutocompleteVal(e.currentTarget.value);
+          }}
+          suggestions={["suggestion 1", "suggestion 2", "suggestion 3"]}
+        />
         <Sandbox>
           <SandboxDisplay>
             {" "}

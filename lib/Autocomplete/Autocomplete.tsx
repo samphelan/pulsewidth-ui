@@ -134,6 +134,7 @@ export const Autocomplete = ({
           style={listStyles}
           variant={variant}
           colorVariant={colorVariant}
+          radius={radius}
           opaque
         >
           {choices.map((choice, i) => (

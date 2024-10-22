@@ -1,3 +1,6 @@
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
 import { defineConfig } from 'vitest/config'
 import {resolve} from 'path'
 import react from '@vitejs/plugin-react'
@@ -8,9 +11,10 @@ import dts from 'vite-plugin-dts'
 export default defineConfig({
   plugins: [react(), tsconfigPaths(), dts({ rollupTypes: true, tsconfigPath: './tsconfig.app.json' })],
   test: {
-    //globals: true,
+    globals: true,
     environment: "jsdom",
-    // ...
+    setupFiles: "./src/test/setup.ts",
+    css: true
   },
   build: {
     lib: {
