@@ -10,14 +10,16 @@ import { formatCSSModuleClasses } from "../utils/functions";
 import { Colors, Radius, Variant } from "../types";
 const f = formatCSSModuleClasses(styles);
 
-interface ButtonProps<T extends ElementType>
-  extends ComponentPropsWithoutRef<"button"> {
+interface InternalButtonProps<T extends ElementType> {
   variant?: Variant;
   colorVariant?: Colors;
   radius?: Radius;
   className?: string;
   as?: T;
 }
+
+export type ButtonProps<T extends ElementType> = InternalButtonProps<T> &
+  ComponentPropsWithoutRef<T>;
 
 export const Button = forwardRef(function Button<T extends ElementType>(
   {
@@ -28,7 +30,7 @@ export const Button = forwardRef(function Button<T extends ElementType>(
     as: Component = "button" as T,
     className,
     ...rest
-  }: ButtonProps<T> & ComponentPropsWithRef<T>,
+  }: InternalButtonProps<T> & ComponentPropsWithRef<T>,
   ref: ForwardedRef<HTMLElement>
 ) {
   return (
@@ -44,8 +46,7 @@ export const Button = forwardRef(function Button<T extends ElementType>(
     </Component>
   );
 }) as <T extends ElementType>(
-  props: ButtonProps<T> &
-    ComponentPropsWithoutRef<T> & {
-      ref?: ForwardedRef<ComponentPropsWithRef<T>["ref"]>;
-    }
+  props: ButtonProps<T> & {
+    ref?: ForwardedRef<ComponentPropsWithRef<T>["ref"]>;
+  }
 ) => JSX.Element;

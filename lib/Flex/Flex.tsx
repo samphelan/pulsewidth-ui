@@ -1,18 +1,16 @@
-import {
+import React, {
   ComponentPropsWithoutRef,
   ComponentPropsWithRef,
   ElementType,
   ForwardedRef,
   forwardRef,
 } from "react";
-
 import styles from "./flex.module.css";
 import { formatCSSModuleClasses } from "../utils/functions";
 
 const f = formatCSSModuleClasses(styles);
 
-interface FlexProps<T extends ElementType>
-  extends ComponentPropsWithoutRef<"div"> {
+interface InternalFlexProps<T extends ElementType> {
   direction?:
     | "row"
     | "row-reverse"
@@ -25,11 +23,8 @@ interface FlexProps<T extends ElementType>
   as?: T;
 }
 
-export type FlexType = <T extends ElementType>(
-  props: FlexProps<T> & {
-    ref?: ForwardedRef<ComponentPropsWithRef<T>["ref"]>;
-  } & ComponentPropsWithoutRef<T>
-) => JSX.Element;
+export type FlexProps<T extends ElementType> = InternalFlexProps<T> &
+  ComponentPropsWithoutRef<T>;
 
 export const Flex = forwardRef(function Flex<T extends ElementType>(
   {
@@ -40,8 +35,8 @@ export const Flex = forwardRef(function Flex<T extends ElementType>(
     className,
     as: Component = "div" as T,
     ...rest
-  }: FlexProps<T> & ComponentPropsWithRef<T>,
-  ref: ForwardedRef<HTMLDivElement>
+  }: InternalFlexProps<T> & ComponentPropsWithRef<T>,
+  ref: ForwardedRef<T>
 ) {
   return (
     <Component
@@ -59,4 +54,8 @@ export const Flex = forwardRef(function Flex<T extends ElementType>(
       {...rest}
     ></Component>
   );
-}) as FlexType;
+}) as <T extends ElementType>(
+  props: FlexProps<T> & {
+    ref?: ForwardedRef<ComponentPropsWithRef<T>["ref"]>;
+  }
+) => JSX.Element;

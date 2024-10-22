@@ -18,6 +18,9 @@ import Sandbox, {
   SandboxDisplay,
 } from "../../components/Sandbox/Sandbox";
 import VariantPicker from "../../components/VariantPicker/VariantPicker";
+import { Dropdown } from "../../../lib/Dropdown/Dropdown";
+import { DropdownButton } from "../../../lib/DropdownButton/DropdownButton";
+import { DropdownContent } from "../../../lib/DropdownContent/DropdownContent";
 
 const LandingPage = () => {
   const [radioChecked, setRadioChecked] = useState(0);
@@ -26,6 +29,7 @@ const LandingPage = () => {
   const [selectedVariant, setSelectedVariant] = useState<Variant>("outline");
   const [autocompleteVal, setAutocompleteVal] = useState("");
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <Fragment>
       <Drawer
@@ -95,6 +99,10 @@ const LandingPage = () => {
         >
           Click Me
         </Button>
+        <Dropdown>
+          <DropdownButton>Dropdown</DropdownButton>
+          <DropdownContent>Content</DropdownContent>
+        </Dropdown>
         <Sandbox>
           <SandboxDisplay>
             {" "}
