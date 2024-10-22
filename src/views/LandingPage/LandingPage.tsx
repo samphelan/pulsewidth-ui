@@ -2,9 +2,11 @@ import {
   Autocomplete,
   Button,
   Checkbox,
+  Drawer,
   Flex,
   Option,
   Radio,
+  RadioGroup,
   Select,
   Variant,
 } from "pulsewidth-ui";
@@ -18,27 +20,52 @@ import Sandbox, {
 import VariantPicker from "../../components/VariantPicker/VariantPicker";
 
 const LandingPage = () => {
-  const [radioChecked, setRadioChecked] = useState(false);
+  const [radioChecked, setRadioChecked] = useState(0);
   const [checkboxChecked, setCheckboxChecked] = useState(false);
   const [selected, setSelected] = useState<string>();
   const [selectedVariant, setSelectedVariant] = useState<Variant>("outline");
   const [autocompleteVal, setAutocompleteVal] = useState("");
+  const [drawerOpen, setDrawerOpen] = useState(false);
   return (
     <Fragment>
+      <Drawer
+        onExit={() => {
+          setDrawerOpen(false);
+        }}
+        open={drawerOpen}
+      >
+        Hey
+      </Drawer>
       <Flex direction="row" className={styles.wrapper}>
         <h1>Playground</h1>
-        <Radio
-          label="Radio"
-          checked={radioChecked}
-          onChange={(e) => {
-            setRadioChecked(e.currentTarget.checked);
-          }}
-        ></Radio>
+        <RadioGroup>
+          <Radio
+            label="Radio"
+            checked={radioChecked === 1}
+            onChange={(on) => {
+              if (on) setRadioChecked(1);
+            }}
+          ></Radio>
+          <Radio
+            label="Radio2"
+            checked={radioChecked === 2}
+            onChange={(on) => {
+              if (on) setRadioChecked(2);
+            }}
+          ></Radio>
+          <Radio
+            label="Radio3"
+            checked={radioChecked === 3}
+            onChange={(on) => {
+              if (on) setRadioChecked(3);
+            }}
+          ></Radio>
+        </RadioGroup>
         <Checkbox
           label="Checkbox"
           checked={checkboxChecked}
-          onChange={(e) => {
-            setCheckboxChecked(e.currentTarget.checked);
+          onChange={(c) => {
+            setCheckboxChecked(c);
           }}
         ></Checkbox>
         <Select
@@ -59,9 +86,11 @@ const LandingPage = () => {
           }}
           suggestions={["suggestion 1", "suggestion 2", "suggestion 3"]}
         />
+
         <Button
           onClick={() => {
             console.log("clicked");
+            setDrawerOpen((prev) => !prev);
           }}
         >
           Click Me
@@ -72,8 +101,8 @@ const LandingPage = () => {
             <Checkbox
               label="Checkbox"
               checked={checkboxChecked}
-              onChange={(e) => {
-                setCheckboxChecked(e.currentTarget.checked);
+              onChange={(c) => {
+                setCheckboxChecked(c);
               }}
             ></Checkbox>
           </SandboxDisplay>

@@ -25,6 +25,12 @@ interface FlexProps<T extends ElementType>
   as?: T;
 }
 
+export type FlexType = <T extends ElementType>(
+  props: FlexProps<T> & {
+    ref?: ForwardedRef<ComponentPropsWithRef<T>["ref"]>;
+  } & ComponentPropsWithoutRef<T>
+) => JSX.Element;
+
 export const Flex = forwardRef(function Flex<T extends ElementType>(
   {
     direction = "row",
@@ -53,8 +59,4 @@ export const Flex = forwardRef(function Flex<T extends ElementType>(
       {...rest}
     ></Component>
   );
-}) as <T extends ElementType>(
-  props: FlexProps<T> & {
-    ref?: ForwardedRef<ComponentPropsWithRef<T>["ref"]>;
-  } & ComponentPropsWithoutRef<T>
-) => JSX.Element;
+}) as FlexType;

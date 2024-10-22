@@ -10,6 +10,7 @@
     position: absolute;
     width: 0;
     height: 0;
+    pointer-events: none;
 }
 
 .checkbox-icon__custom {
@@ -24,11 +25,6 @@
 .checkbox--disabled {
     cursor: not-allowed;
     opacity: 0.5;
-}
-
-.checkbox-label {
-    margin-left: 8px;
-    cursor: pointer;
 }
 
 .checkbox--small {
@@ -66,6 +62,14 @@
 }
 .checkbox-wrapper:hover .variant--solid {
     background-color: var(--pulsewidth-color-solid-dark-hover);
+}
+
+.checkbox:focus-visible + .checkbox-icon__custom {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+.checkbox:focus-visible + .disableIcon__label {
+    outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {

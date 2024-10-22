@@ -12,7 +12,7 @@ import { faCheck, faMinus } from "@fortawesome/free-solid-svg-icons";
 import { Colors, Variant } from "../types";
 
 interface CheckboxProps
-  extends Omit<ComponentPropsWithoutRef<"input">, "size"> {
+  extends Omit<ComponentPropsWithoutRef<"input">, "size" | "onChange"> {
   size?: "small" | "medium" | "large";
   indeterminate?: boolean;
   label?: string;
@@ -20,7 +20,12 @@ interface CheckboxProps
   variant?: Variant;
   colorVariant?: Colors;
   checked?: boolean;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (
+    checked: boolean,
+    indeterminate?: boolean,
+    e?: ChangeEvent
+  ) => void;
+  disableIcon?: boolean;
 }
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
@@ -36,6 +41,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       colorVariant,
       variant = "outline",
       circle = false,
+      disableIcon = false,
       ...rest
     },
     forwardedRef
@@ -78,11 +84,18 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 
     // Handle checkbox changes
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+      console.log("this calls");
       if (!disabled) {
-        //setIsChecked(e.target.checked);
         if (onChange) {
-          onChange(e);
+          onChange(e.currentTarget.checked, e.currentTarget.indeterminate, e);
         }
+      }
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault(); // Prevent the page from scrolling when the space key is pressed
+        if (onChange) onChange(!checked);
       }
     };
 
@@ -105,6 +118,10 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           disabled && styles["checkbox--disabled"],
           className,
         ].join(" ")}
+        onKeyDown={handleKeyDown}
+        role="checkbox"
+        aria-checked={indeterminate ? "mixed" : checked}
+        aria-disabled={disabled}
       >
         <input
           type="checkbox"
@@ -113,10 +130,14 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
               el;
             setRefs(el);
           }}
+          onFocus={() => {
+            console.log("this focuses");
+          }}
           className={styles["checkbox"]}
           checked={checked}
           disabled={disabled}
           onChange={handleChange}
+          aria-hidden="true"
           {...rest}
         />
         <span
@@ -125,7 +146,19 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         >
           {renderIcon()}
         </span>
-        {label && <span className="checkbox-label">{label}</span>}
+        {label && (
+          <span
+            className={[
+              styles["checkbox-label"],
+              ...(disableIcon
+                ? [styles["disableIcon__label"], variantClass]
+                : []),
+            ].join(" ")}
+            data-color={disableIcon && colorVariant}
+          >
+            {label}
+          </span>
+        )}
       </label>
     );
   }

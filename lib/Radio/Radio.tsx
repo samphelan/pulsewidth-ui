@@ -23,7 +23,7 @@ export type RadioSlotProps = {
 };
 
 interface RadioButtonProps
-  extends Omit<ComponentPropsWithoutRef<"input">, "size"> {
+  extends Omit<ComponentPropsWithoutRef<"input">, "size" | "onChange"> {
   size?: "small" | "medium" | "large";
   label?: string;
   customIcon?: IconDefinition;
@@ -33,6 +33,7 @@ interface RadioButtonProps
   labelPos?: "top" | "right" | "bottom" | "left";
   slotProps?: RadioSlotProps;
   spacing?: Radius;
+  onChange?: (checked: boolean, e?: ChangeEvent) => void;
 }
 
 export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
@@ -60,7 +61,14 @@ export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
     // Handle radio button state change
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
       //setIsChecked(e.target.checked);
-      if (onChange) onChange(e); // Call the provided onChange handler
+      if (onChange) onChange(e.currentTarget.checked, e); // Call the provided onChange handler
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault(); // Prevent the page from scrolling when the space key is pressed
+        if (onChange) onChange(true);
+      }
     };
 
     // Size class to apply styles dynamically
@@ -78,6 +86,9 @@ export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
           ...(slotProps?.root?.className ? [slotProps.root.className] : []),
         ].join(" ")}
         data-color={colorVariant}
+        onKeyDown={handleKeyDown}
+        role="radio"
+        aria-checked={checked}
       >
         <input
           type="radio"
@@ -86,6 +97,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
           onChange={handleChange}
           className={styles["radio-button__input"]}
           name={group.name}
+          aria-hidden="true"
           {...rest}
         />
         {!disableIcon && (
