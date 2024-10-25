@@ -1,5 +1,19 @@
 .wrapper {
-    padding: var(--pulsewidth-spacing-9);
-    max-width: 900px;
-
+    padding: var(--pulsewidth-spacing-7) var(--pulsewidth-spacing-4);
+    max-width: calc(100vw - var(--pulsewidth-spacing-4) - var(--pulsewidth-spacing-4));
 }
+
+@media (min-width: 600px) and (max-width: 899px) {
+    .wrapper {
+        padding: var(--pulsewidth-spacing-6);
+        max-width: calc(100vw - var(--pulsewidth-spacing-6) - var(--pulsewidth-spacing-6));
+    }
+  }
+  
+  /* Large screens (Desktop) */
+  @media (min-width: 900px) {
+    .wrapper {
+        padding: var(--pulsewidth-spacing-9);
+        max-width: 900px;
+    }
+  }

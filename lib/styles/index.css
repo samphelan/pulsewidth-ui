@@ -70,6 +70,7 @@
     --pulsewidth-color-plain-dark-hover: var(--pulsewidth-color-gray-8);
     --pulsewidth-color-plain-dark-active: var(--pulsewidth-color-gray-7);
     --pulsewidth-color-plain-dark-text: var(--pulsewidth-color-gray-1);
+    --pulsewidth-color-plain-dark-placeholder-text: var(--pulsewidth-color-gray-4);
 
     /* Outline - Light Mode */
     --pulsewidth-color-outline-hover: var(--pulsewidth-color-gray-0);
@@ -78,6 +79,7 @@
     --pulsewidth-color-outline-border-hover: var(--pulsewidth-color-gray-3);
     --pulsewidth-color-outline-border-active: var(--pulsewidth-color-gray-4);
     --pulsewidth-color-outline-text: var(--pulsewidth-color-gray-8);
+    --pulsewidth-color-outline-placeholder-text: var(--pulsewidth-color-gray-5);
     /* Outline - Dark Mode */
     --pulsewidth-color-outline-dark-hover: var(--pulsewidth-color-gray-8);
     --pulsewidth-color-outline-dark-active: var(--pulsewidth-color-gray-7);
@@ -85,35 +87,43 @@
     --pulsewidth-color-outline-dark-border-hover: var(--pulsewidth-color-gray-3);
     --pulsewidth-color-outline-dark-border-active: var(--pulsewidth-color-gray-2);
     --pulsewidth-color-outline-dark-text: var(--pulsewidth-color-gray-1);
+    --pulsewidth-color-outline-dark-placeholder-text: var(--pulsewidth-color-gray-4);
 
     /* Soft - Light Mode */
     --pulsewidth-color-soft: var(--pulsewidth-color-gray-1);
     --pulsewidth-color-soft-hover: var(--pulsewidth-color-gray-2);
     --pulsewidth-color-soft-active: var(--pulsewidth-color-gray-3);
     --pulsewidth-color-soft-text: var(--pulsewidth-color-gray-9);
+    --pulsewidth-color-soft-placeholder-text: var(--pulsewidth-color-gray-6);
     /* Soft - Dark Mode */
     --pulsewidth-color-soft-dark: var(--pulsewidth-color-gray-7);
     --pulsewidth-color-soft-dark-hover: var(--pulsewidth-color-gray-6);
     --pulsewidth-color-soft-dark-active: var(--pulsewidth-color-gray-5);
     --pulsewidth-color-soft-dark-text: var(--pulsewidth-color-gray-1);
-    --pulsewidth-color-soft-dark-placeholder-text: var(--pulsewidth-color-gray-3);
+    --pulsewidth-color-soft-dark-placeholder-text: var(--pulsewidth-color-gray-4);
 
     /* Solid - Light Mode */
     --pulsewidth-color-solid: var(--pulsewidth-color-gray-7);
     --pulsewidth-color-solid-hover: var(--pulsewidth-color-gray-8);
     --pulsewidth-color-solid-active: var(--pulsewidth-color-gray-9);
     --pulsewidth-color-solid-text: var(--pulsewidth-color-gray-0);
+    --pulsewidth-color-solid-placeholder-text: var(--pulsewidth-color-gray-3);
     /* Solid - Dark Mode */
     --pulsewidth-color-solid-dark: var(--pulsewidth-color-gray-0);
     --pulsewidth-color-solid-dark-hover: var(--pulsewidth-color-gray-2);
     --pulsewidth-color-solid-dark-active: var(--pulsewidth-color-gray-3);
     --pulsewidth-color-solid-dark-text: var(--pulsewidth-color-gray-8);
+    --pulsewidth-color-solid-dark-placeholder-text: var(--pulsewidth-color-gray-5);
 
     /* Background & Text Colors */
     --pulsewidth-color-light-background: white;
     --pulsewidth-color-dark-background: rgb(36, 36, 36);;
     --pulsewidth-color-text-light: #213547;
     --pulsewidth-color-text-dark: rgba(255, 255, 255, 0.87);
+
+    /* Slider Colors */
+    --pulsewidth-color-slider: var(--pulsewidth-color-blue-6);
+    --pulsewidth-color-slider-dark: var(--pulsewidth-color-blue-5);
 
     /* Radius Variables */
     --pulsewidth-radius-0: 0px;
@@ -153,6 +163,8 @@
   }
 
   [data-color="red"] {
+    --pulsewidth-color-slider: var(--pulsewidth-color-red-6);
+    --pulsewidth-color-slider-dark: var(--pulsewidth-color-red-5);
      /* Plain - Light Mode */
      --pulsewidth-color-plain: transparent;
      --pulsewidth-color-plain-hover: var(--pulsewidth-color-red-1);
@@ -204,6 +216,9 @@
   }
 
   [data-color="blue"] {
+    /* Slider */
+    --pulsewidth-color-slider: var(--pulsewidth-color-blue-6);
+    --pulsewidth-color-slider-dark: var(--pulsewidth-color-blue-5);
     /* Plain - Light Mode */
     --pulsewidth-color-plain: transparent;
     --pulsewidth-color-plain-hover: var(--pulsewidth-color-blue-1);
@@ -255,6 +270,9 @@
 }
 
   [data-color="green"] {
+    /* Slider */
+    --pulsewidth-color-slider: var(--pulsewidth-color-green-6);
+    --pulsewidth-color-slider-dark: var(--pulsewidth-color-green-5);
       /* Plain - Light Mode */
       --pulsewidth-color-plain: transparent;
       --pulsewidth-color-plain-hover: var(--pulsewidth-color-green-1);
@@ -306,6 +324,9 @@
   }
 
   [data-color="orange"] {
+    /* Slider */
+    --pulsewidth-color-slider: var(--pulsewidth-color-orange-6);
+    --pulsewidth-color-slider-dark: var(--pulsewidth-color-orange-5);
       /* Plain - Light Mode */
       --pulsewidth-color-plain: transparent;
       --pulsewidth-color-plain-hover: var(--pulsewidth-color-orange-1);
@@ -366,6 +387,61 @@
     margin: 0;
     padding: 0;
   }
+
+  /* Default for small screens (mobile) */
+html {
+  font-size: 12px; /* Smaller base font size for mobile */
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 0.95rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+small {
+  font-size: 0.875rem;
+}
+
+
+@media (min-width: 600px) {
+  /* Medium screens (tablets) */
+  html {
+    font-size: 14px; /* Base font size increases for larger devices */
+  }
+}
+
+@media (min-width: 900px) {
+  /* Larger screens (small desktops or large tablets) */
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Extra large screens (desktops) */
+  html {
+    font-size: 16px;
+  }
+}
   
   
   @media (prefers-color-scheme: light) {

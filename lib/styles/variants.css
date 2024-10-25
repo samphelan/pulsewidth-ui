@@ -16,6 +16,13 @@
     background-color: var(--pulsewidth-color-plain-dark-active);
     border-color: var(--pulsewidth-color-plain-dark-active);
 }
+.variant--plain::placeholder {
+  color: var(--pulsewidth-color-plain-dark-placeholder-text);
+  opacity: 0.8; /* Firefox */
+}
+.variant--plain::-ms-input-placeholder { /* Edge 12 -18 */
+  color: var(--pulsewidth-color-plain-dark-placeholder-text);
+}
 .variant--outline, .static-variant--outline {
     background-color: transparent;
     border: 1px solid var(--pulsewidth-color-outline-dark-border);
@@ -33,6 +40,13 @@
     background-color: var(--pulsewidth-color-outline-dark-active);
     border-color: var(--pulsewidth-color-outline-dark-border-active);
 }
+.variant--outline::placeholder {
+  color: var(--pulsewidth-color-outline-dark-placeholder-text);
+  opacity: 0.8; /* Firefox */
+}
+.variant--outline::-ms-input-placeholder { /* Edge 12 -18 */
+  color: var(--pulsewidth-color-outline-dark-placeholder-text);
+}
 .variant--soft, .static-variant--soft {
     background-color: var(--pulsewidth-color-soft-dark);
     border: 1px solid var(--pulsewidth-color-soft-dark);
@@ -46,6 +60,13 @@
     background-color: var(--pulsewidth-color-soft-dark-active);
     border-color: var(--pulsewidth-color-soft-dark-active);
 }
+.variant--soft::placeholder {
+  color: var(--pulsewidth-color-soft-dark-placeholder-text);
+  opacity: 0.8; /* Firefox */
+}
+.variant--soft::-ms-input-placeholder { /* Edge 12 -18 */
+  color: var(--pulsewidth-color-soft-dark-placeholder-text);
+}
 .variant--solid, .static-variant--solid {
     background-color: var(--pulsewidth-color-solid-dark);
     border: 1px solid var(--pulsewidth-color-solid-dark);
@@ -58,6 +79,13 @@
 .variant--solid:active {
     background-color: var(--pulsewidth-color-solid-dark-active);
     border-color: var(--pulsewidth-color-solid-dark-active);
+}
+.variant--solid::placeholder {
+  color: var(--pulsewidth-color-solid-dark-placeholder-text);
+  opacity: 0.8; /* Firefox */
+}
+.variant--solid::-ms-input-placeholder { /* Edge 12 -18 */
+  color: var(--pulsewidth-color-solid-dark-placeholder-text);
 }
   
 /* Light Mode */
@@ -79,6 +107,13 @@
       background-color: var(--pulsewidth-color-plain-active);
       border-color: var(--pulsewidth-color-plain-active);
     }
+    .variant--plain::placeholder {
+      color: var(--pulsewidth-color-plain-placeholder-text);
+      opacity: 0.8; /* Firefox */
+    }
+    .variant--plain::-ms-input-placeholder { /* Edge 12 -18 */
+      color: var(--pulsewidth-color-plain-placeholder-text);
+    }
     .variant--outline, .static-variant--outline {
       background-color: transparent;
       border: 1px solid var(--pulsewidth-color-outline-border);
@@ -96,6 +131,13 @@
       background-color: var(--pulsewidth-color-outline-active);
       border-color: var(--pulsewidth-color-outline-border-active);
     }
+    .variant--outline::placeholder {
+      color: var(--pulsewidth-color-outline-placeholder-text);
+      opacity: 0.8; /* Firefox */
+    }
+    .variant--outline::-ms-input-placeholder { /* Edge 12 -18 */
+      color: var(--pulsewidth-color-outline-placeholder-text);
+    }
     .variant--soft, .static-variant--soft {
       background-color: var(--pulsewidth-color-soft);
       border: 1px solid var(--pulsewidth-color-soft);
@@ -109,6 +151,13 @@
       background-color: var(--pulsewidth-color-soft-active);
       border-color: var(--pulsewidth-color-soft-active);
     }
+    .variant--soft::placeholder {
+      color: var(--pulsewidth-color-soft-placeholder-text);
+      opacity: 0.8; /* Firefox */
+    }
+    .variant--soft::-ms-input-placeholder { /* Edge 12 -18 */
+      color: var(--pulsewidth-color-soft-placeholder-text);
+    }
     .variant--solid, .static-variant--solid {
       background-color: var(--pulsewidth-color-solid);
       border: 1px solid var(--pulsewidth-color-solid);
@@ -121,5 +170,12 @@
     .variant--solid:active {
       background-color: var(--pulsewidth-color-solid-active);
       border-color: var(--pulsewidth-color-solid-active);
+    }
+    .variant--solid::placeholder {
+      color: var(--pulsewidth-color-solid-placeholder-text);
+      opacity: 0.8; /* Firefox */
+    }
+    .variant--solid::-ms-input-placeholder { /* Edge 12 -18 */
+      color: var(--pulsewidth-color-solid-placeholder-text);
     }
 }

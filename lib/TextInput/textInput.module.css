@@ -1,6 +1,7 @@
 .input {
     padding: calc(0.6em + 4px);
     border-radius: var(--pulsewidth-spacing-2);
+    transition: background-color 0.25s;
 }
 
 .input::placeholder {

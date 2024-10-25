@@ -6,6 +6,7 @@ import React, {
   CSSProperties,
 } from "react";
 import styles from "./slider.module.css";
+import { Colors, Variant } from "pulsewidth-ui";
 
 interface SliderProps {
   min: number;
@@ -15,6 +16,8 @@ interface SliderProps {
   onChange: (value: number) => void;
   className?: string;
   style?: CSSProperties;
+  variant?: Variant;
+  colorVariant?: Colors;
 }
 
 export const Slider = forwardRef(function Slider(
@@ -26,8 +29,10 @@ export const Slider = forwardRef(function Slider(
     onChange,
     className,
     style,
+    variant = "soft",
+    colorVariant = "blue",
   }: SliderProps,
-  ref: React.ForwardedRef<HTMLDivElement>
+  ref: React.ForwardedRef<HTMLLabelElement>
 ) {
   const internalMax = (max - min) / step;
   const internalMin = 0;
@@ -133,7 +138,7 @@ export const Slider = forwardRef(function Slider(
     internalValue > max ? max : internalValue < min ? min : internalValue;
 
   return (
-    <div
+    <label
       className={[styles["wrapper"], className].join(" ")}
       style={style}
       ref={ref}
@@ -153,10 +158,13 @@ export const Slider = forwardRef(function Slider(
         ref={sliderRef}
         onMouseDown={handleMouseDown}
       >
-        <div className={styles["customTrack"]}></div>
         <div
-          className={styles["trackFill"]}
+          className={[styles["customTrack"], `variant--${variant}`].join(" ")}
+        ></div>
+        <div
+          className={`${styles["trackFill"]}`}
           style={{ width: `calc(${(val - min) * multiplier}% - 10px)` }}
+          data-color={colorVariant}
         ></div>
         <button
           ref={buttonRef}
@@ -167,6 +175,6 @@ export const Slider = forwardRef(function Slider(
         ></button>
       </div>
       <div style={{ textAlign: "center" }}>{val}</div>
-    </div>
+    </label>
   );
 });

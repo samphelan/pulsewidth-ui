@@ -1,6 +1,7 @@
 .wrapper {
     background-color: var(--pulsewidth-color-gray-8);
-    padding: var(--pulsewidth-spacing-9);
+    padding: var(--pulsewidth-spacing-4);
+    max-width: calc(100vw - var(--pulsewidth-spacing-4) - var(--pulsewidth-spacing-4));
 }
 
 .description {
@@ -13,6 +14,22 @@
     min-width: 130px;
 }
 
+  /* Medium screens (Tablet) */
+  @media (min-width: 600px) and (max-width: 899px) {
+    .wrapper {
+        padding: var(--pulsewidth-spacing-6);
+        max-width: calc(100vw - var(--pulsewidth-spacing-6) - var(--pulsewidth-spacing-6));
+    }
+  }
+  
+  /* Large screens (Desktop) */
+  @media (min-width: 900px) {
+    .wrapper {
+        padding: var(--pulsewidth-spacing-9);
+        max-width: 900px;
+    }
+  }
+
 @media (prefers-color-scheme: light) {
     .wrapper {
         background-color: var(--pulsewidth-color-gray-0);
@@ -21,3 +38,4 @@
         color: rgb(80,80,80);
     }
 }
+

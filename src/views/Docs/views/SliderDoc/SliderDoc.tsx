@@ -33,6 +33,8 @@ export const SliderSandbox = () => {
           onChange={(n) => {
             setVal(n);
           }}
+          variant={selectedVariant}
+          colorVariant={selectedColor}
         ></Slider>
       </SandboxDisplay>
       <SandboxControls>

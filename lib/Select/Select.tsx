@@ -43,6 +43,7 @@ interface SelectProps {
   radius?: Radius;
   selected?: string;
   onChange?: (v: string) => void;
+  placeholder?: string;
 }
 
 export const Select = ({
@@ -53,6 +54,7 @@ export const Select = ({
   variant = "outline",
   selected,
   onChange,
+  placeholder = "Choose one...",
 }: SelectProps) => {
   const [showOptions, setShowOptions] = useState(false);
   //const [options, setOptions] = useState<ReactElement<OptionProps>[]>([]);
@@ -95,8 +97,16 @@ export const Select = ({
         radius={radius}
         variant={variant}
       >
-        <span>{selected || "Choose One..."}</span>
-        <FontAwesomeIcon icon={faAngleDown} className={styles["caret-icon"]} />
+        <span style={{ opacity: selected ? "1" : "0.5" }}>
+          {selected || placeholder}
+        </span>
+        <FontAwesomeIcon
+          icon={faAngleDown}
+          className={[
+            styles["caret-icon"],
+            ...(showOptions ? [styles["caret-icon-open"]] : []),
+          ].join(" ")}
+        />
       </Button>
       {showOptions && (
         <List
