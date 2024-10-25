@@ -1,129 +1,51 @@
-import {
-  Autocomplete,
-  Button,
-  Checkbox,
-  Drawer,
-  Flex,
-  Option,
-  Radio,
-  RadioGroup,
-  Select,
-  Variant,
-} from "pulsewidth-ui";
+import { Button, Flex } from "pulsewidth-ui";
 import styles from "./landingPage.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment } from "react/jsx-runtime";
-import { useState } from "react";
-import Sandbox, {
-  SandboxControls,
-  SandboxDisplay,
-} from "../../components/Sandbox/Sandbox";
-import VariantPicker from "../../components/VariantPicker/VariantPicker";
-import { Dropdown } from "../../../lib/Dropdown/Dropdown";
-import { DropdownButton } from "../../../lib/DropdownButton/DropdownButton";
-import { DropdownContent } from "../../../lib/DropdownContent/DropdownContent";
+import NavBar from "../../components/NavBar/NavBar";
+import { Link } from "react-router-dom";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const LandingPage = () => {
-  const [radioChecked, setRadioChecked] = useState(0);
-  const [checkboxChecked, setCheckboxChecked] = useState(false);
-  const [selected, setSelected] = useState<string>();
-  const [selectedVariant, setSelectedVariant] = useState<Variant>("outline");
-  const [autocompleteVal, setAutocompleteVal] = useState("");
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <Fragment>
-      <Drawer
-        onExit={() => {
-          setDrawerOpen(false);
-        }}
-        open={drawerOpen}
-      >
-        Hey
-      </Drawer>
+      <NavBar></NavBar>
       <Flex direction="row" className={styles.wrapper}>
-        <h1>Playground</h1>
-        <RadioGroup>
-          <Radio
-            label="Radio"
-            checked={radioChecked === 1}
-            onChange={(on) => {
-              if (on) setRadioChecked(1);
-            }}
-          ></Radio>
-          <Radio
-            label="Radio2"
-            checked={radioChecked === 2}
-            onChange={(on) => {
-              if (on) setRadioChecked(2);
-            }}
-          ></Radio>
-          <Radio
-            label="Radio3"
-            checked={radioChecked === 3}
-            onChange={(on) => {
-              if (on) setRadioChecked(3);
-            }}
-          ></Radio>
-        </RadioGroup>
-        <Checkbox
-          label="Checkbox"
-          checked={checkboxChecked}
-          onChange={(c) => {
-            setCheckboxChecked(c);
-          }}
-        ></Checkbox>
-        <Select
-          selected={selected}
-          onChange={(v) => {
-            setSelected(v);
-          }}
-          variant="outline"
-          colorVariant="gray"
-        >
-          <Option value="option 1">Option 1</Option>
-          <Option value="option 2">Option 2</Option>
-        </Select>
-        <Autocomplete
-          value={autocompleteVal}
-          onChange={(e) => {
-            setAutocompleteVal(e.currentTarget.value);
-          }}
-          suggestions={["suggestion 1", "suggestion 2", "suggestion 3"]}
-        />
-
-        <Button
-          onClick={() => {
-            console.log("clicked");
-            setDrawerOpen((prev) => !prev);
-          }}
-        >
-          Click Me
-        </Button>
-        <Dropdown>
-          <DropdownButton>Dropdown</DropdownButton>
-          <DropdownContent>Content</DropdownContent>
-        </Dropdown>
-        <Sandbox>
-          <SandboxDisplay>
-            {" "}
-            <Checkbox
-              label="Checkbox"
-              checked={checkboxChecked}
-              onChange={(c) => {
-                setCheckboxChecked(c);
-              }}
-            ></Checkbox>
-          </SandboxDisplay>
-          <SandboxControls>
-            <h5>Variant</h5>
-            <VariantPicker
-              selected={selectedVariant}
-              onChange={(v) => {
-                setSelectedVariant(v);
-              }}
-            ></VariantPicker>
-          </SandboxControls>
-        </Sandbox>
+        <h1 className={[styles.h1, styles.mb20].join(" ")}>
+          A{" "}
+          <span className={`${styles.gradient} ${styles.color1}`}>
+            lightweight
+          </span>
+          ,{" "}
+          <span className={`${styles.gradient} ${styles.color2}`}>
+            flexible
+          </span>
+          , and{" "}
+          <span className={`${styles.gradient} ${styles.color3}`}>elegant</span>{" "}
+          React UI library
+        </h1>
+        <h3 className={styles.mb20}>
+          Pulsewidth UI gives you all the tools you need to create scalable
+          applications quickly.
+        </h3>
+        <Flex>
+          <Button
+            as={Link}
+            to="/docs"
+            variant="outline"
+            style={{ marginRight: "10px" }}
+          >
+            Get Started
+          </Button>
+          <Button
+            as={Link}
+            to="https://www.github.com/samphelan/pulsewidth-ui"
+            variant="soft"
+          >
+            <FontAwesomeIcon icon={faGithub} style={{ marginRight: "10px" }} />
+            Github
+          </Button>
+        </Flex>
       </Flex>
     </Fragment>
   );

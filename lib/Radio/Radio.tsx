@@ -51,6 +51,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
       spacing = 3,
       slotProps,
       className,
+      style,
       ...rest
     }: RadioButtonProps,
     ref: ForwardedRef<HTMLInputElement>
@@ -89,6 +90,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
         onKeyDown={handleKeyDown}
         role="radio"
         aria-checked={checked}
+        style={style}
       >
         <input
           type="radio"
@@ -97,7 +99,6 @@ export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
           onChange={handleChange}
           className={styles["radio-button__input"]}
           name={group.name}
-          aria-hidden="true"
           {...rest}
         />
         {!disableIcon && (

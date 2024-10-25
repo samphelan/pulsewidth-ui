@@ -33,8 +33,8 @@ export const CodeBlock = ({ str, className: _className }: CodeBlockProps) => {
             className={className}
             style={{
               ...style,
-              padding: "20px 80px 20px 20px",
-              borderRadius: "30px",
+              padding: "10px 80px 10px 20px",
+              borderRadius: "20px",
               backgroundColor: "var(--pulsewidth-color-gray-9)",
             }}
           >

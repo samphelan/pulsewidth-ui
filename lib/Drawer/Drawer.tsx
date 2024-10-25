@@ -1,5 +1,5 @@
 import { Colors, Flex, Variant } from "pulsewidth-ui";
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { CSSProperties, ReactNode, useEffect, useRef, useState } from "react";
 import styles from "./drawer.module.css";
 import useClickOutside from "../../hooks/useClickOutside";
 
@@ -9,6 +9,9 @@ interface DrawerProps {
   open: boolean;
   variant?: Variant;
   colorVariant?: Colors;
+  className?: string;
+  style?: CSSProperties;
+  anchor?: "top" | "right" | "bottom" | "left";
 }
 
 export const Drawer = ({
@@ -17,6 +20,9 @@ export const Drawer = ({
   open = false,
   variant = "soft",
   colorVariant = "gray",
+  className,
+  style,
+  anchor = "left",
 }: DrawerProps) => {
   const [visible, setVisible] = useState(open);
   const drawerRef = useRef<HTMLElement>(null);
@@ -38,14 +44,19 @@ export const Drawer = ({
         className={[styles["wrapper"], !open ? styles["exitWrapper"] : ""].join(
           " "
         )}
+        style={style}
+        {...{ inert: !open ? "" : undefined }}
       >
         <Flex
           className={[
             styles["drawer"],
-            !open ? styles["exitDrawer"] : "",
+            !open ? styles[`exitDrawer-${anchor}`] : "",
             `static-variant--${variant}`,
+            styles[`anchor-${anchor}`],
+            className,
             `opaque`,
           ].join(" ")}
+          style={style}
           direction="column"
           ref={drawerRef}
           data-color={colorVariant}

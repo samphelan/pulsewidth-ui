@@ -5,26 +5,70 @@
     left: 0;
     right: 0;
     z-index: 50;
-    animation: fadeIn 200ms ease-out 0s forwards;
-
+    animation: fadeIn 150ms ease-out 0s forwards;
 }
 
 .drawer {
     position: absolute;
+    filter: none;
+    
+}
+.wrapper .drawer.anchor-top {
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 200px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    animation: slideInTop 150ms ease-out 0s forwards;
+}
+.wrapper .drawer.anchor-right {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    min-width: 200px;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    animation: slideInRight 150ms ease-out 0s forwards;
+}
+.wrapper .drawer.anchor-bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 200px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    animation: slideInBottom 150ms ease-out 0s forwards;
+}
+.wrapper .drawer.anchor-left {
     top: 0;
     bottom: 0;
     left: 0;
     min-width: 200px;
-    filter: none;
-    animation: slideIn 200ms ease-out 0s forwards;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    animation: slideInLeft 150ms ease-out 0s forwards;
 }
 
 .exitWrapper {
-    animation: fadeOut 200ms ease-in 0s forwards;
+    animation: fadeOut 150ms ease-in 0s forwards;
 }
 
-.exitDrawer {
-    animation: slideOut 200ms ease-in 0s forwards;
+.wrapper .drawer.exitDrawer-left {
+    animation: slideOutLeft 150ms ease-in 0s forwards;
+}
+.wrapper .drawer.exitDrawer-top {
+    animation: slideOutTop 150ms ease-in 0s forwards;
+}
+.wrapper .drawer.exitDrawer-right {
+    animation: slideOutRight 150ms ease-in 0s forwards;
+}
+.wrapper .drawer.exitDrawer-bottom {
+    animation: slideOutBottom 150ms ease-in 0s forwards;
 }
 
 @keyframes fadeIn {
@@ -50,7 +94,7 @@
     }
 }
 
-@keyframes slideIn {
+@keyframes slideInLeft {
     0% {
         transform: translateX(-100%);
     }
@@ -58,12 +102,60 @@
         transform: translateX(0);
     }
 }
+@keyframes slideInTop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slideInBottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
-@keyframes slideOut {
+@keyframes slideOutLeft {
     0% {
         transform: translateX(0);
     }
     100% {
         transform: translateX(-100%);
+    }
+}
+@keyframes slideOutTop {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+@keyframes slideOutRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+@keyframes slideOutBottom {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
     }
 }
