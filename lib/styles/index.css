@@ -65,12 +65,13 @@
     --pulsewidth-color-plain-hover: var(--pulsewidth-color-gray-1);
     --pulsewidth-color-plain-active: var(--pulsewidth-color-gray-2);
     --pulsewidth-color-plain-text: var(--pulsewidth-color-gray-8);
+    --pulsewidth-color-plain-placeholder-text: var(--pulsewidth-color-gray-4);
     /* Plain - Dark Mode */
     --pulsewidth-color-plain-dark: transparent;
     --pulsewidth-color-plain-dark-hover: var(--pulsewidth-color-gray-8);
     --pulsewidth-color-plain-dark-active: var(--pulsewidth-color-gray-7);
     --pulsewidth-color-plain-dark-text: var(--pulsewidth-color-gray-1);
-    --pulsewidth-color-plain-dark-placeholder-text: var(--pulsewidth-color-gray-4);
+    --pulsewidth-color-plain-dark-placeholder-text: var(--pulsewidth-color-gray-5);
 
     /* Outline - Light Mode */
     --pulsewidth-color-outline-hover: var(--pulsewidth-color-gray-0);
@@ -79,7 +80,7 @@
     --pulsewidth-color-outline-border-hover: var(--pulsewidth-color-gray-3);
     --pulsewidth-color-outline-border-active: var(--pulsewidth-color-gray-4);
     --pulsewidth-color-outline-text: var(--pulsewidth-color-gray-8);
-    --pulsewidth-color-outline-placeholder-text: var(--pulsewidth-color-gray-5);
+    --pulsewidth-color-outline-placeholder-text: var(--pulsewidth-color-gray-4);
     /* Outline - Dark Mode */
     --pulsewidth-color-outline-dark-hover: var(--pulsewidth-color-gray-8);
     --pulsewidth-color-outline-dark-active: var(--pulsewidth-color-gray-7);
@@ -87,7 +88,7 @@
     --pulsewidth-color-outline-dark-border-hover: var(--pulsewidth-color-gray-3);
     --pulsewidth-color-outline-dark-border-active: var(--pulsewidth-color-gray-2);
     --pulsewidth-color-outline-dark-text: var(--pulsewidth-color-gray-1);
-    --pulsewidth-color-outline-dark-placeholder-text: var(--pulsewidth-color-gray-4);
+    --pulsewidth-color-outline-dark-placeholder-text: var(--pulsewidth-color-gray-5);
 
     /* Soft - Light Mode */
     --pulsewidth-color-soft: var(--pulsewidth-color-gray-1);

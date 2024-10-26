@@ -85,6 +85,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
           className,
           styles[`labelPos--${labelPos}`],
           ...(slotProps?.root?.className ? [slotProps.root.className] : []),
+          "transition-colors",
         ].join(" ")}
         data-color={colorVariant}
         onKeyDown={handleKeyDown}
@@ -105,6 +106,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
           <span
             className={[
               styles["radio-button__circle"],
+              "transition-colors",
               disableIcon
                 ? null
                 : `variant--${variant} ${styles[`variant--${variant}`]}`,
@@ -126,6 +128,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioButtonProps>(
           <span
             className={[
               styles["radio-button__label"],
+              "transition-colors",
               ...(slotProps?.label?.className
                 ? [slotProps.label.className]
                 : []),

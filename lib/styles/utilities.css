@@ -281,4 +281,10 @@
 .radius9 {
     border-radius: var(--pulsewidth-radius-9);
 }
+/* Transition Colors */
+.transition-colors {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
 

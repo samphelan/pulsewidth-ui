@@ -5,7 +5,10 @@
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  transition: background-color 0.25s;
+}
+
+.button:disabled {
+  cursor: not-allowed;
 }
 
 .button:focus-visible {

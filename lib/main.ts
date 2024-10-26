@@ -4,6 +4,7 @@ import { AccordionContent } from './AccordionContent/AccordionContent'
 import { Autocomplete } from './Autocomplete/Autocomplete'
 import { Avatar } from './Avatar/Avatar'
 import { Button } from './Button/Button'
+import { Calendar, SelectionMode } from './Calendar/Calendar'
 import { Checkbox } from './Checkbox/Checkbox'
 import { Drawer } from './Drawer/Drawer'
 import { Flex } from './Flex/Flex'
@@ -23,5 +24,7 @@ import './styles/index.css'
 import './styles/variants.css'
 import './styles/utilities.css'
 
-export type { Colors, Variant, Position, Radius };
-export { Accordion, AccordionHeader, AccordionContent, Autocomplete, Avatar, Button, Checkbox, Drawer, Flex, List, ListItem, ListItemButton, Option, Password, Phone, Radio, RadioGroup, Select, Slider, TextInput, Tooltip }
+export type { Colors, Variant, Position, Radius, SelectionMode };
+export { Accordion, AccordionHeader, AccordionContent, Autocomplete, Avatar, Button, Calendar, Checkbox,
+    Drawer, Flex, List, ListItem, ListItemButton, Option, Password, Phone, Radio, RadioGroup, Select, Slider,
+    TextInput, Tooltip }

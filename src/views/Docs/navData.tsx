@@ -17,6 +17,7 @@ import Overview from "./views/Overview/Overview";
 import Installation from "./views/Installation/Installation";
 import Usage from "./views/Usage/Usage";
 import Contributing from "./views/Contributing/Contributing";
+import CalendarDoc from "./views/CalendarDoc/CalendarDoc";
 
 type Page = {
   title?: string;
@@ -81,6 +82,10 @@ export const navData: NavData[] = [
           { path: "List", component: <ListDoc /> },
           { path: "Tooltip", component: <TooltipDoc /> },
         ],
+      },
+      {
+        title: "Date & Time",
+        pages: [{ path: "Calendar", component: <CalendarDoc /> }],
       },
     ],
   },

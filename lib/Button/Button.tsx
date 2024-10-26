@@ -38,7 +38,7 @@ export const Button = forwardRef(function Button<T extends ElementType>(
       ref={ref}
       className={`${f([
         "button",
-      ])} ${className} variant--${variant} radius${radius}`}
+      ])} transition-colors ${className} variant--${variant} radius${radius}`}
       data-color={colorVariant}
       {...rest}
     >
