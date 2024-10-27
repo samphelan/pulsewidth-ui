@@ -18,6 +18,7 @@ import Installation from "./views/Installation/Installation";
 import Usage from "./views/Usage/Usage";
 import Contributing from "./views/Contributing/Contributing";
 import CalendarDoc from "./views/CalendarDoc/CalendarDoc";
+import ModalDoc from "./views/ModalDoc/ModalDoc";
 
 type Page = {
   title?: string;
@@ -73,6 +74,7 @@ export const navData: NavData[] = [
         pages: [
           { path: "Drawer", component: <DrawerDoc /> },
           { path: "Flex", component: <FlexDoc /> },
+          { path: "Modal", component: <ModalDoc /> },
         ],
       },
       {
