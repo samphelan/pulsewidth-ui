@@ -19,6 +19,7 @@ import Usage from "./views/Usage/Usage";
 import Contributing from "./views/Contributing/Contributing";
 import CalendarDoc from "./views/CalendarDoc/CalendarDoc";
 import ModalDoc from "./views/ModalDoc/ModalDoc";
+import DropdownDoc from "./views/DropdownDoc/DropdownDoc";
 
 type Page = {
   title?: string;
@@ -73,6 +74,7 @@ export const navData: NavData[] = [
         title: "Layout & Containers",
         pages: [
           { path: "Drawer", component: <DrawerDoc /> },
+          { path: "Dropdown", component: <DropdownDoc /> },
           { path: "Flex", component: <FlexDoc /> },
           { path: "Modal", component: <ModalDoc /> },
         ],

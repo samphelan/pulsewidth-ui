@@ -1,6 +1,7 @@
 import { ReactNode, useRef, useState } from "react";
 import DropdownContext from "./DropdownContext";
-import { Flex } from "pulsewidth-ui";
+import { Flex } from "../Flex/Flex";
+import { Colors, Radius, Variant } from "../types";
 import styles from "./dropdown.module.css";
 import useClickOutside from "../../hooks/useClickOutside";
 
@@ -8,12 +9,18 @@ interface DropdownProps {
   children?: ReactNode;
   open?: boolean;
   onChange?: (open: boolean) => void;
+  variant?: Variant;
+  colorVariant?: Colors;
+  radius?: Radius;
 }
 
 export const Dropdown = ({
   children,
   open = false,
   onChange,
+  variant,
+  colorVariant,
+  radius,
 }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(open);
 
@@ -24,7 +31,6 @@ export const Dropdown = ({
   });
 
   const handleChange = (b: boolean) => {
-    console.log("this calls");
     setIsOpen(b);
     if (onChange) onChange(b);
   };
@@ -34,9 +40,12 @@ export const Dropdown = ({
       value={{
         open: open || isOpen,
         handleChange,
+        variant,
+        colorVariant,
+        radius,
       }}
     >
-      <Flex ref={wrapperRef} className={styles.wrapper}>
+      <Flex ref={wrapperRef} className={styles.wrapper} direction="column">
         {children}
       </Flex>
     </DropdownContext.Provider>
