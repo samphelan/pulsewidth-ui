@@ -4,14 +4,17 @@ import DropdownContext from "../Dropdown/DropdownContext";
 import { ButtonProps } from "../Button/Button";
 
 export const DropdownButton = ({ children }: ButtonProps<"button">) => {
-  const { handleChange, open, variant, color } = useContext(DropdownContext);
+  const { handleChange, open, variant, colorVariant, radius } =
+    useContext(DropdownContext);
+
   return (
     <Button
       variant={variant}
-      colorVariant={color}
+      colorVariant={colorVariant}
       onClick={() => {
         handleChange(!open);
       }}
+      radius={radius}
     >
       {children}
     </Button>

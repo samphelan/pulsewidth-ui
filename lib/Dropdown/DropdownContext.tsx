@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Colors, Variant } from "../types";
+import { Colors, Radius, Variant } from "../types";
 
 /**
  * @ignore - internal component.
@@ -8,9 +8,16 @@ import { Colors, Variant } from "../types";
 const DropdownContext = React.createContext<{
   open: boolean;
   variant?: Variant;
-  color?: Colors;
+  colorVariant?: Colors;
+  radius?: Radius;
   handleChange: (open: boolean) => void;
-}>({ open: false, handleChange: () => {} });
+}>({
+  open: false,
+  handleChange: () => {},
+  variant: "outline",
+  colorVariant: "gray",
+  radius: 3,
+});
 
 if (process.env.NODE_ENV !== "production") {
   DropdownContext.displayName = "DropdownContext";

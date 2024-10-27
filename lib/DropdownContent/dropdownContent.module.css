@@ -1,4 +1,6 @@
 .wrapper {
     position: absolute;
     top: calc(100% + 4px);
+    z-index: 9;
+    min-width: 100%;
 }

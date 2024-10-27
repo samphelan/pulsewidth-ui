@@ -27,6 +27,7 @@ export const Sheet = forwardRef(function Sheet<T extends ElementType>(
     radius = 3,
     as = "div" as T,
     children,
+    className,
   }: SheetProps<T> & ComponentPropsWithRef<T>,
   ref: ForwardedRef<T>
 ) {
@@ -34,7 +35,7 @@ export const Sheet = forwardRef(function Sheet<T extends ElementType>(
     <Flex
       as={as}
       ref={ref}
-      className={`static-variant--${variant} opaque radius${radius} pt3 pb3 pr3 pl3`}
+      className={`static-variant--${variant} opaque radius${radius} ${className}`}
       data-color={colorVariant}
     >
       {children}
