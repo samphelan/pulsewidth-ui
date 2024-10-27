@@ -11,6 +11,7 @@ import { Flex } from './Flex/Flex'
 import { List } from './List/List'
 import { ListItem } from './ListItem/ListItem'
 import { ListItemButton } from './ListItemButton/ListItemButton'
+import { Modal } from './Modal/Modal'
 import { Radio } from './Radio/Radio'
 import { RadioGroup } from './RadioGroup/RadioGroup'
 import { Password } from './Password/Password'
@@ -26,5 +27,5 @@ import './styles/utilities.css'
 
 export type { Colors, Variant, Position, Radius, SelectionMode };
 export { Accordion, AccordionHeader, AccordionContent, Autocomplete, Avatar, Button, Calendar, Checkbox,
-    Drawer, Flex, List, ListItem, ListItemButton, Option, Password, Phone, Radio, RadioGroup, Select, Slider,
-    TextInput, Tooltip }
+    Drawer, Flex, List, ListItem, ListItemButton, Modal, Option, Password, Phone, Radio, RadioGroup, Select,
+    Slider, TextInput, Tooltip }

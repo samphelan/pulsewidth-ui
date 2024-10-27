@@ -10,7 +10,7 @@ import { formatCSSModuleClasses } from "../utils/functions";
 
 const f = formatCSSModuleClasses(styles);
 
-interface InternalFlexProps<T extends ElementType> {
+export interface InternalFlexProps<T extends ElementType> {
   direction?:
     | "row"
     | "row-reverse"
