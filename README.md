@@ -1,11 +1,11 @@
 # **Pulsewidth UI**
 
-A lightweight and customizable React UI component library built with styled-components for consistent design and ease of use.
+A lightweight and customizable React UI component library.
 
 ## **Features**
 
-- **Pre-built Components**: Includes a range of commonly used components like buttons, modals, cards, and forms.
-- **Customizable**: Easily theme components using styled-components and props.
+- **Pre-built Components**: Includes a range of commonly used components like buttons, modals, and forms.
+- **Customizable**: Easily theme components using props and CSS. No external libraries required.
 - **Fully Typed**: Written in TypeScript for better developer experience and type safety.
 - **Responsive**: Components are responsive by default with customizable breakpoints.
 - **Easy Integration**: Designed to work seamlessly with any React project.
