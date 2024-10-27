@@ -83,7 +83,7 @@ export const Calendar = ({
 
           // Allow the "range" selection mode to behave as expected if it is activated after a single date has been selected.
           if (newDates.length === 1) {
-            setRangeStart(date);
+            setRangeStart(newDates[0]);
           } else {
             setRangeStart(null);
           }

@@ -4,7 +4,7 @@
 }
 
 .wrapper {
-    padding: 0 200px;
+    padding: 0 10px;
     margin: 0;
     justify-content: center;
     align-items: flex-start;
@@ -48,3 +48,17 @@
         background-position: left;
     }
 }
+
+  /* Medium screens (Tablet) */
+  @media (min-width: 600px) and (max-width: 899px) {
+    .wrapper {
+        padding: 0 80px;
+    }
+  }
+  
+  /* Large screens (Desktop) */
+  @media (min-width: 900px) {
+    .wrapper {
+        padding: 0 200px;
+    }
+  }

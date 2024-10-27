@@ -13,7 +13,7 @@ import { Fragment } from "react/jsx-runtime";
 import NavBar from "../../components/NavBar/NavBar";
 import styles from "./docs.module.css";
 import { Link, useParams } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { findComponentByPath, navData, NavData } from "./navData";
@@ -92,6 +92,10 @@ const Docs = () => {
   const { page = "" } = useParams();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [page]);
+
   return (
     <Fragment>
       <NavBar
@@ -125,7 +129,11 @@ const Docs = () => {
             }}
           />
         </Drawer>
-        <SideNav page={page} navData={navData} className="hideOnTablet" />
+        <SideNav
+          page={page}
+          navData={navData}
+          className={`hideOnTablet ${styles["desktopSideNav"]}`}
+        />
         <Flex className={styles.pageWrap}>
           {findComponentByPath(page || "Overview")}
         </Flex>

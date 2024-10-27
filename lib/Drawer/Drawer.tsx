@@ -58,6 +58,7 @@ export const Drawer = ({
           ].join(" ")}
           style={style}
           direction="column"
+          justify="flex-start"
           ref={drawerRef}
           data-color={colorVariant}
         >
